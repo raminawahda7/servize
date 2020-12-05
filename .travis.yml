@@ -9,11 +9,12 @@ services:
    - postgresql
 install:
     # - pipenv install
+    - pip install python
     - pip install -r requirements.txt
 
 script:
     # - cd server
-    - python server/manage.py runserver
+    - python manage.py test
     # - pytest
 # deploy:
 #   provider: pages
