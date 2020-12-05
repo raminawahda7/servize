@@ -11,8 +11,8 @@ install:
     - pipenv install
 
 script:
-    - cd server 
-    -  python manage.py test 
+    - cd 
+    - python manage.py test && python manage.py runserver
 # deploy:
 #   provider: pages
 #   skip_cleanup: true
