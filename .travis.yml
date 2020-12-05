@@ -1,0 +1,26 @@
+language: python
+
+python:
+    - "3.9"
+env:
+    - SECRET_KEY='TEST'
+    - DJANGO_VERSION=3.1.4
+services:
+   - postgresql
+install:
+    - pipenv install
+
+script:
+    -  python manage.py test 
+# deploy:
+#   provider: pages
+#   skip_cleanup: true
+#   github_token: $GITHUB_TOKEN
+#   local_dir: build
+#   on:
+#     branch: master
+# after_success:
+#     - codecov
+
+# on:
+#   branch: all
