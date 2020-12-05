@@ -1,0 +1,16 @@
+language: python
+
+python:
+    - "3.9"
+env:
+    - SECRET_KEY='TEST'
+     - DJANGO_VERSION=3.1.4
+services:
+   - postgresql
+install:
+    - pipenv install
+
+script:
+    -  coverage run --source='authentication' manage.py test && coverage report && coverage html
+after_success:
+    - codecov
