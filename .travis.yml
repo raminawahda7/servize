@@ -11,6 +11,7 @@ install:
     - pipenv install
 
 script:
+    - cd server 
     -  python manage.py test 
 # deploy:
 #   provider: pages
