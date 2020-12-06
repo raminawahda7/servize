@@ -21,7 +21,7 @@ class CategoryProvider(models.Model):
         return self
 
      
-class Image (models.Model):
+class Image(models.Model):
     images = models.URLField()
     servicProvider = models.ForeignKey(ServiceProvider, on_delete=models.CASCADE) # connect provider with it's images.
     def __str__(self):
