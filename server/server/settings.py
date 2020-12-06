@@ -40,7 +40,10 @@ INSTALLED_APPS = [
     'corsheaders',            # add this
     'rest_framework',         # add this
     # add name of applications here
-    'mainApp'
+    'Category',
+    'ServiceProvider',
+    'User',
+    'SubCategory'
 
 
 ]
@@ -87,7 +90,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'servizeDB', 
         'USER': 'postgres', 
-        'PASSWORD': 'rami871995',
+        'PASSWORD': '741987',
         'HOST': 'localhost', 
         'PORT': '5432',
     }
