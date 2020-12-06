@@ -5,5 +5,6 @@ app_name='SubCategory'
 
 
 urlpatterns=[
-    path('',SubCategoryList.as_view())
+    path('',SubCategoryList.as_view()),
+    
  ]

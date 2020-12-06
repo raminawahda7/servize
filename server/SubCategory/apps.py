@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class SubCategoryConfig(AppConfig):
+class SubcategoryConfig(AppConfig):
     name = 'SubCategory'

@@ -4,4 +4,6 @@ from SubCategory.models import SubCategory
 class  SubCategorySerializer(serializers.ModelSerializer):
     class Meta:
         model=SubCategory
-        fields=('subName','submage','category','pk')
+        fields=('subName','subImage','category')
+
+

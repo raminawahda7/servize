@@ -3,7 +3,7 @@ from Category.models import Category
 
 class ServiceProvider(models.Model):
     name  = models.CharField(max_length=20)
-    phoneNum=models.CharField(max_length=20)
+    phoneNum=models.CharField(max_length=12)
     email = models.EmailField()
     status = models.BooleanField(default=False)
     locationID = models.IntegerField() 

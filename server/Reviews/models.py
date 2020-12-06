@@ -7,7 +7,7 @@ class Reviews(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE)
     servicProvider = models.ForeignKey(ServiceProvider, on_delete=models.CASCADE) # connect provider with it's images.
     def __str__(self):
-        return self.stars
+        return self
       
 
      

@@ -21,6 +21,8 @@ urlpatterns = [
     path('category/',include('Category.urls')),
     path('location/',include('Location.urls')),
     path('subcategory/',include('SubCategory.urls')),
+    path('user/',include('User.urls')),
+    path('reviews/',include('Reviews.urls')),
   
 
 ]
