@@ -23,6 +23,7 @@ urlpatterns = [
     path('subcategory/',include('SubCategory.urls')),
     path('user/',include('User.urls')),
     path('reviews/',include('Reviews.urls')),
+    path('serviceprovider/',include('ServiceProvider.urls')),
   
 
 ]
