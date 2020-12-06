@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'Category',
     'ServiceProvider',
     'User',
-    'SubCategory'
+    'SubCategory',
+    'Location'
 
 
 ]
