@@ -4,13 +4,27 @@ python:
     - "3.9"
 env:
     - SECRET_KEY='TEST'
-     - DJANGO_VERSION=3.1.4
+    - DJANGO_VERSION=3.1.4
 services:
    - postgresql
 install:
-    - pipenv install
+    # - pipenv install
+    - pip install python
+    - pip install -r requirements.txt
 
 script:
-    -  coverage run --source='authentication' manage.py test && coverage report && coverage html
-after_success:
-    - codecov
+    # - cd server
+    - python manage.py test
+    # - pytest
+# deploy:
+#   provider: pages
+#   skip_cleanup: true
+#   github_token: $GITHUB_TOKEN
+#   local_dir: build
+#   on:
+#     branch: master
+# after_success:
+#     - codecov
+
+# on:
+#   branch: all
