@@ -17,26 +17,12 @@ function App() {
         <p>
           {/* Edit <code>src/App.tsx</code> and save to reload. */}
         </p>
-        <div>
 
-          <Signup />
-
-        </div>
-
-        <div>
-          <h2>
-            <Login />
-          </h2>
-        </div>
-
-        <div>
-          <h1>
-            <Catagories />
-          </h1>
-        </div>
-
+        <Signup />
+        <Login />
         <Navbar />
         <Main />
+        <Catagories />
         <Footer />
 
       </header>
