@@ -21,3 +21,11 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+<<<<<<< HEAD
+
+/package-lock.json
+=======
+package-lock.json
+.eslintcache
+>>>>>>> 7da109bdeaed7ee66cbf4db4837b5c8882f0d2ec
