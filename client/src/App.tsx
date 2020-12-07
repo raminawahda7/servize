@@ -3,6 +3,7 @@ import React from 'react';
 // import './App.css';
 import Signup from './components/Signup';
 import Login from './components/Login';
+import Catagories from './components/Catagories';
 
 function App() {
   return (
@@ -22,6 +23,12 @@ function App() {
           <h2>
             <Login />
           </h2>
+        </div>
+
+        <div>
+          <h1>
+            <Catagories />
+          </h1>
         </div>
       </header>
     </div>
