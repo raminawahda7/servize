@@ -11,7 +11,7 @@ class ServiceProvider(models.Model):
     area = models.ForeignKey(Area,on_delete=models.CASCADE)
     # //RGISTRATION AS AFORIGN KEY 
     def __str__(self):
-        return self
+        return self.name
 
 
 class CategoryProvider(models.Model):
