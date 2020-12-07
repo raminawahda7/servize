@@ -3,7 +3,12 @@ import React from 'react';
 // import './App.css';
 import Signup from './components/Signup';
 import Login from './components/Login';
+import Catagories from './components/Catagories';
 
+// import './App.css';
+import Navbar from "./components/Nav-bar/Nav-bar";
+import Footer from "./components/Footer/Footer";
+import Main from "./components/Main-view/Main-view";
 function App() {
   return (
     <div className="App">
@@ -12,17 +17,14 @@ function App() {
         <p>
           {/* Edit <code>src/App.tsx</code> and save to reload. */}
         </p>
-        <div>
-          <h1>
-            <Signup />
-          </h1>
-        </div>
 
-        <div>
-          <h2>
-            <Login />
-          </h2>
-        </div>
+        <Signup />
+        <Login />
+        <Navbar />
+        <Main />
+        <Catagories />
+        <Footer />
+
       </header>
     </div>
   );
