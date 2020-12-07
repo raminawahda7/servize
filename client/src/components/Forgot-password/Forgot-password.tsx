@@ -23,7 +23,7 @@ const ForgotPassword = ()=>{
     return (
         <div id="reset">
             <button ><Link to="/">Return To Home Page</Link> </button>
-            <form className="reset-form" id="reset-form" onSubmit={() => { handleSubmit}}>
+            <form className="reset-form" id="reset-form" onSubmit={handleSubmit}>
                 <h1>Forgot Password</h1>
                 <br />
                 <div className="">
