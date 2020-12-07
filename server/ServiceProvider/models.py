@@ -15,7 +15,7 @@ class ServiceProvider(models.Model):
 
 
 class CategoryProvider(models.Model):
-    subcategory = models.ForeignKey(SubCategory, on_delete=models.CASCADE)
+    subcategory = models.ForeignKey(SubCategory, on_delete=models.CASCADE,default=1)
     serviceProvider = models.ForeignKey(ServiceProvider, on_delete=models.CASCADE)
     def __str__(self):
         return self
