@@ -37,16 +37,21 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'corsheaders',            # add this
+    'corsheaders',            # add this 
     'rest_framework',         # add this
     # add name of applications here
-    'mainApp'
+    'Category',
+    'ServiceProvider',
+    'User',
+    'SubCategory',
+    'Location',
+    'Reviews',
 
 
 ]
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',    # add this
+    'corsheaders.middleware.CorsMiddleware',    # add this for connection between front and back
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -126,6 +131,11 @@ USE_L10N = True
 
 USE_TZ = True
 
+CORS_ALLOW_ALL_ORIGINS=True
+
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost:8000',
+)
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
