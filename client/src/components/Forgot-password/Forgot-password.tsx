@@ -3,7 +3,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 // import './ForgotPassword.css';
-// const axios = require('axios');
+const axios = require('axios');
 const $ = require('jquery');
 
 // Sends a request to change password for a user that forgot the password
@@ -12,8 +12,23 @@ const $ = require('jquery');
 const handleSubmit = (e:any) => {
     e.preventDefault();
     // console.log("hi");
-    let input = $('#reset-form').serializeArray();
-    console.log(input); 
+    let input = $('#forgot-form').serializeArray();
+    console.log(input[0].value); 
+
+    let options = {
+        url: `http://localhost:3000/user/forgot-password`,
+        method: 'post',
+        data: { email: input[0].value }
+    }
+
+    axios(options)
+        .then((results:any) => {
+            console.log(results);
+
+        })
+        .catch((err: any) => {
+            console.error("err===== =>", err);
+        })
 }   
 
 const ForgotPassword = ()=>{ 
@@ -23,7 +38,7 @@ const ForgotPassword = ()=>{
     return (
         <div id="reset">
             <button ><Link to="/">Return To Home Page</Link> </button>
-            <form className="reset-form" id="reset-form" onSubmit={handleSubmit}>
+            <form className="forgot-form" id="forgot-form" onSubmit={handleSubmit}>
                 <h1>Forgot Password</h1>
                 <br />
                 <div className="">
