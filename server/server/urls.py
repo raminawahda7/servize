@@ -7,11 +7,14 @@ urlpatterns = [
     path('category/',include('Category.urls')),
     path('location/',include('Location.urls')),
     path('subcategory/',include('SubCategory.urls')),
-    path('user/',include('User.urls')),
     path('reviews/',include('Reviews.urls')),
     path('serviceprovider/',include('ServiceProvider.urls')),
     path('auth/', include('djoser.urls')),
-    path('auth/', include('djoser.urls.jwt')),  # to handle token 
-  
+    path('auth/', include('djoser.urls.jwt')),                         # to handle token 
+    path('auth/users/', include('djoser.urls')),                       #Use this endpoint to register new user
+    path('auth/users/activation/', include('djoser.urls')),            #Use this endpoint to activate user account. This endpoint is not a URL which will be directly exposed to your users - you should provide site in your frontend application (configured by ACTIVATION_URL) which will send POST request to activate endpoint
+    path('auth/jwt/create/', include('djoser.urls')),                  # Use this endpoint to obtain JWT.
+   #   #Use this endpoint to send email to user with password reset link. 
+                                                                     #You have to setup PASSWORD_RESET_CONFIRM_URL.
 
 ]

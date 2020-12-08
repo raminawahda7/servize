@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     # add name of applications here
     'Category',
     'ServiceProvider',
-    'User',
     'SubCategory',
     'Location',
     'Reviews',
