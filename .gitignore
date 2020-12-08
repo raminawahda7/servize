@@ -5,8 +5,7 @@
 /.pnp
 .pnp.js
 .env
-/env
-
+server/env
 
 
 
@@ -26,3 +25,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+#django
+pyvenv.cfg
