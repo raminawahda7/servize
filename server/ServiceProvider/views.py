@@ -3,16 +3,16 @@ from rest_framework import generics
 from ServiceProvider.models import ServiceProvider,Image,CategoryProvider  
 from ServiceProvider.serialize import ServiceProviderSerializer,ImageSerializer,CategoryProviderSerializer
 
-class ServiceProviderList(generics.ListCreateAPIView):
+className ServiceProviderList(generics.ListCreateAPIView):
     queryset=ServiceProvider.objects.all()
-    serializer_class=ServiceProviderSerializer
+    serializer_className=ServiceProviderSerializer
 
-class ImageList(generics.ListCreateAPIView):
+className ImageList(generics.ListCreateAPIView):
     queryset=Image.objects.all()
-    serializer_class=ImageSerializer
+    serializer_className=ImageSerializer
 
 
-class CategoryProviderList(generics.ListCreateAPIView):
+className CategoryProviderList(generics.ListCreateAPIView):
     queryset=CategoryProvider.objects.all()
-    serializer_class=CategoryProviderSerializer
+    serializer_className=CategoryProviderSerializer
 

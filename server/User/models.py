@@ -1,6 +1,6 @@
 from django.db import models
 
-class User(models.Model):
+className User(models.Model):
     name = models.CharField(max_length=20)
     email = models.EmailField()
     image = models.CharField(max_length=256)
@@ -26,7 +26,7 @@ class User(models.Model):
 
 
 
-    # class Admin(models.Model):
+    # className Admin(models.Model):
     # name = models.CharField(max_length=20)
     # email = models.EmailField()
 

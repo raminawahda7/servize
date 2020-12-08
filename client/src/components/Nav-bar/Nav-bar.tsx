@@ -19,7 +19,7 @@ $(window).on("scroll", function () {
 
 const Navbar = () => {
     return (
-        <header>
+        <header id="nav-bar">
             <nav>
                 <div className="menu-icon">
                     <i className="fa fa-bars fa-2x"></i>
