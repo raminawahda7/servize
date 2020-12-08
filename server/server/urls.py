@@ -11,7 +11,7 @@ urlpatterns = [
     path('reviews/',include('Reviews.urls')),
     path('serviceprovider/',include('ServiceProvider.urls')),
     path('auth/', include('djoser.urls')),
-    path('auth/', include('djoser.urls.jwt')),
+    path('auth/', include('djoser.urls.jwt')),  # to handle token 
   
 
 ]
