@@ -7,7 +7,7 @@ class SubCategory(models.Model):
     subImage = models.CharField(max_length=256,default='you should put url for your image')
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     def __str__(self):
-        return self
+        return self.subName
       
       
 
