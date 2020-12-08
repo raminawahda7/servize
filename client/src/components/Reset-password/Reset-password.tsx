@@ -7,29 +7,30 @@ import React from 'react';
 const axios = require('axios');
 const $ = require('jquery');
 
-const handleSubmit = (e: any) => {
-    e.preventDefault();
-    // console.log("hi");
-    let input = $('#reset-form').serializeArray();
-    console.log(input);
-
-    let options = {
-        url: `http://localhost:3000/user/reset/:token`,
-        method: 'post',
-        // data: { email: input[0].value }
-    }
-
-    axios(options)
-        .then((results: any) => {
-            console.log(results);
-
-        })
-        .catch((err: any) => {
-            console.error("err===== =>", err);
-        })
-}   
 
 const ResetPassword = () => {
+    const handleSubmit = (e: any) => {
+        e.preventDefault();
+        // console.log("hi");
+        let input = $('#reset-form').serializeArray();
+        console.log(input);
+
+        let options = {
+            url: `http://localhost:3000/user/reset/:token`,
+            method: 'post',
+            // data: { email: input[0].value }
+        }
+
+        axios(options)
+            .then((results: any) => {
+                console.log(results);
+
+            })
+            .catch((err: any) => {
+                console.error("err===== =>", err);
+            })
+    }   
+
     return (
         <MDBContainer>
             <MDBRow>
