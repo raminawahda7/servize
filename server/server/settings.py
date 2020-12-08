@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corsheaders',            # add this 
     'rest_framework',         # add this
-    'djoser'
+    
     # add name of applications here
     'Category',
     'ServiceProvider',
@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'SubCategory',
     'Location',
     'Reviews',
+    'djoser',
     'accounts',
 
 
