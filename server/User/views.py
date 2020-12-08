@@ -4,6 +4,6 @@ from User.models import User
 from User.serialize import UserSerializer
 
 
-class UserList(generics.ListCreateAPIView):
+className UserList(generics.ListCreateAPIView):
     queryset=User.objects.all()
-    serializer_class=UserSerializer
+    serializer_className=UserSerializer

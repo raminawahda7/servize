@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class ServiceproviderConfig(AppConfig):
+className ServiceproviderConfig(AppConfig):
     name = 'ServiceProvider'

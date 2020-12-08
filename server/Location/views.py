@@ -4,10 +4,10 @@ from Location.models import City,Area
 from Location.serialize import CitySerializer,AreaSerializer
 
 
-class CityList(generics.ListCreateAPIView):
+className CityList(generics.ListCreateAPIView):
     queryset=City.objects.all()
-    serializer_class=CitySerializer
+    serializer_className=CitySerializer
 
-class AreaList(generics.ListCreateAPIView):
+className AreaList(generics.ListCreateAPIView):
     queryset=Area.objects.all()
-    serializer_class=AreaSerializer
+    serializer_className=AreaSerializer

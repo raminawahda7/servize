@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'corsheaders',            # add this
+    'corsheaders',            # add this 
     'rest_framework',         # add this
     # add name of applications here
     'Category',
@@ -51,7 +51,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',    # add this
+    'corsheaders.middleware.CorsMiddleware',    # add this for connection between front and back
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -92,7 +92,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'servizeDB', 
         'USER': 'postgres', 
-        'PASSWORD': '741987',
+        'PASSWORD': 'student',
         'HOST': 'localhost', 
         'PORT': '5432',
     }
@@ -131,6 +131,11 @@ USE_L10N = True
 
 USE_TZ = True
 
+CORS_ALLOW_ALL_ORIGINS=True
+
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost:8000',
+)
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
