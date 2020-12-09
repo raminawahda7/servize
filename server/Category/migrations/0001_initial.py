@@ -3,7 +3,7 @@
 from django.db import migrations, models
 
 
-className Migration(migrations.Migration):
+class Migration(migrations.Migration):
 
     initial = True
 

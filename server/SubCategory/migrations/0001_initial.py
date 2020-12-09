@@ -4,7 +4,7 @@ from django.db import migrations, models
 import django.db.models.deletion
 
 
-className Migration(migrations.Migration):
+class Migration(migrations.Migration):
 
     initial = True
 
