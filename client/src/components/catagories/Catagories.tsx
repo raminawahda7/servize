@@ -11,13 +11,11 @@ const Catagories = () => {
                 <MDBCol md='4'>
                     <MDBCard className="mx-4" style={{ width: "20rem" }} collection>
                         <MDBCardImage className="img-fluid" zoom src="https://i.pinimg.com/236x/bf/3a/75/bf3a750816439abe4a1b9a5ede52f312.jpg" />
-                        <div className="stripe light">
-                            <a href="#!">
-                                <p>Electrican
+                        <a href="#!">
+                            <p>Electrican
             <MDBIcon icon="chevron-right" />
-                                </p>
-                            </a>
-                        </div>
+                            </p>
+                        </a>
                     </MDBCard>
                 </MDBCol>
 
