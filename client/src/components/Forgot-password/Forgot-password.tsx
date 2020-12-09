@@ -22,9 +22,9 @@ const ForgotPassword = ()=>{
         e.preventDefault();
         let input = $('#forgot-form').serializeArray();
         // console.log(input[0].value);
-        const [email, setEmail] = useState("") 
+        // const [email, setEmail] = useState("") 
         dispatch(store(input))
-        setEmail("");
+        // setEmail("");
 
         let options = {
             url: `http://localhost:3000/user/forgot-password`,
@@ -62,7 +62,7 @@ const ForgotPassword = ()=>{
                 <br />
                 <div className="">
                     <label htmlFor="email">Email</label>
-                    <input type="email" value={email} className="text" id="email" name="email"/>
+                    <input type="email" className="text" id="email" name="email"/>
                 </div>
                 <br />
                 <button className="button" >Reset Password</button><br />
