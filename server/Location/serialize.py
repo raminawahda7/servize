@@ -1,13 +1,13 @@
 from rest_framework import serializers
 from Location.models import City,Area
 
-className  CitySerializer(serializers.ModelSerializer):
-    className Meta:
+class  CitySerializer(serializers.ModelSerializer):
+    class Meta:
         model=City
         fields=('name','pk')
 
-className  AreaSerializer(serializers.ModelSerializer):
-    className Meta:
+class  AreaSerializer(serializers.ModelSerializer):
+    class Meta:
         model=Area
         fields=('name','City','pk')
 
