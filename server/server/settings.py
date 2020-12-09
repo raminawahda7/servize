@@ -96,12 +96,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'servizeDB', 
         'USER': 'postgres', 
-<<<<<<< HEAD
         'PASSWORD': '741987',
-=======
-        # 'PASSWORD': 'rami871995',
-        'PASSWORD': 'student',
->>>>>>> fb216b83979b5b7ae7f55c186c3df5c625370273
         'HOST': 'localhost', 
         'PORT': '5432',
     }
@@ -158,9 +153,9 @@ CORS_ORIGIN_WHITELIST = (
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated'
-    ],
+    # 'DEFAULT_PERMISSION_CLASSES': [
+    #     'rest_framework.permissions.IsAuthenticated'
+    # ],
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
