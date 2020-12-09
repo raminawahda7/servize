@@ -4,8 +4,8 @@ from SubCategory.models import SubCategory
 from SubCategory.serialize import SubCategorySerializer
 
 
-class SubCategoryList(generics.ListCreateAPIView):
+className SubCategoryList(generics.ListCreateAPIView):
     queryset=SubCategory.objects.all()
-    serializer_class=SubCategorySerializer
+    serializer_className=SubCategorySerializer
 
 
