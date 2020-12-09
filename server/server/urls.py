@@ -1,28 +1,22 @@
-"""server URL Configuration
 
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/3.1/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
 from django.contrib import admin
-from django.urls import path,include
+from django.urls import path,include,re_path
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    # path('admin/', admin.site.urls),
     path('category/',include('Category.urls')),
     path('location/',include('Location.urls')),
     path('subcategory/',include('SubCategory.urls')),
-    path('user/',include('User.urls')),
     path('reviews/',include('Reviews.urls')),
-  
+    path('serviceprovider/',include('ServiceProvider.urls')),
+    path('auth/', include('djoser.urls')),
+    path('auth/', include('djoser.urls.jwt')),                         # to handle token 
+    path('auth/users/', include('djoser.urls')),                       #Use this endpoint to register new user
+    path('auth/users/activation/', include('djoser.urls')),            #Use this endpoint to activate user account. This endpoint is not a URL which will be directly exposed to your users - you should provide site in your frontend application (configured by ACTIVATION_URL) which will send POST request to activate endpoint
+    path('auth/jwt/create/', include('djoser.urls')),                  # Use this endpoint to obtain JWT.
+    path('auth/users/reset_password/', include('djoser.urls')),    #Use this endpoint to send email to user with password reset link. 
+                                                                     #You have to setup PASSWORD_RESET_CONFIRM_URL.
+
+    path('auth/users/reset_password_confirm/', include('djoser.urls')),   #Use this endpoint to finish reset password process
 
 ]
