@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class LocationConfig(AppConfig):
+className LocationConfig(AppConfig):
     name = 'Location'
