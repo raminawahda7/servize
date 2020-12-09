@@ -1,32 +1,51 @@
 import React from 'react';
-// import logo from './logo.svg';
-// import './App.css';
+
 import Signup from './components/Signup';
 import Login from './components/Login';
-import Catagories from './components/Catagories';
+import Catagories from './components/catagories/Catagories';
+import Profile from './components/profile/Profile';
+import Provider from './components/Register-provider/Regester-provider'
 
 // import './App.css';
+import { Switch, Route, BrowserRouter } from 'react-router-dom';
 import Navbar from "./components/Nav-bar/Nav-bar";
+import Categories from "./components/Categories/Categories";
 import Footer from "./components/Footer/Footer";
 import Main from "./components/Main-view/Main-view";
+
+import ForgotPassword from "./components/Forgot-password/Forgot-password";
+import ResetPassword from "./components/Reset-password/Reset-password";
+import ProviderContainer from "./components/Provider-container/Provider-container";
+
+
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
-        <p>
-          {/* Edit <code>src/App.tsx</code> and save to reload. */}
-        </p>
+    <BrowserRouter>
+      <div className="App">
 
+        {/* <Navbar /> */}
         <Signup />
         <Login />
+        <Provider />
         <Navbar />
         <Main />
         <Catagories />
-        <Footer />
 
-      </header>
-    </div>
+        <Switch>
+
+          {/* <Route exact path="/" component={Main} /> */}
+          <Route exact path="/" component={Categories} />
+          <Route path="/provider" component={ProviderContainer} />
+          <Route path="/user/forgot-password" component={ForgotPassword} />
+          <Route path="/reset/:token" component={ResetPassword} />
+
+        </Switch>
+
+        {/* <Footer /> */}
+
+      </div>
+    </BrowserRouter>
   );
 }
 
