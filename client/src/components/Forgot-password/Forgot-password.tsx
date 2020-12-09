@@ -14,14 +14,17 @@ const $ = require('jquery');
 
 const ForgotPassword = ()=>{ 
     
+    
     const dispatch = useDispatch();
     const userInStore = useSelector((state: any) => state.user);
     console.log(userInStore)
     const handleSubmit = (e: any) => {
         e.preventDefault();
         let input = $('#forgot-form').serializeArray();
-        // console.log(input[0].value); 
+        // console.log(input[0].value);
+        const [email, setEmail] = useState("") 
         dispatch(store(input))
+        setEmail("");
 
         let options = {
             url: `http://localhost:3000/user/forgot-password`,
@@ -59,7 +62,7 @@ const ForgotPassword = ()=>{
                 <br />
                 <div className="">
                     <label htmlFor="email">Email</label>
-                    <input type="email" className="text" id="email" name="email"/>
+                    <input type="email" value={email} className="text" id="email" name="email"/>
                 </div>
                 <br />
                 <button className="button" >Reset Password</button><br />
