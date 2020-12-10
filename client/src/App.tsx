@@ -3,7 +3,8 @@ import React from 'react';
 import Signup from './components/Signup';
 import Login from './components/Login';
 import Catagories from './components/catagories/Catagories';
-import Profile from './components/profile/Profile';
+import ProviderProf from './components/profiles/ProviderProf';
+import UserProf from './components/profiles/UserProf'
 import Provider from './components/Register-provider/Regester-provider'
 
 // import './App.css';
@@ -31,6 +32,8 @@ function App() {
         <Navbar />
         <Main />
         <Catagories />
+        <ProviderProf />
+        <UserProf />
 
         <Switch>
 
