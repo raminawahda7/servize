@@ -8,15 +8,15 @@ class ServiceProvider(models.Model):
     email = models.EmailField(max_length=255, unique=True)
     status = models.BooleanField(default=False)
     city = models.ForeignKey(City,on_delete=models.CASCADE)
-    area = models.ForeignKey(Area,on_delete=models.CASCADE)
+    # area = models.ForeignKey(Area,on_delete=models.CASCADE)
     # //RGISTRATION AS AFORIGN KEY 
     def __str__(self):
         return self.name
 
 
 class CategoryProvider(models.Model):
-    subcategory = models.ForeignKey(SubCategory, on_delete=models.CASCADE,default=1)
-    serviceProvider = models.ForeignKey(ServiceProvider, on_delete=models.CASCADE)
+    subcategory = models.ForeignKey(SubCategory, on_delete=models.CASCADE,default=1,related_name='providers')
+    serviceProvider = models.ForeignKey(ServiceProvider, on_delete=models.CASCADE,related_name='Categories')
     def __str__(self):
         return self
 
