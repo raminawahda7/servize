@@ -19,7 +19,7 @@ class UserAccountManager(BaseUserManager):
 class UserAccount(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(max_length=255, unique=True)
     name = models.CharField(max_length=255)
-    is_active = models.BooleanField(default=false)
+    is_active = models.BooleanField(default=False)
     is_serviceProvider = models.BooleanField(default=False)
 
     objects = UserAccountManager()

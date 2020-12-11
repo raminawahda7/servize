@@ -1,13 +1,11 @@
 from rest_framework import serializers
 from SubCategory.models import SubCategory
-from ServiceProvider.serialize import ServiceProviderSerializer
+from ServiceProvider.serialize import ProviderCategorySerializer
+
 class  SubCategorySerializer(serializers.ModelSerializer):
-    # serviceProvider = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
+    providers = ProviderCategorySerializer(many=True,read_only=True)
     class Meta:
         model=SubCategory
-        fields=('subName','subImage','category','pk')   #,'serviceProvider'
-        
-
-     
+        fields=('subName','subImage','category','providers')
 
 

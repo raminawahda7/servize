@@ -8,6 +8,7 @@ urlpatterns = [
     path('location/',include('Location.urls')),
     path('subcategory/',include('SubCategory.urls')),
     path('reviews/',include('Reviews.urls')),
+    path('user/',include('User.urls')),
     path('serviceprovider/',include('ServiceProvider.urls')),
     path('auth/', include('djoser.urls')),
     path('auth/', include('djoser.urls.jwt')),                         # to handle token 
