@@ -11,6 +11,7 @@ class ServiceProvider(models.Model):
     status = models.BooleanField(default=False)
     city = models.ForeignKey(City,on_delete=models.CASCADE)
     Category = models.ForeignKey(Category, on_delete=models.CASCADE,related_name='serviceProviders')
+    subcategory = models.ForeignKey(SubCategory, on_delete=models.CASCADE,default=1,related_name='providers')
     # area = models.ForeignKey(Area,on_delete=models.CASCADE)
     # //RGISTRATION AS AFORIGN KEY 
     def __str__(self):
@@ -26,7 +27,7 @@ class CategoryProvider(models.Model):
      
 class Image(models.Model):
     images = models.URLField()
-    servicProvider = models.OneToOneField(ServiceProvider,on_delete=models.CASCADE) # connect provider with it's images.
+    servicProvider = models.OneToOneField(ServiceProvider, on_delete=models.CASCADE) # connect provider with it's images.
     def __str__(self):
         return self
 
