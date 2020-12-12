@@ -32,7 +32,7 @@ const Navbar = () => {
                         <li><a href="#">How it Works</a></li>
                         <li><a href="#">Browse Jobs</a></li>
                         <li><a href="#">Language</a></li>
-                        <li><Link to="/prov/signup">Become a Seller</Link></li>
+                        <li><Link to="/prov/signup">Become a Service Provider</Link></li>
                         <li><Link to="/user/login">Log In</Link></li>
                         <li><Link to="/user/signup">Join</Link></li>
                     </ul>
