@@ -4,16 +4,38 @@ import { Link, Redirect } from 'react-router-dom';
 // import React, { Component } from 'react';
 import { MDBContainer, MDBRow, MDBCol, MDBBtn } from 'mdbreact';
 import React from 'react';
-// const axios = require('axios');
+const axios = require('axios');
 const $ = require('jquery');
 
 
 const ResetPassword = () => {
+    const handleSubmit = (e: any) => {
+        e.preventDefault();
+        // console.log("hi");
+        let input = $('#reset-form').serializeArray();
+        console.log(input);
+
+        let options = {
+            url: `http://localhost:3000/user/reset/:token`,
+            method: 'post',
+            // data: { email: input[0].value }
+        }
+
+        axios(options)
+            .then((results: any) => {
+                console.log(results);
+
+            })
+            .catch((err: any) => {
+                console.error("err===== =>", err);
+            })
+    }   
+
     return (
         <MDBContainer>
             <MDBRow>
                 <MDBCol md="6">
-                    <form>
+                    <form className="reset-form" id="reset-form" onSubmit={handleSubmit}>
                         <p className="h4 text-center mb-4">Reset Password</p>
                         <label htmlFor="defaultFormLoginEmailEx" className="grey-text">
                             New Password
