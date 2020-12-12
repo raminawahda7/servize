@@ -21,10 +21,10 @@ function App() {
     <BrowserRouter>
       <div className="App">
 
-        {/* <Navbar /> */}
-        <Signup />
-        {/* <Login />
-        <ProviderSignup /> */}
+        <Navbar />
+        {/* <Signup /> */}
+        {/* <Login /> */}
+        {/* <ProviderSignup /> */}
         {/* <Catagories /> */}
 
         <Switch>
