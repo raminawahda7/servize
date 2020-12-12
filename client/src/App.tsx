@@ -34,7 +34,7 @@ function App() {
           <Route path="/user/signup" component={Signup} />
           <Route path="/user/login" component={Login} />
           <Route path="/provider" component={ProviderContainer} />
-          <Route path="/user/forgot-password" component={ForgotPassword} />
+          <Route path="/auth/users/reset_password/" component={ForgotPassword} />
           <Route path="/reset/:token" component={ResetPassword} />
 
         </Switch>
