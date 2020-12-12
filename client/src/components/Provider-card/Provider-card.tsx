@@ -11,7 +11,7 @@ const ProviderCard = ({user}:{user:any}) => {
     const userInStore = useSelector((state: any) => state.user);
     // const dispatch = useDispatch();
     return (
-        < div className="col-md-3 d-none d-md-block" >
+        < div className="col-md-3 d-none d-md-block" style={{display:"flex"}}>
             <div className="card mb-2">
                 <img className="card-img-top" src={user.catImage}/>
                 <div className="card-body">
