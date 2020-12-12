@@ -25,7 +25,7 @@ const Signup = () => {
                 onSubmit={handleSubmit((formData) => {
                     console.log(formData)
                     let options = {
-                        url: `http://localhost:8000/serviceprovider/`,
+                        url: `http://localhost:8000/auth/users/`,
                         method: 'post',
                         data: {
                             username: formData.username,
