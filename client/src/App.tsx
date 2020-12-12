@@ -12,6 +12,7 @@ import Main from "./components/Main-view/Main-view";
 import ForgotPassword from "./components/Forgot-password/Forgot-password";
 import ResetPassword from "./components/Reset-password/Reset-password";
 import ProviderContainer from "./components/Provider-container/Provider-container";
+import Activate from './components/Activate';
 
 import './App.css';
 
@@ -20,26 +21,27 @@ function App() {
     <BrowserRouter>
       <div className="App">
 
-        <Navbar />
-        {/* <Signup /> */}
+        {/* <Navbar /> */}
+        <Signup />
         {/* <Login />
         <ProviderSignup /> */}
         {/* <Catagories /> */}
 
         <Switch>
 
-          <Route exact path="/" component={Main} />
-          {/* <Route exact path="/" component={Categories} /> */}
+          {/* <Route exact path="/" component={Main} /> */}
+          <Route exact path="/" component={Categories} />
           <Route path="/prov/signup" component={ProviderSignup} />
           <Route path="/user/signup" component={Signup} />
           <Route path="/user/login" component={Login} />
           <Route path="/provider" component={ProviderContainer} />
-          <Route path="/user/forgot-password" component={ForgotPassword} />
+          <Route path="/auth/users/reset_password/" component={ForgotPassword} />
           <Route path="/reset/:token" component={ResetPassword} />
+          <Route path="/activate/:uid/:token" component={Activate} />
 
         </Switch>
 
-        <Footer />
+        {/* <Footer /> */}
 
       </div>
     </BrowserRouter>
