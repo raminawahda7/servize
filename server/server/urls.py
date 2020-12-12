@@ -8,6 +8,7 @@ urlpatterns = [
     path('location/',include('Location.urls')),
     path('subcategory/',include('SubCategory.urls')),
     path('reviews/',include('Reviews.urls')),
+    path('user/',include('User.urls')),
     path('serviceprovider/',include('ServiceProvider.urls')),
     path('auth/', include('djoser.urls')),
     path('auth/', include('djoser.urls.jwt')),                         # to handle token 
@@ -18,5 +19,5 @@ urlpatterns = [
                                                                      #You have to setup PASSWORD_RESET_CONFIRM_URL.
 
     path('auth/users/reset_password_confirm/', include('djoser.urls')),   #Use this endpoint to finish reset password process
-
+    path('', include('cal.urls')),                                        # add urls for cal app
 ]

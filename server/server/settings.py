@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'SubCategory',
     'Location',
     'Reviews',
+    'User',
     'djoser',
     'accounts',
 
@@ -153,17 +154,13 @@ CORS_ORIGIN_WHITELIST = (
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 REST_FRAMEWORK = {
-    # 'DEFAULT_PERMISSION_CLASSES': [
-    #     'rest_framework.permissions.IsAuthenticated'
-    # ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny'
+    ],
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
 }
-
-
-
-
 
 
 SIMPLE_JWT = {
