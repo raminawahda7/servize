@@ -12,6 +12,7 @@ import Main from "./components/Main-view/Main-view";
 import ForgotPassword from "./components/Forgot-password/Forgot-password";
 import ResetPassword from "./components/Reset-password/Reset-password";
 import ProviderContainer from "./components/Provider-container/Provider-container";
+import Activate from './components/Activate';
 
 import './App.css';
 
@@ -21,7 +22,7 @@ function App() {
       <div className="App">
 
         {/* <Navbar /> */}
-        {/* <Signup /> */}
+        <Signup />
         {/* <Login />
         <ProviderSignup /> */}
         {/* <Catagories /> */}
@@ -36,6 +37,7 @@ function App() {
           <Route path="/provider" component={ProviderContainer} />
           <Route path="/auth/users/reset_password/" component={ForgotPassword} />
           <Route path="/reset/:token" component={ResetPassword} />
+          <Route path="/activate/:uid/:token" component={Activate} />
 
         </Switch>
 

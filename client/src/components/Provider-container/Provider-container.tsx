@@ -7,10 +7,10 @@ const ProviderContainer = () => {
     const serializedState:any = localStorage.getItem("state");
     const userInStore = JSON.parse(serializedState) 
 
-    // console.log("store ===> ",userInStore.user)
+    console.log("store ===> ",userInStore)
     return (
         <div className="list">
-            {userInStore.user.map((user: any, index: number) =>
+           {userInStore.user.map((user: any, index: number) =>
                 <ProviderCard
                     key={index}
                     user={user}

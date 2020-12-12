@@ -25,7 +25,7 @@ const Categories = () => {
 
         axios(options)
             .then((results: any) => {
-                console.log("axios",results);
+                console.log("axios",results.data);
                 dispatch(store(results.data))
 
             })
