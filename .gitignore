@@ -8,7 +8,7 @@
 server/env
 /env
 
-*/migrations/
+server/accounts/migrations/
 
 
 
