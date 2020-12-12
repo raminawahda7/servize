@@ -3,9 +3,9 @@ from SubCategory.models import SubCategory
 from ServiceProvider.serialize import ProviderCategorySerializer
 
 class  SubCategorySerializer(serializers.ModelSerializer):
-    serviceProviders = ProviderCategorySerializer(many=True,read_only=True)
+    subCatproviders = ProviderCategorySerializer(many=True,read_only=True)
     class Meta:
         model=SubCategory
-        fields=('subName','subImage','category','serviceProviders')
+        fields=('subName','subImage','category','subCatproviders')
 
 
