@@ -1,13 +1,12 @@
-
 import React from 'react';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
-
+import './Footer.css';
 
 const Footer = () => {
     return (
-        <footer className="page-footer font-small mdb-color pt-4">
+        <footer id="footer" className="page-footer font-small mdb-color pt-4">
 
             <div className="container text-center text-md-left">
 

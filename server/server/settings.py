@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'SubCategory',
     'Location',
     'Reviews',
+    # 'cal'
     'User',
     'djoser',
     'accounts',

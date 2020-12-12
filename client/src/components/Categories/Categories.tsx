@@ -1,15 +1,39 @@
 import React from 'react';
+import { Link, Redirect } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import '@fortawesome/fontawesome-free/css/all.min.css';
-import 'bootstrap-css-only/css/bootstrap.min.css';
-import 'mdbreact/dist/css/mdb.css';
+import { store } from '../../actions/Users/usersActions';
+import '../Provider-signup/node_modules/@fortawesome/fontawesome-free/css/all.min.css';
+import '../Provider-signup/node_modules/bootstrap-css-only/css/bootstrap.min.css';
+import '../Provider-signup/node_modules/mdbreact/dist/css/mdb.css';
 import './Categories.css';
+const axios = require('axios');
 const $ = require('jquery');
 
 
 
 const Categories = () => {
-    
+    const userInStore = useSelector((state: any) => state.user);
+    const dispatch = useDispatch();
+    const handleClick = (e: any) => {
+        e.preventDefault();
+
+        let options = {
+            url: `http://localhost:8000/category/`,
+            method: 'get',
+            // data: { email: input[0].value }
+        }
+
+        axios(options)
+            .then((results: any) => {
+                // console.log("axios",results.data);
+                dispatch(store(results.data))
+
+            })
+            .catch((err: any) => {
+                console.error("err===== =>", err);
+            })
+    }
+
     return (
 
         <div id="cat-img" className="carousel slide carousel-multi-item" data-ride="carousel">
@@ -58,20 +82,22 @@ const Categories = () => {
                         </div>
                     </div>
 
-                    <div className="">
-                        <div className="">
-                            <a className="" >
-                                <h4 className="">Card title</h4>
-                                <p className="">Some quick example text to build on the card title and make up the bulk of the
+                    {/* <Link to="/provider"> */}
+                        <div className="tset" onClick={handleClick}>
+                            <div className="">
+                                <a className="" >
+                                <Link to="/provider">
+                                    <h4 className="">Card title</h4>
+                                </Link> 
+                                    <p className="">Some quick example text to build on the card title and make up the bulk of the
                     card's content.</p>
 
-                                <img className="" src=""
-                                    alt="Card image cap" />
-                            </a>
-
-
+                                    <img className="" src=""
+                                        alt="Card image cap" />
+                                </a>
+                            </div>
                         </div>
-                    </div>
+                    {/* </Link> */}
 
                 </div>
 
