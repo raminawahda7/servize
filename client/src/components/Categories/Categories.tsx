@@ -4,12 +4,12 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
 import './Categories.css';
-const $ = require('jquery');
+// const $ = require('jquery');
 
 
 
 const Categories = () => {
-    
+
     return (
 
         <div id="cat-img" className="carousel slide carousel-multi-item" data-ride="carousel">

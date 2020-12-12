@@ -5,7 +5,7 @@ import { Link, Redirect } from 'react-router-dom';
 import { MDBContainer, MDBRow, MDBCol, MDBBtn } from 'mdbreact';
 import React from 'react';
 const axios = require('axios');
-const $ = require('jquery');
+// const $ = require('jquery');
 
 
 const ResetPassword = () => {
@@ -29,7 +29,7 @@ const ResetPassword = () => {
             .catch((err: any) => {
                 console.error("err===== =>", err);
             })
-    }   
+    }
 
     return (
         <MDBContainer>

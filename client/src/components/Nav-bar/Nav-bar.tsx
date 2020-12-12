@@ -26,7 +26,7 @@ const Navbar = () => {
                 </div>
                 <div className="logo">
                     <a href="#">Servize</a>
-               </div>
+                </div>
                 <div className="menu">
                     <ul>
                         <li><a href="#">How it Works</a></li>
