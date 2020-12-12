@@ -1,4 +1,4 @@
-import { store } from '../../actions/actions';
+import { store } from '../../actions/Users/usersActions';
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -6,18 +6,11 @@ import { Link } from 'react-router-dom';
 const axios = require('axios');
 const $ = require('jquery');
 
-// Sends a request to change password for a user that forgot the password
-// Using email verification
-
-
-
-
 const ForgotPassword = ()=>{ 
-    
     
     const dispatch = useDispatch();
     const userInStore = useSelector((state: any) => state.user);
-    console.log(userInStore)
+    console.log ("rootstore",userInStore)
     const handleSubmit = (e: any) => {
         e.preventDefault();
         let input = $('#forgot-form').serializeArray();
