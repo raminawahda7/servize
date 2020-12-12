@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route, BrowserRouter } from 'react-router-dom';
+import {BrowserRouter as Router, Switch, Route, } from 'react-router-dom';
 import Signup from './components/Signup/Signup';
 import Login from './components/Login/Login';
 import Catagories from './components/catagories/Catagories';
@@ -18,7 +18,7 @@ import './App.css';
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <div className="App">
 
         {/* <Navbar /> */}
@@ -44,7 +44,7 @@ function App() {
         {/* <Footer /> */}
 
       </div>
-    </BrowserRouter>
+    </Router>
   );
 }
 
