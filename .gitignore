@@ -8,6 +8,8 @@
 server/env
 /env
 
+server/accounts/migrations/
+
 
 
 # testing

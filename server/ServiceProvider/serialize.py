@@ -1,22 +1,32 @@
 from rest_framework import serializers
 from ServiceProvider.models import ServiceProvider,Image,CategoryProvider
 from SubCategory.models import SubCategory
+from Category.models import Category
 
-className  ServiceProviderSerializer(serializers.ModelSerializer):
-    className Meta:
+
+class  CategoryProviderSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=CategoryProvider
+        fields=('subcategory')
+
+class  ProviderCategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model=CategoryProvider
+        fields=('serviceProvider')
+
+
+class  ServiceProviderSerializer(serializers.ModelSerializer):
+    Categories = CategoryProviderSerializer(many=True, read_only=True)
+    class Meta:
         model=ServiceProvider
-        fields=('name','email','phone','status','city','area')
+        fields=('name','email','phone','status','city','Categories')
 
 
-className  ImageSerializer(serializers.ModelSerializer):
-    className Meta:
+class  ImageSerializer(serializers.ModelSerializer):
+    class Meta:
         model=Image
         fields=('images','serviceProvider')
 
 
-className  CategoryProviderSerializer(serializers.ModelSerializer):
-    className Meta:
-        model=CategoryProvider
-        fields=('subcategory','serviceProvider')
 
 

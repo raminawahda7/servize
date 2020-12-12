@@ -25,16 +25,16 @@ const Navbar = () => {
                     <i className="fa fa-bars fa-2x"></i>
                 </div>
                 <div className="logo">
-                    <a href="#">Servize</a>
+                    <Link to="/">Servize</Link>
                 </div>
                 <div className="menu">
                     <ul>
                         <li><a href="#">How it Works</a></li>
                         <li><a href="#">Browse Jobs</a></li>
                         <li><a href="#">Language</a></li>
-                        <li><a href="#">Become a Seller</a></li>
-                        <li><a href="#">Sign In</a></li>
-                        <li><Link to="/user/forgot-password">Join</Link></li>
+                        <li><Link to="/prov/signup">Become a Seller</Link></li>
+                        <li><Link to="/user/login">Log In</Link></li>
+                        <li><Link to="/user/signup">Join</Link></li>
                     </ul>
                 </div>
             </nav>

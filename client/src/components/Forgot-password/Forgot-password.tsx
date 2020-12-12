@@ -1,4 +1,4 @@
-import { store } from '../../actions/actions';
+import { store } from '../../actions/Users/usersActions';
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 const axios = require('axios');
 const $ = require('jquery');
 
+<<<<<<< HEAD
 // Sends a request to change password for a user that forgot the password
 // Using email verification
 
@@ -15,19 +16,27 @@ const $ = require('jquery');
 const ForgotPassword = () => {
 
 
+=======
+const ForgotPassword = ()=>{
+
+>>>>>>> b6e47cb64a9f99a54cee53dbaf7cd418fbc4a883
     const dispatch = useDispatch();
     const userInStore = useSelector((state: any) => state.user);
-    console.log(userInStore)
+    console.log("rootstore", userInStore)
     const handleSubmit = (e: any) => {
         e.preventDefault();
         let input = $('#forgot-form').serializeArray();
         // console.log(input[0].value);
+<<<<<<< HEAD
         // const [email, setEmail] = useState("")
+=======
+        // const [email, setEmail] = useState("")
+>>>>>>> b6e47cb64a9f99a54cee53dbaf7cd418fbc4a883
         dispatch(store(input))
         // setEmail("");
 
         let options = {
-            url: `http://localhost:3000/user/forgot-password`,
+            url: `http://localhost:3000/auth/users/reset_password/`,
             method: 'post',
             data: { email: input[0].value }
         }

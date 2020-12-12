@@ -4,7 +4,7 @@ from Reviews.models import Reviews
 from Reviews.serialize import ReviewsSerializer
 
 
-className ReviewsList(generics.ListCreateAPIView):
+class ReviewsList(generics.ListCreateAPIView):
     queryset=Reviews.objects.all()
-    serializer_className=ReviewsSerializer
+    serializer_class=ReviewsSerializer
 
