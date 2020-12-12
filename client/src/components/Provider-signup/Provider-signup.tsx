@@ -26,22 +26,37 @@ const ProviderSignup = () => {
             <form id="signup-form"
                 onSubmit={handleSubmit((formData) => {
                     console.log(formData)
-                    let options = {
-                        url: `http://localhost:8000/auth/users/`,
-                        method: 'post',
-                        data: {
-                            name: formData.name,
-                            email: formData.email,
-                            password: formData.password,
-                            re_password: formData.re_password,
-                            Phone: formData.phone,
-                            city: formData.city,
-                        }
-                    }
+                    // let options = {
+                    //     url: `http://localhost:8000/auth/users/`,
+                    //     method: 'post',
+                    //     data: {
+                    //         name: formData.name,
+                    //         email: formData.email,
+                    //         password: formData.password,
+                    //         re_password: formData.re_password,
+                    //         Phone: formData.phone,
+                    //         city: formData.city,
+                    //     }
+                    // }
 
-                    axios(options)
-                        .then((results: any) => {
-                            console.log("axios", results);
+                    // axios(options)
+                    //     .then((results: any) => {
+                    //         console.log("axios", results);
+
+                    //     })
+                    //     .catch((err: any) => {
+                    //         console.error("err===== =>", err);
+                    //     })
+
+                    axios.post(`http://localhost:8000/auth/users/`, {
+                        name: formData.name,
+                        email: formData.email,
+                        password: formData.password,
+                        re_password: formData.password
+                    })
+
+                        .then((result: any) => {
+                            console.log(result)
 
                         })
                         .catch((err: any) => {
@@ -77,10 +92,12 @@ const ProviderSignup = () => {
                     <div className="password error" ></div>
                 </div>
                 <br />
+
+                <div className="password-req" >8 characters or longer. Combine upper and lowercase letters and numbers</div><br />
+                <p >Already have an account? <Link to="/user/login" style={{ textDecoration: "none" }}>Sign In</Link></p>
                 <button className="button" >Sign Up</button><br />
+
             </form>
-            <div className="password-req" >8 characters or longer. Combine upper and lowercase letters and numbers</div><br />
-            <p >Already have an account? <Link to="/signin" style={{ textDecoration: "none" }}>Sign In</Link></p>
         </div>
     );
 }

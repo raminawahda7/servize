@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { appendErrors, useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
+// import './Signup.css';
+
 // import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBInput } from 'mdbreact';
 // import '@fortawesome/fontawesome-free/css/all.min.css';
 // import 'bootstrap-css-only/css/bootstrap.min.css';
@@ -24,26 +26,40 @@ const Signup = () => {
             <form id="signup-form"
                 onSubmit={handleSubmit((formData) => {
                     console.log(formData)
-                    let options = {
-                        url: `http://localhost:8000/auth/users/`,
-                        method: 'post',
-                        data: {
-                            username: formData.username,
-                            email: formData.email,
-                            phone: formData.phone,
-                            password: formData.password,
-                        }
-                    }
+                    // let options = {
+                    //     url: `http://localhost:8000/auth/users/`,
+                    //     method: 'post',
+                    //     data: {
+                    //         name: formData.username,
+                    //         email: formData.email,
+                    //         // phone: formData.phone,
+                    //         password: formData.password,
+                    //         re_password: formData.password
+                    //     }
+                    // }
 
-                    axios(options)
-                        .then((results: any) => {
-                            console.log("axios", results);
+                    // axios(options)
+                    //     .then((results: any) => {
+                    //         console.log("axios", results);
+
+                    //     })
+                    //     .catch((err: any) => {
+                    //         console.error("err===== =>", err);
+                    //     })
+                    axios.post(`http://localhost:8000/auth/users/`, {
+                        name: formData.username,
+                        email: formData.email,
+                        password: formData.password,
+                        re_password: formData.password
+                    })
+
+                        .then((result:any) => {
+                            console.log(result)
 
                         })
                         .catch((err: any) => {
-                            console.error("err===== =>", err);
+                             console.error("err===== =>", err);
                         })
-
                 })}
             >
                 <h1>Sign Up</h1>
@@ -69,10 +85,12 @@ const Signup = () => {
                     <div className="password error" ></div>
                 </div>
                 <br />
+
+                <div className="password-req" >8 characters or longer. Combine upper and lowercase letters and numbers</div><br />
+                <p >Already have an account? <Link to="/user/login" style={{ textDecoration: "none" }}>Sign In</Link></p>
+
                 <button className="button" >Sign Up</button><br />
             </form>
-            <div className="password-req" >8 characters or longer. Combine upper and lowercase letters and numbers</div><br />
-            <p >Already have an account? <Link to="/signin" style={{ textDecoration: "none" }}>Sign In</Link></p>
         </div>
     );
 }
