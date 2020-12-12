@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'SubCategory',
     'Location',
     'Reviews',
+    # 'cal'
+    'User',
     'djoser',
     'accounts',
 
@@ -96,8 +98,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'servizeDB', 
         'USER': 'postgres', 
-        'PASSWORD': 'rami871995',
-        # 'PASSWORD': 'student',
+        'PASSWORD': '741987',
         'HOST': 'localhost', 
         'PORT': '5432',
     }
@@ -161,10 +162,6 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
 }
-
-
-
-
 
 
 SIMPLE_JWT = {
