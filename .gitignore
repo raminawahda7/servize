@@ -7,7 +7,7 @@
 .env
 server/env
 /env
-
+server/server/accounts/migrations
 
 
 # testing
