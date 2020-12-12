@@ -13,11 +13,8 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-<<<<<<< HEAD
         ('Location', '0001_initial'),
         ('SubCategory', '0001_initial'),
-=======
->>>>>>> ed3321db849c312c25a9f88f4dc3f946dfb4c884
         ('Category', '0001_initial'),
     ]
 
