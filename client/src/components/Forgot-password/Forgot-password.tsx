@@ -20,7 +20,7 @@ const ForgotPassword = ()=>{
         // setEmail("");
 
         let options = {
-            url: `http://localhost:3000/user/forgot-password`,
+            url: `http://localhost:3000/auth/users/reset_password/`,
             method: 'post',
             data: { email: input[0].value }
         }

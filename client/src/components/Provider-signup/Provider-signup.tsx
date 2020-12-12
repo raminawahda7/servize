@@ -11,6 +11,7 @@ interface FormData {
     name: string;
     email: string;
     password: string;
+    re_password: string;
     city: string;
     phone: number;
 }
@@ -26,12 +27,13 @@ const ProviderSignup = () => {
                 onSubmit={handleSubmit((formData) => {
                     console.log(formData)
                     let options = {
-                        url: `http://localhost:8000/serviceprovider/`,
+                        url: `http://localhost:8000/auth/users/`,
                         method: 'post',
                         data: {
                             name: formData.name,
                             email: formData.email,
                             password: formData.password,
+                            re_password: formData.re_password,
                             Phone: formData.phone,
                             city: formData.city,
                         }
@@ -70,8 +72,8 @@ const ProviderSignup = () => {
                     <label htmlFor="password" >Password:</label>
                     <input type="password" className="text" id="password" name="password" ref={register({ required: "required" })} />
 
-                    <label htmlFor="confirmPassword" >Confirm Password:</label>
-                    <input type="password" className="text" id="confirmPassword" name="confirmPassword" ref={register({ required: "required" })} />
+                    <label htmlFor="re_password" >Confirm Password:</label>
+                    <input type="password" className="text" id="re_password" name="re_password" ref={register({ required: "required" })} />
                     <div className="password error" ></div>
                 </div>
                 <br />

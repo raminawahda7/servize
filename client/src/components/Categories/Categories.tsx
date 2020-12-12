@@ -2,9 +2,9 @@ import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { store } from '../../actions/Users/usersActions';
-import '../Provider-signup/node_modules/@fortawesome/fontawesome-free/css/all.min.css';
-import '../Provider-signup/node_modules/bootstrap-css-only/css/bootstrap.min.css';
-import '../Provider-signup/node_modules/mdbreact/dist/css/mdb.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import 'bootstrap-css-only/css/bootstrap.min.css';
+import 'mdbreact/dist/css/mdb.css';
 import './Categories.css';
 const axios = require('axios');
 const $ = require('jquery');
@@ -25,7 +25,7 @@ const Categories = () => {
 
         axios(options)
             .then((results: any) => {
-                // console.log("axios",results.data);
+                console.log("axios",results.data);
                 dispatch(store(results.data))
 
             })

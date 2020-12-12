@@ -13,10 +13,10 @@ const ProviderCard = ({user}:{user:any}) => {
     return (
         < div className="col-md-3 d-none d-md-block" >
             <div className="card mb-2">
-                {/* <img className="card-img-top" src={user.img}/> */}
+                <img className="card-img-top" src={user.catImage}/>
                 <div className="card-body">
                     <h4 className="card-title" onClick={handleClick}>{user.catName}</h4>
-                    <p className="card-text">{user.catImage}</p>
+                    {/* <p className="card-text">{user.catImage}</p> */}
                     <a className="btn btn-primary">Learn more</a>
                 </div>
             </div>
