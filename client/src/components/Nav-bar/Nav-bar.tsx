@@ -1,10 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Button from '@material-ui/core/Button';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
 import './Nav-bar.css';
+import Logout from '../logout/logout.js';
 const $ = require('jquery');
+
 
 
 $(window).on("scroll", function () {
@@ -35,6 +38,8 @@ const Navbar = () => {
                         <li><Link to="/prov/signup">Become a Service Provider</Link></li>
                         <li><Link to="/user/login">Log In</Link></li>
                         <li><Link to="/user/signup">Join</Link></li>
+                        <li><Logout>logout</Logout></li>
+
                     </ul>
                 </div>
             </nav>

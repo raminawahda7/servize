@@ -41,7 +41,7 @@ export default function Login() {
                                     console.log(result)
                                     setAccess(result.data.access);
                                     setRefresh(result.data.refresh);
-                                    window.location.href="/"
+                                    // window.location.href="/"
 
                                 })
                                 .catch((err: any) => {
@@ -86,8 +86,8 @@ export default function Login() {
                     >
                         <p className="h5 text-center mb-4">Log in</p>
                         <div className="grey-text">
-                            <MDBInput label="Type your email" icon="envelope" group type="email" validate error="wrong" success="right" value={email} onChange={(e: any) => { setEmail(e.target.value); console.log(e.target.value) }} />
-                            <MDBInput label="Type your password" icon="lock" group type="password" validate error="wrong" success="right" value={password} onChange={(e: any) => setPassword(e.target.value)} />
+                            <MDBInput holder="Type your email" icon="envelope" group type="email" validate error="wrong" success="right" value={email} onChange={(e: any) => { setEmail(e.target.value)}} />
+                            <MDBInput holder="Type your password" icon="lock" group type="password" validate error="wrong" success="right" value={password} onChange={(e: any) => setPassword(e.target.value)} />
                         </div>
                         <div className="text-center">
                             <MDBBtn type="submit" disabled={submitting}>Log in</MDBBtn>
