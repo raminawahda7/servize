@@ -17,8 +17,10 @@ export default function Login() {
     const [submitting, setSubmitting] = useState<boolean>(false);
     const [serverErrors, setServerErrors] = useState<Array<string>>([]);
     const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    
+    const [password, setPassword] = useState(''); // hooks 
+    // create state for email and password 
+    // use setemail
+    // use email not formData
 
     return (
         <MDBContainer>
@@ -26,7 +28,7 @@ export default function Login() {
                 <MDBCol md="6">
                     <form
                         onSubmit={handleSubmit((formData) => {
-                            console.log(email, "email");
+                            console.log(formData);
                             // let options = {
                             //     url: `http://localhost:8000/serviceprovider/`,
                             //     method: 'post',
@@ -44,10 +46,11 @@ export default function Login() {
                             //     .catch((err: any) => {
                             //         console.error("err===== =>", err);
                             //     })
-                            axios.post(`http://localhost:8000/auth/users/`, {
-                                email: formData.email,
-                                password: formData.password,
-                            })
+                            axios.post(`http://localhost:8000/auth/jwt/create`,
+                                {
+                                    email: email,
+                                    password: password,
+                                })
 
                                 .then((result: any) => {
                                     console.log(result)
@@ -57,12 +60,25 @@ export default function Login() {
                                     console.error("err===== =>", err);
                                 })
 
+                            // axios.get('http://localhost:8000/auth/users/me', {
+
+                            //     headers: {
+                            //         Authorization: 'JWT ' //the token is a variable which holds the token
+                            //     }
+                            // })
+                            // .then((result: any) => {
+                            //     console.log(result)
+
+                            // })
+                            // .catch((err: any) => {
+                            //     console.error("err===== =>rami", err);
+                            // })
 
                         })}
                     >
                         <p className="h5 text-center mb-4">Log in</p>
                         <div className="grey-text">
-                            <MDBInput label="Type your email" icon="envelope" group type="email" validate error="wrong" success="right" value={email} onChange={(e: any) => setEmail(e.target.value)} />
+                            <MDBInput label="Type your email" icon="envelope" group type="email" validate error="wrong" success="right" value={email} onChange={(e: any) =>{setEmail(e.target.value);console.log(e.target.value)}} />
                             <MDBInput label="Type your password" icon="lock" group type="password" validate error="wrong" success="right" value={password} onChange={(e: any) => setPassword(e.target.value)} />
                         </div>
                         <div className="text-center">
