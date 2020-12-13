@@ -41,6 +41,7 @@ export default function Login() {
                                     console.log(result)
                                     setAccess(result.data.access);
                                     setRefresh(result.data.refresh);
+                                    window.location.href="/"
 
                                 })
                                 .catch((err: any) => {
@@ -50,23 +51,7 @@ export default function Login() {
                             
                             console.log('hay heeeeeeeeeee:',access);
 
-                            //  axios({
-                            //     url: 'http://localhost:8000/auth/users/me/',
-                            //     method: 'get',
-                            //     headers: {
-                            //         'Authorization': access,
-                            //         'Content-Type': 'application/json'
-                            //     }
-                            //  })
-                            //  .then((response: any) => {
-                            //     localStorage.setItem("access_token", access);
-                            //     localStorage.setItem("refresh_token", refresh);
-                            //     console.log(response)
-                            //  }) 
-                            //  .catch((err : any)=> {
-                            //     console.log(err);
-                            //  });
-
+                           
                             async function getData() {
                                 try {
                                    let res = await axios({
@@ -113,6 +98,5 @@ export default function Login() {
         </MDBContainer>
     )
 }
-
 
 

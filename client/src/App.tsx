@@ -22,20 +22,20 @@ function App() {
     <Router>
       <div className="App">
 
-        {/* <Navbar /> */}
+        <Navbar />
         <Signup />
-        {/* <Login />
-        <ProviderSignup /> */}
-        {/* <Catagories /> */}
+        <Login />
+        {/* <ProviderSignup />  */}
+         <Catagories />
 
         <Switch>
 
-          {/* <Route exact path="/" component={Main} /> */}
+          <Route exact path="/" component={Main} />
           <Route exact path="/" component={Categories} />
-          <Route path="/prov/signup" component={ProviderSignup} />
+          {/* <Route path="/prov/signup" component={ProviderSignup} /> */}
           <Route path="/user/signup" component={Signup} />
           <Route path="/user/login" component={Login} />
-          <Route path="/provider" component={ProviderContainer} />
+          {/* <Route path="/provider" component={ProviderContainer} /> */}
           <Route path="/reset_password" component={ForgotPassword} />
           <Route path="/reset_password" component={ResetPassword} />
           <Route exact path='/password/reset/confirm/:uid/:token' component={ResetPasswordConfirm} />
@@ -43,7 +43,7 @@ function App() {
 
         </Switch>
 
-        {/* <Footer /> */}
+        <Footer />
 
       </div>
     </Router>
