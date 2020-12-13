@@ -21,7 +21,8 @@ export default function Login() {
     // create state for email and password 
     // use setemail
     // use email not formData
-
+    const [access, setAccess] = useState("");
+    const [refresh, setRefresh] = useState("");
     return (
         <MDBContainer>
             <MDBRow>
@@ -29,23 +30,7 @@ export default function Login() {
                     <form
                         onSubmit={handleSubmit((formData) => {
                             console.log(formData);
-                            // let options = {
-                            //     url: `http://localhost:8000/serviceprovider/`,
-                            //     method: 'post',
-                            //     data: {
-                            //         email: email,
-                            //         password: password,                               
-                            //     }
-                            // }
 
-                            // axios(options)
-                            //     .then((results: any) => {
-                            //         console.log("axios", results);
-
-                            //     })
-                            //     .catch((err: any) => {
-                            //         console.error("err===== =>", err);
-                            //     })
                             axios.post(`http://localhost:8000/auth/jwt/create`,
                                 {
                                     email: email,
@@ -54,31 +39,69 @@ export default function Login() {
 
                                 .then((result: any) => {
                                     console.log(result)
+                                    setAccess(result.data.access);
+                                    setRefresh(result.data.refresh);
 
                                 })
                                 .catch((err: any) => {
                                     console.error("err===== =>", err);
                                 })
 
-                            // axios.get('http://localhost:8000/auth/users/me', {
+                            
+                            console.log('hay heeeeeeeeeee:',access);
 
+                            //  axios({
+                            //     url: 'http://localhost:8000/auth/users/me/',
+                            //     method: 'get',
                             //     headers: {
-                            //         Authorization: 'JWT ' //the token is a variable which holds the token
+                            //         'Authorization': access,
+                            //         'Content-Type': 'application/json'
                             //     }
-                            // })
-                            // .then((result: any) => {
-                            //     console.log(result)
+                            //  })
+                            //  .then((response: any) => {
+                            //     localStorage.setItem("access_token", access);
+                            //     localStorage.setItem("refresh_token", refresh);
+                            //     console.log(response)
+                            //  }) 
+                            //  .catch((err : any)=> {
+                            //     console.log(err);
+                            //  });
 
-                            // })
-                            // .catch((err: any) => {
-                            //     console.error("err===== =>rami", err);
-                            // })
+                            async function getData() {
+                                try {
+                                   let res = await axios({
+                                        url: 'http://localhost:8000/auth/users/me/',
+                                        method: 'get',
+                                        timeout: 8000,
+                                        headers: {
+                                            'Authorization': 'JWT '+ access,
+                                            'Content-Type': 'application/json',
+                                        }
+                                    })
+                                    if(res.status == 200){
+                                        // test for status you want, etc
+                                        console.log(res.status)
+                                        localStorage.setItem("access_token", access);
+                                        localStorage.setItem("refresh_token", refresh);
+                                    }    
+                                    // Don't forget to return something
+                                   
+                                    return res.data
+                                }
+                                catch (err) {
+                                    console.error(err);
+                                }
+                            }
+                            
+                            getData()
+                            .then(res => console.log(res))
+                            
 
                         })}
                     >
                         <p className="h5 text-center mb-4">Log in</p>
                         <div className="grey-text">
-                            <MDBInput label="Type your email" icon="envelope" group type="email" validate error="wrong" success="right" value={email} onChange={(e: any) =>{setEmail(e.target.value);console.log(e.target.value)}} />
+                            <MDBInput label="Type your email" icon="envelope" group type="email" validate error="wrong" success="right" value={email} onChange={(e: any) => { setEmail(e.target.value); console.log(e.target.value) }} />
                             <MDBInput label="Type your password" icon="lock" group type="password" validate error="wrong" success="right" value={password} onChange={(e: any) => setPassword(e.target.value)} />
                         </div>
                         <div className="text-center">
@@ -90,3 +113,6 @@ export default function Login() {
         </MDBContainer>
     )
 }
+
+
+
