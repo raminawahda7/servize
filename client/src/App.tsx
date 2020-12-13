@@ -11,6 +11,7 @@ import Footer from "./components/Footer/Footer";
 import Main from "./components/Main-view/Main-view";
 import ForgotPassword from "./components/Forgot-password/Forgot-password";
 import ResetPassword from "./components/Reset-password/Reset-password";
+import ResetPasswordConfirm from "./components/Reset-password/Reset-password-confirm"
 import ProviderContainer from "./components/Provider-container/Provider-container";
 import Activate from './components/Activate';
 
@@ -21,10 +22,10 @@ function App() {
     <Router>
       <div className="App">
 
-        <Navbar />
-        {/* <Signup /> */}
-        {/* <Login /> */}
-        {/* <ProviderSignup /> */}
+        {/* <Navbar /> */}
+        <Signup />
+        {/* <Login />
+        <ProviderSignup /> */}
         {/* <Catagories /> */}
 
         <Switch>
@@ -35,8 +36,9 @@ function App() {
           <Route path="/user/signup" component={Signup} />
           <Route path="/user/login" component={Login} />
           <Route path="/provider" component={ProviderContainer} />
-          <Route path="/auth/users/reset_password/" component={ForgotPassword} />
-          <Route path="/reset/:token" component={ResetPassword} />
+          <Route path="/reset_password" component={ForgotPassword} />
+          <Route path="/reset_password" component={ResetPassword} />
+          <Route exact path='/password/reset/confirm/:uid/:token' component={ResetPasswordConfirm} />
           <Route path="/activate/:uid/:token" component={Activate} />
 
         </Switch>

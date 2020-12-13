@@ -1,27 +1,25 @@
 import React, { useState } from 'react';
-import { Link, Redirect } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { login } from '../actions/auth';
+import { appendErrors, useForm } from 'react-hook-form';
+import { Link } from 'react-router-dom';
+import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from 'mdbreact';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import 'bootstrap-css-only/css/bootstrap.min.css';
+import 'mdbreact/dist/css/mdb.css';
+const axios = require('axios');
 
-const Login = ({ login, isAuthenticated }) => {
-    const [formData, setFormData] = useState({
-        email: '',
-        password: ''
-    });
+interface formData {
+    email: string;
+    password: string;
+}
 
-    const { email, password } = formData;
-
-    const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
-
-    const onSubmit = e => {
-        e.preventDefault();
-
-        login(email, password);
-    };
-
-    if (isAuthenticated)
-        return <Redirect to='/' />;
+export default function Login() {
+    const { register, handleSubmit, errors } = useForm<formData>();
+    const [submitting, setSubmitting] = useState<boolean>(false);
+    const [serverErrors, setServerErrors] = useState<Array<string>>([]);
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
     
+
     return (
         <MDBContainer>
             <MDBRow>
@@ -76,4 +74,3 @@ const Login = ({ login, isAuthenticated }) => {
         </MDBContainer>
     )
 }
-
