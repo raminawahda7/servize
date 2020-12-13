@@ -9,3 +9,6 @@ class SubCategoryList(generics.ListCreateAPIView):
     serializer_class=SubCategorySerializer
 
 
+
+
+

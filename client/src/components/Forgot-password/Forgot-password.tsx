@@ -1,34 +1,61 @@
-import { store } from '../../actions/actions';
-import React from 'react';
+import { store } from '../../actions/Users/usersActions';
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 // import './ForgotPassword.css';
-// const axios = require('axios');
+const axios = require('axios');
 const $ = require('jquery');
 
-// Sends a request to change password for a user that forgot the password
-// Using email verification
-
-const handleSubmit = (e:any) => {
-    e.preventDefault();
-    // console.log("hi");
-    let input = $('#reset-form').serializeArray();
-    console.log(input); 
-}   
-
 const ForgotPassword = ()=>{ 
+    
     const dispatch = useDispatch();
-    // dispatch(store($('#reset-form').serializeArray()
     const userInStore = useSelector((state: any) => state.user);
+    console.log ("rootstore",userInStore)
+    const handleSubmit = (e: any) => {
+        e.preventDefault();
+        let input = $('#forgot-form').serializeArray();
+        // console.log(input[0].value);
+        // const [email, setEmail] = useState("") 
+        dispatch(store(input))
+        // setEmail("");
+
+        let options = {
+            url: `http://localhost:3000/auth/users/reset_password/`,
+            method: 'post',
+            data: { email: input[0].value }
+        }
+
+        axios(options)
+            .then((results: any) => {
+                console.log(results);
+
+            })
+            .catch((err: any) => {
+                console.error("err===== =>", err);
+            })
+
+        try {
+            const serializedState = localStorage.getItem("state");
+            if (serializedState === null) {
+                return undefined
+            }
+            return { user: JSON.parse(serializedState) }
+        }
+        catch (e) {
+            console.log(e);
+            return;
+        }
+    }
+    
     return (
         <div id="reset">
             <button ><Link to="/">Return To Home Page</Link> </button>
-            <form className="reset-form" id="reset-form" onSubmit={handleSubmit}>
+            <form className="forgot-form" id="forgot-form" onSubmit={ handleSubmit}>
                 <h1>Forgot Password</h1>
                 <br />
                 <div className="">
                     <label htmlFor="email">Email</label>
-                    <input type="email" className="text" id="email" name="email" />
+                    <input type="email" className="text" id="email" name="email"/>
                 </div>
                 <br />
                 <button className="button" >Reset Password</button><br />
@@ -38,25 +65,5 @@ const ForgotPassword = ()=>{
         </div>
     )
 };
-
-// const mapStateToProps = () => {
-//     try {
-//         const serializedState = localStorage.getItem("state");
-//         if (serializedState === null) {
-//             return undefined
-//         }
-//         return { user: JSON.parse(serializedState) }
-//     }
-//     catch (e) {
-//         console.log(e);
-//         return;
-//     }
-// }
-
-// const mapDispatchToProps = (dispatch:Function) => {
-//     return {
-//         storeUser: (z:string) => { dispatch(store(z)) },
-//     }
-// }
 
 export default ForgotPassword;
