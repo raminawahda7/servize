@@ -39,6 +39,7 @@ const Navbar = () => {
             .catch((err: any) => {
                 console.error("err===== =>", err);
             })
+        // dispatch(store({user:"test"}))
 
     }
 
