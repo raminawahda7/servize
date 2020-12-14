@@ -49,7 +49,6 @@ export default function Login() {
                                     console.error("err===== =>", err);
                                 })
 
-<<<<<<< HEAD
                             
                             console.log('hay heeeeeeeeeee:',access);
 
@@ -100,8 +99,6 @@ export default function Login() {
                             .then(res => console.log(res))
                             
 
-=======
->>>>>>> 7565a5e971b9e202e023c70e4d5a8fba73c3f534
                         })}
                     >
                         <p className="h5 text-center mb-4">Log in</p>
@@ -118,9 +115,3 @@ export default function Login() {
         </MDBContainer>
     )
 }
-
-
-<<<<<<< HEAD
-
-=======
->>>>>>> 7565a5e971b9e202e023c70e4d5a8fba73c3f534
