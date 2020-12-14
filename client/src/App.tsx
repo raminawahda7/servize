@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Switch, Route, } from 'react-router-dom';
 import Signup from './components/Signup/Signup';
 import Login from './components/Login/Login';
 import Catagories from './components/catagories/Catagories';
-import Profile from './components/profile/Profile';
+// import Profile from './components/profile/Profile';
 import ProviderSignup from './components/Provider-signup/Provider-signup'
 import Navbar from "./components/Nav-bar/Nav-bar";
 import Categories from "./components/Categories/Categories";
