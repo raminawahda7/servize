@@ -2,20 +2,20 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { store } from '../../actions/Users/usersActions';
-import './Nav-bar.css';
 const axios = require('axios');
 const $ = require('jquery');
+import "./Nav-bar.css";
+
+// import Logout from '../Logout/Logout';
 
 
 $(window).on("scroll", function () {
-    if ($(window).scrollTop()) {
-        $('nav').addClass('black');
-    }
-
-    else {
-        $('nav').removeClass('black');
-    }
-})
+  if ($(window).scrollTop()) {
+    $("nav").addClass("black");
+  } else {
+    $("nav").removeClass("black");
+  }
+});
 
 const Navbar = () => {
     const userInStore = useSelector((state: any) => state.user);
@@ -68,3 +68,50 @@ const Navbar = () => {
     )
 }
 export default Navbar;
+//   return (
+//     <header id="nav-bar">
+//       <nav>
+//         <div className="menu-icon">
+//           <i className="fa fa-bars fa-2x"></i>
+//         </div>
+//         <div className="logo">
+//           <Link to="/">Servize</Link>
+//         </div>
+//         <div className="menu">
+//           <ul>
+//             <li>
+//               <a href="#">How it Works</a>
+//             </li>
+//             <li>
+//               <a href="#">Browse Jobs</a>
+//             </li>
+//             <li>
+//               <a href="#">Language</a>
+//             </li>
+//             <li>
+//               <Link to="/prov/signup">Become a Service Provider</Link>
+//             </li>
+//             <li>
+//               <Link to="/user/login">Log In</Link>
+//             </li>
+//             <li>
+//               <Link to="/user/signup">Join</Link>
+//             </li>
+//             <li>
+//               <Button
+//                 onClick={() => {
+//                   localStorage.clear();
+//                   window.location.href = "/";
+//                 }}
+//                 id="logout"
+//               >
+//                 Logout
+//               </Button>
+//             </li>
+//           </ul>
+//         </div>
+//       </nav>
+//     </header>
+//   );
+// };
+// export default Navbar;

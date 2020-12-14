@@ -54,11 +54,14 @@ function App() {
           {/* <Route path="/provider" component={ProviderContainer} /> */}
           <Route path="/auth/users/reset_password/" component={ForgotPassword} />
           <Route path="/reset/:token" component={ResetPassword} />
+          <Route exact path='/password/reset/confirm/:uid/:token' component={ResetPasswordConfirm} />
+          <Route path="/activate/:uid/:token" component={Activate} />
+
           <Route path="/activate/:uid/:token" component={Activate} />
 
         </Switch>
 
-        {/* <Footer /> */}
+        <Footer />
 
       </div>
     </Router>
