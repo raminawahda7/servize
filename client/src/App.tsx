@@ -33,7 +33,7 @@ function App() {
         {/* <Navbar /> */}
         {/* <Search /> */}
         {/* <Catagories /> */}
-        {/* <ProviderProf /> */}
+        <ProviderProf />
         {/* <ProviderView /> */}
         {/* <UserView /> */}
         {/* <UserProf /> */}

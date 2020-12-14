@@ -8,6 +8,8 @@ import RoomIcon from '@material-ui/icons/Room';
 // import Context from '../utils/context';
 import './ProviderProf.css'
 
+import UploadImg from '../profiles/uploadImg';
+import StarRating from '../rates/StarRate';
 
 export default function ProviderProf() {
     // const context = useContext(Context)
@@ -31,17 +33,8 @@ export default function ProviderProf() {
                                 className="label label-warning pull-right r-activity">  </span></a></li>
                             <li><a href="#"> <i className="fa fa-edit"></i> Edit profile</a></li>
                         </ul>
-                    </div>
-                </div>
-                <div className="profile-info col-md-9">
-                    <div className="panel">
-                        <form>
-                            <textarea placeholder="Whats in your mind today?"
-                                className="form-control input-lg p-text-area"></textarea>
-                        </form>
-                        <footer className="panel-footer">
-                            <button className="btn btn-warning pull-right">Post</button>
-                            <ul className="nav nav-pills">
+                        <div>
+                            <br></br><ul className="nav nav-pills">
                                 <li>
                                     <a href="https://www.google.com/maps/search/?api=1"><RoomIcon style={{ color: "blue", fontSize: "x-large" }} stroke={"blue"} stroke-width={1} /></a>
                                 </li>
@@ -54,13 +47,38 @@ export default function ProviderProf() {
                                 <li>
                                     <a href="https://www.twitter.com/" ><TwitterIcon style={{ color: "blue", fontSize: "x-large" }} stroke={"blue"} stroke-width={1} /></a>
                                 </li>
-                            </ul>
+                            </ul> <br></br>
+                            <div><StarRating /></div>
+                        </div>
+                    </div>
+                </div>
+                <div className="profile-info col-md-9">
+                    <div className="panel">
+                        <form>
+                            <textarea placeholder="Whats in your mind today?"
+                                className="form-control input-lg p-text-area"></textarea>
+                        </form>
+                        <footer className="panel-footer">
+                            <button className="btn btn-warning pull-right">Post</button>
+                            {/* <ul className="nav nav-pills">
+                                <li>
+                                    <a href="https://www.google.com/maps/search/?api=1"><RoomIcon style={{ color: "blue", fontSize: "x-large" }} stroke={"blue"} stroke-width={1} /></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.facebook.com/" ><FacebookIcon style={{ color: "blue", fontSize: "x-large" }} stroke={"blue"} stroke-width={1} /></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/" ><InstagramIcon style={{ color: "blue", fontSize: "x-large" }} stroke={"blue"} stroke-width={1} /></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.twitter.com/" ><TwitterIcon style={{ color: "blue", fontSize: "x-large" }} stroke={"blue"} stroke-width={1} /></a>
+                                </li>
+                            </ul> */}
                         </footer>
                     </div>
                     <div className="panel">
                         <div className="bio-graph-heading">
-                            Aliquam ac magna metus. Nam sed arcu non tellus fringilla fringilla ut vel ispum. Aliquam ac magna
-                            metus.
+                            Helllllllllo
                     </div>
                         <div className="panel-body bio-graph-info">
                             <h1>Deatils</h1>
@@ -121,6 +139,7 @@ export default function ProviderProf() {
                                             <h4 className="terques"> </h4>
                                             <Form>
                                                 <Form.Group>
+                                                    <div><UploadImg /></div>
                                                     <Form.File id="exampleFormControlFile1" label="Example file input" />
                                                 </Form.Group>
                                             </Form>
