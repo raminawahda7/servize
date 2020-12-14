@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { appendErrors, useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
+// import './Signup.css';
+
 // import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBInput } from 'mdbreact';
 // import '@fortawesome/fontawesome-free/css/all.min.css';
 // import 'bootstrap-css-only/css/bootstrap.min.css';
 // import 'mdbreact/dist/css/mdb.css';
 const axios = require('axios');
-// const $ = require('jquery');
+const $ = require('jquery');
 
 interface FormData {
     username: string;
@@ -15,6 +17,17 @@ interface FormData {
     password: string;
 }
 const Signup = () => {
+
+
+    // const openForm= () =>{
+    //     document.getElementById("signup-form").style.display = "block";
+    // }
+
+    const closeForm = () => {
+        //    $("signup-form").style.display = "none";
+        $("#signup-form").hide();
+
+    }
     const { register, handleSubmit, errors } = useForm<FormData>();
     const [submitting, setSubmitting] = useState<boolean>(false);
     const [serverErrors, setServerErrors] = useState<Array<string>>([]);
@@ -24,26 +37,40 @@ const Signup = () => {
             <form id="signup-form"
                 onSubmit={handleSubmit((formData) => {
                     console.log(formData)
-                    let options = {
-                        url: `http://localhost:8000/auth/users/`,
-                        method: 'post',
-                        data: {
-                            username: formData.username,
-                            email: formData.email,
-                            phone: formData.phone,
-                            password: formData.password,
-                        }
-                    }
+                    // let options = {
+                    //     url: `http://localhost:8000/auth/users/`,
+                    //     method: 'post',
+                    //     data: {
+                    //         name: formData.username,
+                    //         email: formData.email,
+                    //         // phone: formData.phone,
+                    //         password: formData.password,
+                    //         re_password: formData.password
+                    //     }
+                    // }
 
-                    axios(options)
-                        .then((results: any) => {
-                            console.log("axios", results);
+                    // axios(options)
+                    //     .then((results: any) => {
+                    //         console.log("axios", results);
+
+                    //     })
+                    //     .catch((err: any) => {
+                    //         console.error("err===== =>", err);
+                    //     })
+                    axios.post(`http://localhost:8000/auth/users/`, {
+                        name: formData.username,
+                        email: formData.email,
+                        password: formData.password,
+                        re_password: formData.password
+                    })
+
+                        .then((result: any) => {
+                            console.log(result)
 
                         })
                         .catch((err: any) => {
                             console.error("err===== =>", err);
                         })
-
                 })}
             >
                 <h1>Sign Up</h1>
@@ -57,9 +84,9 @@ const Signup = () => {
                     <input type="email" className="text" id="email" name="email" ref={register({ required: "required" })} />
                     <div className="email error" ></div>
 
-                    <label htmlFor="phone" >Phone:</label>
+                    {/* <label htmlFor="phone" >Phone:</label>
                     <input type="text" className="text" id="phone" name="phone" ref={register({ required: "required" })} />
-                    <div className="phone error" ></div>
+                    <div className="phone error" ></div> */}
 
                     <label htmlFor="password" >Password:</label>
                     <input type="password" className="text" id="password" name="password" ref={register({ required: "required" })} />
@@ -69,10 +96,14 @@ const Signup = () => {
                     <div className="password error" ></div>
                 </div>
                 <br />
+
+                <button className="btn cancel" onClick={closeForm}>Close</button>
+
                 <button className="button" >Sign Up</button><br />
+
+                <div className="password-req" >8 characters or longer. Combine upper and lowercase letters and numbers</div><br />
+                <p >Already have an account? <Link to="/user/login" style={{ textDecoration: "none" }}>Sign In</Link></p>
             </form>
-            <div className="password-req" >8 characters or longer. Combine upper and lowercase letters and numbers</div><br />
-            <p >Already have an account? <Link to="/signin" style={{ textDecoration: "none" }}>Sign In</Link></p>
         </div>
     );
 }

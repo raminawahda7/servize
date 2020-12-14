@@ -11,15 +11,19 @@ import UserProf from './components/profiles/UserProf'
 
 import ProviderSignup from './components/Provider-signup/Provider-signup'
 import Navbar from "./components/Nav-bar/Nav-bar";
-import Categories from "./components/Categories/Categories";
+import Categories from "./components/Categories-container/Categories-container";
 import Footer from "./components/Footer/Footer";
 import Main from "./components/Main-view/Main-view";
 import ForgotPassword from "./components/Forgot-password/Forgot-password";
 import ResetPassword from "./components/Reset-password/Reset-password";
 import ProviderContainer from "./components/Provider-container/Provider-container";
 import Activate from './components/Activate';
+<<<<<<< HEAD
 import Search from './components/search/Search';
 import StarRating from './components/rates/StarRate';
+=======
+import Search from "./components/Search/Search";
+>>>>>>> 0840f3b8ee660639ca5e2867b32bce2de759b634
 
 import './App.css';
 
@@ -38,17 +42,19 @@ function App() {
         {/* <UserProf /> */}
         <StarRating />
         {/* <Login />
+        {/* <Signup />
         <ProviderSignup /> */}
         {/* <Catagories /> */}
+        {/* <Search /> */}
 
         <Switch>
 
           <Route exact path="/" component={Main} />
           <Route exact path="/" component={Categories} />
-          <Route path="/prov/signup" component={ProviderSignup} />
-          <Route path="/user/signup" component={Signup} />
-          <Route path="/user/login" component={Login} />
-          <Route path="/provider" component={ProviderContainer} />
+          {/* <Route path="/prov/signup" component={ProviderSignup} /> */}
+          {/* <Route path="/user/signup" component={Signup} /> */}
+          {/* <Route path="/user/login" component={Login} /> */}
+          {/* <Route path="/provider" component={ProviderContainer} /> */}
           <Route path="/auth/users/reset_password/" component={ForgotPassword} />
           <Route path="/reset/:token" component={ResetPassword} />
           <Route path="/activate/:uid/:token" component={Activate} />
