@@ -18,12 +18,8 @@ import ForgotPassword from "./components/Forgot-password/Forgot-password";
 import ResetPassword from "./components/Reset-password/Reset-password";
 import ProviderContainer from "./components/Provider-container/Provider-container";
 import Activate from './components/Activate';
-<<<<<<< HEAD
 import Search from './components/search/Search';
 import StarRating from './components/rates/StarRate';
-=======
-import Search from "./components/Search/Search";
->>>>>>> 0840f3b8ee660639ca5e2867b32bce2de759b634
 
 import './App.css';
 
