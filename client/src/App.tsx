@@ -19,12 +19,8 @@ import ResetPassword from "./components/Reset-password/Reset-password";
 import ResetPasswordConfirm from "./components/Reset-password/Reset-password-confirm"
 import ProviderContainer from "./components/Provider-container/Provider-container";
 import Activate from './components/Activate';
-<<<<<<< HEAD
-import Search from './components/search/Search';
+// import Search from './components/search/Search';
 import StarRating from './components/rates/StarRate';
-=======
-import Search from "./components/Search/Search";
->>>>>>> 0840f3b8ee660639ca5e2867b32bce2de759b634
 
 import './App.css';
 
@@ -34,10 +30,6 @@ function App() {
       <div className="App">
 
         {/* <Navbar /> */}
-<<<<<<< HEAD
-        <Signup />
-        {/* <Login />
-=======
         {/* <Navbar /> */}
         {/* <Search /> */}
         {/* <Catagories /> */}
@@ -48,7 +40,6 @@ function App() {
         <StarRating />
         {/* <Login />
         {/* <Signup />
->>>>>>> 7565a5e971b9e202e023c70e4d5a8fba73c3f534
         <ProviderSignup /> */}
         {/* <Catagories /> */}
         {/* <Search /> */}
@@ -57,22 +48,12 @@ function App() {
 
           <Route exact path="/" component={Main} />
           <Route exact path="/" component={Categories} />
-<<<<<<< HEAD
-          <Route path="/prov/signup" component={ProviderSignup} />
-          <Route path="/user/signup" component={Signup} />
-          <Route path="/user/login" component={Login} />
-          <Route path="/provider" component={ProviderContainer} />
-          <Route path="/reset_password" component={ForgotPassword} />
-          <Route path="/reset_password" component={ResetPassword} />
-          <Route exact path='/password/reset/confirm/:uid/:token' component={ResetPasswordConfirm} />
-=======
           {/* <Route path="/prov/signup" component={ProviderSignup} /> */}
           {/* <Route path="/user/signup" component={Signup} /> */}
-          {/* <Route path="/user/login" component={Login} /> */}
+          <Route path="/user/login" component={Login} />
           {/* <Route path="/provider" component={ProviderContainer} /> */}
           <Route path="/auth/users/reset_password/" component={ForgotPassword} />
           <Route path="/reset/:token" component={ResetPassword} />
->>>>>>> 7565a5e971b9e202e023c70e4d5a8fba73c3f534
           <Route path="/activate/:uid/:token" component={Activate} />
 
         </Switch>

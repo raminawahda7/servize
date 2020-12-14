@@ -13,13 +13,9 @@
     "@types/react": "^16.9.53",
     "@types/react-dom": "^16.9.8",
     "@types/react-redux": "^7.1.11",
-<<<<<<< HEAD
-    "axios": "^0.21.0",
-=======
     "@types/redux-persist": "^4.3.1",
     "axios": "^0.21.0",
     "bootstrap": "^4.5.3",
->>>>>>> 7565a5e971b9e202e023c70e4d5a8fba73c3f534
     "dotenv": "^8.2.0",
     "jquery": "^3.5.1",
     "mdbreact": "^5.0.0",
