@@ -29,7 +29,7 @@ function App() {
     <Router>
       <div className="App">
 
-        {/* <Navbar /> */}
+        <Navbar />
         {/* <Navbar /> */}
         {/* <Search /> */}
         {/* <Catagories /> */}
@@ -39,9 +39,9 @@ function App() {
         {/* <UserProf /> */}
         <StarRating />
         {/* <Login />
-        {/* <Signup />
-        <ProviderSignup /> */}
-        {/* <Catagories /> */}
+        <Signup /> */}
+        {/* <ProviderSignup />  */}
+         {/* <Catagories />  */}
         {/* <Search /> */}
 
         <Switch>
@@ -49,15 +49,13 @@ function App() {
           <Route exact path="/" component={Main} />
           <Route exact path="/" component={Categories} />
           {/* <Route path="/prov/signup" component={ProviderSignup} /> */}
-          {/* <Route path="/user/signup" component={Signup} /> */}
+          <Route path="/user/signup" component={Signup} />
           <Route path="/user/login" component={Login} />
           {/* <Route path="/provider" component={ProviderContainer} /> */}
           <Route path="/auth/users/reset_password/" component={ForgotPassword} />
           <Route path="/reset/:token" component={ResetPassword} />
           <Route exact path='/password/reset/confirm/:uid/:token' component={ResetPasswordConfirm} />
-          <Route path="/activate/:uid/:token" component={Activate} />
-
-          <Route path="/activate/:uid/:token" component={Activate} />
+          {/* <Route path="/activate/:uid/:token" component={Activate} /> */}
 
         </Switch>
 
