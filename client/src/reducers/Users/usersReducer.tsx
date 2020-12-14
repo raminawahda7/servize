@@ -1,13 +1,14 @@
 import * as actionTypes from '../../actions/actionTypes';
 import {store} from '../../actions/Users/usersActions';
-export interface State {
-    user: [],
-    // prov: {name:string, description:string, img: string}
-}
+
+// export interface State {
+//     user: [],
+//     // prov: {name:string, description:string, img: string}
+// }
 
 
 let initState : {
-    user: State
+    user: [],
 
 }
 
@@ -20,8 +21,8 @@ let initState : {
 //     ]
     
 // }
-type A = ReturnType<typeof store>; 
-const userReducer = (state:{} = initState, action:A) => {
+// type A = ReturnType<typeof store>; 
+const userReducer = (state:{} = initState, action:any) => {
     // console.log("action", action);
     console.log("action", action);
     
