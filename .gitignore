@@ -7,6 +7,10 @@
 .env
 server/env
 /env
+
+
+# testing
+/coverage
 /server/accounts/migrations/
 /server/Category/migrations/
 /server/Location/migrations/
@@ -14,10 +18,6 @@ server/env
 /server/ServiceProvider/migrations/
 /server/SubCategory/migrations/
 /server/User/migrations/
-
-# testing
-/coverage
-
 # production
 /build
 
