@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 // import 'bootstrap-css-only/css/bootstrap.min.css';
 // import 'mdbreact/dist/css/mdb.css';
 const axios = require('axios');
-// const $ = require('jquery');
+const $ = require('jquery');
 
 interface FormData {
     username: string;
@@ -17,6 +17,17 @@ interface FormData {
     password: string;
 }
 const Signup = () => {
+
+
+    // const openForm= () =>{
+    //     document.getElementById("signup-form").style.display = "block";
+    // }
+
+    const closeForm = () => {
+        //    $("signup-form").style.display = "none";
+        $("#signup-form").hide();
+
+    }
     const { register, handleSubmit, errors } = useForm<FormData>();
     const [submitting, setSubmitting] = useState<boolean>(false);
     const [serverErrors, setServerErrors] = useState<Array<string>>([]);
@@ -53,12 +64,12 @@ const Signup = () => {
                         re_password: formData.password
                     })
 
-                        .then((result:any) => {
+                        .then((result: any) => {
                             console.log(result)
 
                         })
                         .catch((err: any) => {
-                             console.error("err===== =>", err);
+                            console.error("err===== =>", err);
                         })
                 })}
             >
@@ -73,9 +84,9 @@ const Signup = () => {
                     <input type="email" className="text" id="email" name="email" ref={register({ required: "required" })} />
                     <div className="email error" ></div>
 
-                    <label htmlFor="phone" >Phone:</label>
+                    {/* <label htmlFor="phone" >Phone:</label>
                     <input type="text" className="text" id="phone" name="phone" ref={register({ required: "required" })} />
-                    <div className="phone error" ></div>
+                    <div className="phone error" ></div> */}
 
                     <label htmlFor="password" >Password:</label>
                     <input type="password" className="text" id="password" name="password" ref={register({ required: "required" })} />
@@ -86,10 +97,12 @@ const Signup = () => {
                 </div>
                 <br />
 
-                <div className="password-req" >8 characters or longer. Combine upper and lowercase letters and numbers</div><br />
-                <p >Already have an account? <Link to="/user/login" style={{ textDecoration: "none" }}>Sign In</Link></p>
+                <button className="btn cancel" onClick={closeForm}>Close</button>
 
                 <button className="button" >Sign Up</button><br />
+
+                <div className="password-req" >8 characters or longer. Combine upper and lowercase letters and numbers</div><br />
+                <p >Already have an account? <Link to="/user/login" style={{ textDecoration: "none" }}>Sign In</Link></p>
             </form>
         </div>
     );
