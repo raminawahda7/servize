@@ -13,7 +13,7 @@ import usersReducer from './Users/usersReducer';
 // }
 
 const rootReducer = combineReducers ({
-    user: usersReducer,
+    users: usersReducer,
 
 });
 
