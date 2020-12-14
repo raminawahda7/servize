@@ -14,11 +14,11 @@ const persistConfig = {
     debug: true
 }
 
-const persistedReducer = persistReducer(persistConfig, rootReducer);
+// const persistedReducer = persistReducer(persistConfig, rootReducer);
 
-const store = createStore(persistedReducer, applyMiddleware(thunk)) //,middleware
+// const store = createStore(persistedReducer, applyMiddleware(thunk)) //,middleware
 
-const persistor = persistStore(store);
+// const persistor = persistStore(store);
 
-export { store, persistor }
+// export { store, persistor }
 

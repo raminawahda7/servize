@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { appendErrors, useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBInput } from 'mdbreact';
-import '@fortawesome/fontawesome-free/css/all.min.css';
-import 'bootstrap-css-only/css/bootstrap.min.css';
-import 'mdbreact/dist/css/mdb.css';
+import '../Provider-container/Provider-card/node_modules/@fortawesome/fontawesome-free/css/all.min.css';
+import '../Provider-container/Provider-card/node_modules/bootstrap-css-only/css/bootstrap.min.css';
+import '../Provider-container/Provider-card/node_modules/mdbreact/dist/css/mdb.css';
 const axios = require('axios');
 
 interface FormData {
@@ -26,22 +26,37 @@ const ProviderSignup = () => {
             <form id="signup-form"
                 onSubmit={handleSubmit((formData) => {
                     console.log(formData)
-                    let options = {
-                        url: `http://localhost:8000/auth/users/`,
-                        method: 'post',
-                        data: {
-                            name: formData.name,
-                            email: formData.email,
-                            password: formData.password,
-                            re_password: formData.re_password,
-                            Phone: formData.phone,
-                            city: formData.city,
-                        }
-                    }
+                    // let options = {
+                    //     url: `http://localhost:8000/auth/users/`,
+                    //     method: 'post',
+                    //     data: {
+                    //         name: formData.name,
+                    //         email: formData.email,
+                    //         password: formData.password,
+                    //         re_password: formData.re_password,
+                    //         Phone: formData.phone,
+                    //         city: formData.city,
+                    //     }
+                    // }
 
-                    axios(options)
-                        .then((results: any) => {
-                            console.log("axios", results);
+                    // axios(options)
+                    //     .then((results: any) => {
+                    //         console.log("axios", results);
+
+                    //     })
+                    //     .catch((err: any) => {
+                    //         console.error("err===== =>", err);
+                    //     })
+
+                    axios.post(`http://localhost:8000/auth/users/`, {
+                        name: formData.name,
+                        email: formData.email,
+                        password: formData.password,
+                        re_password: formData.password
+                    })
+
+                        .then((result: any) => {
+                            console.log(result)
 
                         })
                         .catch((err: any) => {
@@ -77,10 +92,12 @@ const ProviderSignup = () => {
                     <div className="password error" ></div>
                 </div>
                 <br />
+
+                <div className="password-req" >8 characters or longer. Combine upper and lowercase letters and numbers</div><br />
+                <p >Already have an account? <Link to="/user/login" style={{ textDecoration: "none" }}>Sign In</Link></p>
                 <button className="button" >Sign Up</button><br />
+
             </form>
-            <div className="password-req" >8 characters or longer. Combine upper and lowercase letters and numbers</div><br />
-            <p >Already have an account? <Link to="/signin" style={{ textDecoration: "none" }}>Sign In</Link></p>
         </div>
     );
 }
