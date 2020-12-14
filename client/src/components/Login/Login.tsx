@@ -31,24 +31,7 @@ export default function Login() {
                         onSubmit={handleSubmit((formData) => {
                             console.log(formData);
 
-                            axios.post(`http://localhost:8000/auth/jwt/create`,
-                                {
-                                    email: email,
-                                    password: password,
-                                })
-
-                                .then((result: any) => {
-                                    console.log(result)
-                                    setAccess(result.data.access);
-                                    setRefresh(result.data.refresh);
-
-                                })
-                                .catch((err: any) => {
-                                    console.error("err===== =>", err);
-                                })
-
                             
-                            console.log('hay heeeeeeeeeee:',access);
 
                             //  axios({
                             //     url: 'http://localhost:8000/auth/users/me/',
@@ -97,8 +80,26 @@ export default function Login() {
                             .then(res => console.log(res))
                             
 
-                        })}
-                    >
+                            axios.post(`http://localhost:8000/auth/jwt/create`,
+                                {
+                                    email: email,
+                                    password: password,
+                                })
+
+                                .then((result: any) => {
+                                    console.log(result)
+                                    setAccess(result.data.access);
+                                    setRefresh(result.data.refresh);
+
+                                })
+                                .catch((err: any) => {
+                                    console.error("err===== =>", err);
+                                })
+
+                            
+                            console.log('hay heeeeeeeeeee:',access);
+
+                        })}>
                         <p className="h5 text-center mb-4">Log in</p>
                         <div className="grey-text">
                             <MDBInput label="Type your email" icon="envelope" group type="email" validate error="wrong" success="right" value={email} onChange={(e: any) => { setEmail(e.target.value); console.log(e.target.value) }} />
