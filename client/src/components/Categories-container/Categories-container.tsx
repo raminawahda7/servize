@@ -15,7 +15,7 @@ const $ = require('jquery');
 const Categories = () => {
     const userInStore = useSelector((state: any) => state.user);
     const dispatch = useDispatch();
-    console.log("store ===> ", userInStore)
+    // console.log("store ===> ", userInStore)
     // axios.get(`http://localhost:8000/category/`)
 
     //     .then((result: any) => {

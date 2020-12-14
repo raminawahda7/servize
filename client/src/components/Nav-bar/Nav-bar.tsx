@@ -58,8 +58,8 @@ const Navbar = () => {
                         <li><a href="#">Language</a></li>
                         <li><Link to="/prov/signup">Become a Service Provider</Link></li>
                         <li><Link to="/user/login">Log In</Link></li>
-                        {/* <li><Link to="/user/signup">Join</Link></li> */}
-                        <li onClick={handleClick}> <a href="#">Join</a></li>
+                        <li><Link to="/user/signup">Join</Link></li>
+                        {/* <li onClick={handleClick}> <a href="#">Join</a></li> */}
                     </ul>
                 </div>
             </nav>

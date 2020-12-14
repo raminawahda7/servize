@@ -10,12 +10,12 @@ const ProviderContainer = () => {
     console.log("store ===> ",userInStore)
     return (
         <div className="list">
-           {/* {userInStore.map((prov: any, index: number) =>
+           {userInStore.map((prov: any, index: number) =>
                 <ProviderCard
                     key={index}
                     prov={prov}
                 />
-            )} */}
+            )}
         </div>
     );
 }

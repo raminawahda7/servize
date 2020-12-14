@@ -12,11 +12,11 @@ import usersReducer from './Users/usersReducer';
 //     debug: true
 // }
 
-const rootReducer = combineReducers ({
-    users: usersReducer,
+// const rootReducer = combineReducers ({
+//     users: usersReducer,
 
-});
-
+// });
+const rootReducer = usersReducer;
 
 // const persistedReducer = persistReducer(persistConfig, rootReducer);
 
