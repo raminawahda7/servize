@@ -6,20 +6,8 @@ import { Link } from 'react-router-dom';
 const axios = require('axios');
 const $ = require('jquery');
 
-<<<<<<< HEAD
-// Sends a request to change password for a user that forgot the password
-// Using email verification
-
-
-
-
 const ForgotPassword = () => {
 
-
-=======
-const ForgotPassword = ()=>{
-
->>>>>>> b6e47cb64a9f99a54cee53dbaf7cd418fbc4a883
     const dispatch = useDispatch();
     const userInStore = useSelector((state: any) => state.user);
     console.log("rootstore", userInStore)
@@ -27,11 +15,7 @@ const ForgotPassword = ()=>{
         e.preventDefault();
         let input = $('#forgot-form').serializeArray();
         // console.log(input[0].value);
-<<<<<<< HEAD
         // const [email, setEmail] = useState("")
-=======
-        // const [email, setEmail] = useState("")
->>>>>>> b6e47cb64a9f99a54cee53dbaf7cd418fbc4a883
         dispatch(store(input))
         // setEmail("");
 
