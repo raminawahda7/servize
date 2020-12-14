@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route, BrowserRouter } from 'react-router-dom';
+import {BrowserRouter as Router, Switch, Route, } from 'react-router-dom';
 import Signup from './components/Signup/Signup';
 import Login from './components/Login/Login';
 import Catagories from './components/catagories/Catagories';
@@ -16,19 +16,24 @@ import Footer from "./components/Footer/Footer";
 import Main from "./components/Main-view/Main-view";
 import ForgotPassword from "./components/Forgot-password/Forgot-password";
 import ResetPassword from "./components/Reset-password/Reset-password";
+import ResetPasswordConfirm from "./components/Reset-password/Reset-password-confirm"
 import ProviderContainer from "./components/Provider-container/Provider-container";
 import Activate from './components/Activate';
+<<<<<<< HEAD
 import Search from './components/search/Search';
+=======
+// import Search from './components/search/Search';
+>>>>>>> fddac1c08bc1c422335a76ad66b9095f19c21522
 import StarRating from './components/rates/StarRate';
 
 import './App.css';
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <div className="App">
 
-        {/* <Navbar /> */}
+        <Navbar />
         {/* <Navbar /> */}
         {/* <Search /> */}
         {/* <Catagories /> */}
@@ -38,9 +43,9 @@ function App() {
         {/* <UserProf /> */}
         <StarRating />
         {/* <Login />
-        {/* <Signup />
-        <ProviderSignup /> */}
-        {/* <Catagories /> */}
+        <Signup /> */}
+        {/* <ProviderSignup />  */}
+         {/* <Catagories />  */}
         {/* <Search /> */}
 
         <Switch>
@@ -48,19 +53,20 @@ function App() {
           <Route exact path="/" component={Main} />
           <Route exact path="/" component={Categories} />
           {/* <Route path="/prov/signup" component={ProviderSignup} /> */}
-          {/* <Route path="/user/signup" component={Signup} /> */}
-          {/* <Route path="/user/login" component={Login} /> */}
+          <Route path="/user/signup" component={Signup} />
+          <Route path="/user/login" component={Login} />
           {/* <Route path="/provider" component={ProviderContainer} /> */}
           <Route path="/auth/users/reset_password/" component={ForgotPassword} />
           <Route path="/reset/:token" component={ResetPassword} />
-          <Route path="/activate/:uid/:token" component={Activate} />
+          <Route exact path='/password/reset/confirm/:uid/:token' component={ResetPasswordConfirm} />
+          {/* <Route path="/activate/:uid/:token" component={Activate} /> */}
 
         </Switch>
 
-        {/* <Footer /> */}
+        <Footer />
 
       </div>
-    </BrowserRouter>
+    </Router>
   );
 }
 
