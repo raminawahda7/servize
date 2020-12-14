@@ -1,5 +1,5 @@
 import * as actionTypes from '../actionTypes';
-export const store = (z:any) => {
+export const store = (z:[]) => {
     return {
         type: actionTypes.STORE_USER,
         payload: z
