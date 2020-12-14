@@ -5,9 +5,11 @@ import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from 'mdbreact';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
+
 const axios = require('axios');
 
 interface formData {
+
     email: string;
     password: string;
 }
@@ -41,6 +43,7 @@ export default function Login() {
                                     console.log(result)
                                     setAccess(result.data.access);
                                     setRefresh(result.data.refresh);
+                                    // window.location.href="/"
 
                                 })
                                 .catch((err: any) => {
@@ -50,23 +53,7 @@ export default function Login() {
                             
                             console.log('hay heeeeeeeeeee:',access);
 
-                            //  axios({
-                            //     url: 'http://localhost:8000/auth/users/me/',
-                            //     method: 'get',
-                            //     headers: {
-                            //         'Authorization': access,
-                            //         'Content-Type': 'application/json'
-                            //     }
-                            //  })
-                            //  .then((response: any) => {
-                            //     localStorage.setItem("access_token", access);
-                            //     localStorage.setItem("refresh_token", refresh);
-                            //     console.log(response)
-                            //  }) 
-                            //  .catch((err : any)=> {
-                            //     console.log(err);
-                            //  });
-
+                           
                             async function getData() {
                                 try {
                                    let res = await axios({
@@ -101,8 +88,8 @@ export default function Login() {
                     >
                         <p className="h5 text-center mb-4">Log in</p>
                         <div className="grey-text">
-                            <MDBInput label="Type your email" icon="envelope" group type="email" validate error="wrong" success="right" value={email} onChange={(e: any) => { setEmail(e.target.value); console.log(e.target.value) }} />
-                            <MDBInput label="Type your password" icon="lock" group type="password" validate error="wrong" success="right" value={password} onChange={(e: any) => setPassword(e.target.value)} />
+                            <MDBInput placeholder="Type your email" icon="envelope" group type="email" validate error="wrong" success="right" value={email} onChange={(e: any) => { setEmail(e.target.value)}} />
+                            <MDBInput placeholder="Type your password" icon="lock" group type="password" validate error="wrong" success="right" value={password} onChange={(e: any) => setPassword(e.target.value)} />
                         </div>
                         <div className="text-center">
                             <MDBBtn type="submit" disabled={submitting}>Log in</MDBBtn>
@@ -113,6 +100,3 @@ export default function Login() {
         </MDBContainer>
     )
 }
-
-
-
