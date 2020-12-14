@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Form from 'react-bootstrap/Form'
 import InstagramIcon from '@material-ui/icons/Instagram';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
@@ -27,7 +28,7 @@ export default function ProviderProf() {
                         <ul className="nav nav-pills nav-stacked">
                             <li className="active"><a href="#"> <i className="fa fa-user"></i> Profile</a></li>
                             <li><a href="#"> <i className="fa fa-calendar"></i> Recent Activity <span
-                                className="label label-warning pull-right r-activity">9</span></a></li>
+                                className="label label-warning pull-right r-activity">  </span></a></li>
                             <li><a href="#"> <i className="fa fa-edit"></i> Edit profile</a></li>
                         </ul>
                     </div>
@@ -85,6 +86,7 @@ export default function ProviderProf() {
                             </div>
                         </div>
                     </div>
+
                     <div>
                         <div className="row">
                             <div className="col-md-6">
@@ -98,9 +100,9 @@ export default function ProviderProf() {
                                             </div>
                                         </div>
                                         <div className="bio-desk">
-                                            <h4 className="red">Envato Website</h4>
+                                            <h4 className="red"></h4>
                                             <p>Started : 15 July</p>
-                                            <p>Deadline : 15 August</p>
+                                            <p></p>
                                         </div>
                                     </div>
                                 </div>
@@ -116,9 +118,14 @@ export default function ProviderProf() {
                                             </div>
                                         </div>
                                         <div className="bio-desk">
-                                            <h4 className="terques">ThemeForest CMS </h4>
-                                            <p>Started : 15 July</p>
-                                            <p>Deadline : 15 August</p>
+                                            <h4 className="terques"> </h4>
+                                            <Form>
+                                                <Form.Group>
+                                                    <Form.File id="exampleFormControlFile1" label="Example file input" />
+                                                </Form.Group>
+                                            </Form>
+                                            {/* <p>Started : 15 July</p>
+                                            <p>Deadline : 15 August</p> */}
                                         </div>
                                     </div>
                                 </div>
@@ -134,9 +141,9 @@ export default function ProviderProf() {
                                             </div>
                                         </div>
                                         <div className="bio-desk">
-                                            <h4 className="green">VectorLab Portfolio</h4>
-                                            <p>Started : 15 July</p>
-                                            <p>Deadline : 15 August</p>
+                                            <h4 className="green"></h4>
+                                            {/* <p>Started : 15 July</p>
+                                            <p>Deadline : 15 August</p> */}
                                         </div>
                                     </div>
                                 </div>
@@ -152,9 +159,9 @@ export default function ProviderProf() {
                                             </div>
                                         </div>
                                         <div className="bio-desk">
-                                            <h4 className="purple">Adobe Muse Template</h4>
-                                            <p>Started : 15 July</p>
-                                            <p>Deadline : 15 August</p>
+                                            <h4 className="purple"></h4>
+                                            {/* <p>Started : 15 July</p>
+                                            <p>Deadline : 15 August</p> */}
                                         </div>
                                     </div>
                                 </div>

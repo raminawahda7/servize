@@ -1,13 +1,13 @@
 from django.shortcuts import render
 from rest_framework import generics  
-from Location.models import City,Area
-from Location.serialize import CitySerializer,AreaSerializer
+from Location.models import City
+from Location.serialize import CitySerializer
 
 
-className CityList(generics.ListCreateAPIView):
+class CityList(generics.ListCreateAPIView):
     queryset=City.objects.all()
-    serializer_className=CitySerializer
+    serializer_class=CitySerializer
 
-className AreaList(generics.ListCreateAPIView):
-    queryset=Area.objects.all()
-    serializer_className=AreaSerializer
+# class AreaList(generics.ListCreateAPIView):
+#     queryset=Area.objects.all()
+#     serializer_class=AreaSerializer
