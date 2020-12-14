@@ -5,21 +5,29 @@ from Category.models import Category
 
 
 class  CategoryProviderSerializer(serializers.ModelSerializer):
-    class Meta:
-        model=CategoryProvider
-        fields=('subcategory')
+    providerName = serializers.CharField(source='serviceProviderId.provider.name', read_only=True)
+    providerId=serializers.CharField(source='serviceProviderId.provider.id', read_only=True)
+    cateName=serializers.CharField(source='categoryId.catName', read_only=True)
+    cateId=serializers.CharField(source='categoryId.id', read_only=True)
 
-class  ProviderCategorySerializer(serializers.ModelSerializer):
+    
     class Meta:
         model=CategoryProvider
-        fields=('serviceProvider')
+        fields=['providerName','providerId','cateName']
+
+
 
 
 class  ServiceProviderSerializer(serializers.ModelSerializer):
-    Categories = CategoryProviderSerializer(many=True, read_only=True,default=1)
+    users= ProviderUserSerializer(many=True, read_only=True)
+    Categories=CategoryProviderSerializer((many=True, read_only=True)
     class Meta:
         model=ServiceProvider
-        fields=('name','email','phone','city','Category','Categories','subcategory','UserAccount')
+        fields=('provider','phone','city','role','image','users','Categories')
+
+
+
+
 
 
 class  ImageSerializer(serializers.ModelSerializer):
