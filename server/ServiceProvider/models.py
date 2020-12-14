@@ -8,7 +8,8 @@ class ServiceProvider(models.Model):
     phone =models.CharField(max_length=12,default='0000')
     city = models.ForeignKey(City,on_delete=models.CASCADE,related_name='serviceProviders')
     role = models.CharField(max_length=20,default='ServiceProvider')
-    image = models.CharField(max_length=256)
+    categoryId = models.ForeignKey(Category, on_delete=models.CASCADE,default=1)
+    picture = models.CharField(max_length=256)
     def __str__(self):
         return self.Provider.name
 
@@ -26,7 +27,7 @@ class CategoryProvider(models.Model):
      
 class Image(models.Model):
     images = models.CharField(max_length=256)
-    servicProvider = models.ForeignKey(ServiceProvider, on_delete=models.CASCADE) # connect provider with it's images.
+    serviceProvider = models.ForeignKey(ServiceProvider, on_delete=models.CASCADE) # connect provider with it's images.
     def __str__(self):
         return self
 

@@ -1,7 +1,8 @@
 from rest_framework import serializers
 from ServiceProvider.models import ServiceProvider,Image,CategoryProvider
-from SubCategory.models import SubCategory
 from Category.models import Category
+from User.serialize import ProviderUserSerializer
+
 
 
 class  CategoryProviderSerializer(serializers.ModelSerializer):
@@ -20,10 +21,10 @@ class  CategoryProviderSerializer(serializers.ModelSerializer):
 
 class  ServiceProviderSerializer(serializers.ModelSerializer):
     users= ProviderUserSerializer(many=True, read_only=True)
-    Categories=CategoryProviderSerializer((many=True, read_only=True)
+    Categories=CategoryProviderSerializer(many=True, read_only=True)
     class Meta:
         model=ServiceProvider
-        fields=('provider','phone','city','role','image','users','Categories')
+        fields=('provider','phone','city','role','categoryId','picture','users','Categories')
 
 
 

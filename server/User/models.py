@@ -1,6 +1,6 @@
 from django.db import models
 from accounts.models import UserAccount
-from ServiceProvider import ServiceProvider
+from ServiceProvider.models import ServiceProvider
 
 class User(models.Model):
     user = models.OneToOneField(UserAccount,on_delete=models.CASCADE, related_name="user")
@@ -16,10 +16,10 @@ class User(models.Model):
 
 class ProviderUser(models.Model):
     userId = models.ForeignKey(User,on_delete=models.CASCADE, related_name='providers')
-    providerId = models.ForeignKey(ServicProvider,on_delete=models.CASCADE, related_name='users')
+    providerId = models.ForeignKey(ServiceProvider,on_delete=models.CASCADE, related_name='users')
 
     class Meta:
-        together = ('userId','providerId')
+        unique_together = ('userId','providerId')
 
     def __str__(self):
         return "%s %s" % (self.userId.user.name, self.providerId.provider.name)
