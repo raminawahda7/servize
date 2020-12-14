@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter as Router, Switch, Route, } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, } from 'react-router-dom';
 import Signup from './components/Signup/Signup';
 import Login from './components/Login/Login';
 import Catagories from './components/catagories/Catagories';
@@ -19,11 +19,7 @@ import ResetPassword from "./components/Reset-password/Reset-password";
 import ResetPasswordConfirm from "./components/Reset-password/Reset-password-confirm"
 import ProviderContainer from "./components/Provider-container/Provider-container";
 import Activate from './components/Activate';
-<<<<<<< HEAD
-import Search from './components/search/Search';
-=======
 // import Search from './components/search/Search';
->>>>>>> fddac1c08bc1c422335a76ad66b9095f19c21522
 import StarRating from './components/rates/StarRate';
 
 import './App.css';
@@ -33,7 +29,7 @@ function App() {
     <Router>
       <div className="App">
 
-        <Navbar />
+        {/* <Navbar /> */}
         {/* <Navbar /> */}
         {/* <Search /> */}
         {/* <Catagories /> */}
@@ -44,8 +40,8 @@ function App() {
         <StarRating />
         {/* <Login />
         <Signup /> */}
-        {/* <ProviderSignup />  */}
-         {/* <Catagories />  */}
+        {/* <ProviderSignup /> */}
+        {/* <Catagories /> */}
         {/* <Search /> */}
 
         <Switch>
