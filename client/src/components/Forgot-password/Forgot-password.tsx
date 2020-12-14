@@ -6,16 +6,16 @@ import { Link } from 'react-router-dom';
 const axios = require('axios');
 const $ = require('jquery');
 
-const ForgotPassword = ()=>{ 
-    
+const ForgotPassword = () => {
+
     const dispatch = useDispatch();
     const userInStore = useSelector((state: any) => state.user);
-    console.log ("rootstore",userInStore)
+    console.log("rootstore", userInStore)
     const handleSubmit = (e: any) => {
         e.preventDefault();
         let input = $('#forgot-form').serializeArray();
         // console.log(input[0].value);
-        // const [email, setEmail] = useState("") 
+        // const [email, setEmail] = useState("")
         dispatch(store(input))
         // setEmail("");
 
@@ -46,16 +46,16 @@ const ForgotPassword = ()=>{
             return;
         }
     }
-    
+
     return (
         <div id="reset">
             <button ><Link to="/">Return To Home Page</Link> </button>
-            <form className="forgot-form" id="forgot-form" onSubmit={ handleSubmit}>
+            <form className="forgot-form" id="forgot-form" onSubmit={handleSubmit}>
                 <h1>Forgot Password</h1>
                 <br />
                 <div className="">
                     <label htmlFor="email">Email</label>
-                    <input type="email" className="text" id="email" name="email"/>
+                    <input type="email" className="text" id="email" name="email" />
                 </div>
                 <br />
                 <button className="button" >Reset Password</button><br />

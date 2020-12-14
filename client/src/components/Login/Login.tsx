@@ -5,9 +5,11 @@ import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from 'mdbreact';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
+
 const axios = require('axios');
 
 interface formData {
+
     email: string;
     password: string;
 }
@@ -47,6 +49,7 @@ export default function Login() {
                                     console.error("err===== =>", err);
                                 })
 
+<<<<<<< HEAD
                             
                             console.log('hay heeeeeeeeeee:',access);
 
@@ -97,6 +100,8 @@ export default function Login() {
                             .then(res => console.log(res))
                             
 
+=======
+>>>>>>> 7565a5e971b9e202e023c70e4d5a8fba73c3f534
                         })}
                     >
                         <p className="h5 text-center mb-4">Log in</p>
@@ -115,4 +120,7 @@ export default function Login() {
 }
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7565a5e971b9e202e023c70e4d5a8fba73c3f534
