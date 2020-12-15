@@ -1,5 +1,5 @@
 from django.urls import path
-from ServiceProvider.views import ServiceProviderList,ImageList,CategoryProviderList
+from ServiceProvider.views import ServiceProviderList,ImageList
 
 app_name='ServiceProvider'
 

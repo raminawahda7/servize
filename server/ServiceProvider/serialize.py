@@ -1,30 +1,31 @@
 from rest_framework import serializers
-from ServiceProvider.models import ServiceProvider,Image,CategoryProvider
+from ServiceProvider.models import ServiceProvider,Image
 from Category.models import Category
 from User.serialize import ProviderUserSerializer
 
 
 
-class  CategoryProviderSerializer(serializers.ModelSerializer):
-    providerName = serializers.CharField(source='serviceProviderId.provider.name', read_only=True)
-    providerId=serializers.CharField(source='serviceProviderId.provider.id', read_only=True)
-    cateName=serializers.CharField(source='categoryId.catName', read_only=True)
-    cateId=serializers.CharField(source='categoryId.id', read_only=True)
+# class  CategoryProviderSerializer(serializers.ModelSerializer):
+#     providerName = serializers.CharField(source='serviceProviderId.provider.name', read_only=True)
+#     providerId=serializers.CharField(source='serviceProviderId.provider.id', read_only=True)
+#     cateName=serializers.CharField(source='categoryId.catName', read_only=True)
+#     cateId=serializers.CharField(source='categoryId.id', read_only=True)
+#     categoryId = models.ForeignKey(Category, on_delete=models.CASCADE,default=1)
 
     
-    class Meta:
-        model=CategoryProvider
-        fields=['providerName','providerId','cateName']
+#     class Meta:
+#         model=CategoryProvider
+#         fields=['categoryId','serviceProviderId']
 
 
 
 
 class  ServiceProviderSerializer(serializers.ModelSerializer):
     users= ProviderUserSerializer(many=True, read_only=True)
-    Categories=CategoryProviderSerializer(many=True, read_only=True)
+    # Categories=CategoryProviderSerializer(many=True, read_only=True)
     class Meta:
         model=ServiceProvider
-        fields=('provider','phone','city','role','categoryId','picture','users','Categories')
+        fields=('provider','phone','city','role','picture','users','categoryId')
 
 
 
