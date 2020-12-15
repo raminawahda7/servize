@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import generics 
-from ServiceProvider.models import ServiceProvider,Image,CategoryProvider  
-from ServiceProvider.serialize import ServiceProviderSerializer,ImageSerializer,CategoryProviderSerializer
+from ServiceProvider.models import ServiceProvider,Image 
+from ServiceProvider.serialize import ServiceProviderSerializer,ImageSerializer
 
 class ServiceProviderList(generics.ListCreateAPIView):
     queryset=ServiceProvider.objects.all()
@@ -12,7 +12,7 @@ class ImageList(generics.ListCreateAPIView):
     serializer_class=ImageSerializer
 
 
-class CategoryProviderList(generics.ListCreateAPIView):
-    queryset=CategoryProvider.objects.all()
-    serializer_class=CategoryProviderSerializer
+# class CategoryProviderList(generics.ListCreateAPIView):
+#     queryset=CategoryProvider.objects.all()
+#     serializer_class=CategoryProviderSerializer
 

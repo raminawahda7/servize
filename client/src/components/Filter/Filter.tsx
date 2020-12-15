@@ -38,7 +38,7 @@ const Navbar = () => {
             </div>
 
             <div>
-                Area
+                City
             </div>
 
             <div>

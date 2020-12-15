@@ -14,7 +14,7 @@ const Search = () => {
     // const [city, setCity] = useState(false);
 
     const handleClick = () => {
-        axios.post(`http://localhost:8000/`)    // sending data
+        axios.post(`http://localhost:8000/`,{})    // sending data
 
             .then((result: any) => {
                 console.log("axios", result.data)
