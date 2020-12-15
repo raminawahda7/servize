@@ -3,10 +3,10 @@ from Location.models import City
 from ServiceProvider.serialize import ServiceProviderSerializer
 
 class  CitySerializer(serializers.ModelSerializer):
-    serviceProvider = ServiceProviderSerializer(many=True, read_only=True)
+    serviceProviders = ServiceProviderSerializer(many=True, read_only=True)
     class Meta:
         model=City
-        fields=['name','pk','serviceProvider']
+        fields=['name','pk','serviceProviders']
          
 
 # class  AreaSerializer(serializers.ModelSerializer):
