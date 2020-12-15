@@ -6,7 +6,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('category/',include('Category.urls')),
     path('location/',include('Location.urls')),
-    path('subcategory/',include('SubCategory.urls')),
     path('reviews/',include('Reviews.urls')),
     path('user/',include('User.urls')),
     path('serviceprovider/',include('ServiceProvider.urls')),

@@ -4,19 +4,22 @@ import storage from 'redux-persist/lib/storage';
 import usersReducer from './Users/usersReducer';
 
 
-const persistConfig = {
-    key: 'root',
-    storage: storage,
-    whitelist: [],
-    blacklist: [],
-    debug: true
-}
+// const persistConfig = {
+//     key: 'root',
+//     storage: storage,
+//     whitelist: [],
+//     blacklist: [],
+//     debug: true
+// }
 
-const rootReducer = combineReducers({
+const rootReducer = combineReducers ({
     users: usersReducer,
 
 });
 
-const persistedReducer = persistReducer(persistConfig, rootReducer);
+
+// const persistedReducer = persistReducer(persistConfig, rootReducer);
+
+const persistedReducer = rootReducer;
 
 export default persistedReducer;
