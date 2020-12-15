@@ -11,7 +11,8 @@ class ServiceProvider(models.Model):
     status = models.BooleanField(default=False)
     city = models.ForeignKey(City,on_delete=models.CASCADE)
     Category = models.ForeignKey(Category, on_delete=models.CASCADE,related_name='serviceProviders')
-    subcategory = models.ForeignKey(SubCategory, on_delete=models.CASCADE,default=1,related_name='subCatproviders')
+    # subcategory = models.ForeignKey(SubCategory, on_delete=models.CASCADE,default=1,related_name='subCatproviders')
+    UserAccount = models.OneToOneField(UserAccount,on_delete=models.CASCADE)
     # area = models.ForeignKey(Area,on_delete=models.CASCADE)
     # //RGISTRATION AS AFORIGN KEY 
     def __str__(self):

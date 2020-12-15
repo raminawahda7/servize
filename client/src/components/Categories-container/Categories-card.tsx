@@ -18,7 +18,7 @@ const CategoriesCard = ({ user }: { user: any }) => {
 
         .then((result: any) => {
             console.log("axios", result.data)
-            dispatch(store(result.data))
+            // dispatch(store(result.data))
 
         })
         .catch((err: any) => {
