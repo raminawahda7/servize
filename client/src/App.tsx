@@ -37,7 +37,7 @@ function App() {
         {/* <ProviderView /> */}
         {/* <UserView /> */}
         {/* <UserProf /> */}
-        <StarRating />
+        {/* <StarRating /> */}
         {/* <Login />
         <Signup /> */}
         {/* <ProviderSignup />  */}
@@ -51,6 +51,7 @@ function App() {
           {/* <Route path="/prov/signup" component={ProviderSignup} /> */}
           <Route path="/user/signup" component={Signup} />
           <Route path="/user/login" component={Login} />
+          <Route path="/providerProfile" exact component={() => < ProviderProf/>} />
           {/* <Route path="/provider" component={ProviderContainer} /> */}
           <Route path="/auth/users/reset_password/" component={ForgotPassword} />
           <Route path="/reset/:token" component={ResetPassword} />
