@@ -1,5 +1,5 @@
-# from django.apps import AppConfig
+from django.apps import AppConfig
 
 
-# class CalConfig(AppConfig):
-#     name = 'cal'
+class CalConfig(AppConfig):
+    name = 'cal'
