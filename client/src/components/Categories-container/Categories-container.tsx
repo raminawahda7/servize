@@ -37,12 +37,12 @@ const Categories = (props:any) => {
     if (userInStore !== undefined) {
         return (
             <div className="list">
-                {userInStore.map((user: any, index: any) =>
+                {/* {userInStore.map((user: any, index: any) =>
                     <CategoriesCard
                         key={index}
                         user={user}
                     />
-                )}
+                )} */}
             </div>
         )
     }
