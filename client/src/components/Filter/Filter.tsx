@@ -48,6 +48,9 @@ const Navbar = () => {
             <div>
                 Price
             </div>
+            <div>
+                Rating
+            </div>
         </div>
        
 
