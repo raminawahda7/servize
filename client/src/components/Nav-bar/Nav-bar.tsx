@@ -42,7 +42,7 @@ const Navbar = (props: any) => {
             .then((result: any) => {
                 console.log("axios", result.data)
                 // dispatch(store(result.data))
-                props.store(result.data)
+                props.store(true)
 
             })
             .catch((err: any) => {

@@ -1,5 +1,5 @@
 import { createStore, applyMiddleware, compose } from 'redux';
-import { persistStore } from 'redux-persist';
+// import { persistStore } from 'redux-persist';
 import { composeWithDevTools } from "redux-devtools-extension"
 import thunk from "redux-thunk";
 import logger from 'redux-logger';
@@ -20,6 +20,9 @@ const store = createStore(
     //     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
     )
 
-const persistor = persistStore(store);
+// const persistor = persistStore(store);
 
-export { store, persistor }
+// export { store, persistor }
+store.subscribe(() => console.log("state", store.getState()))
+console.log("in the store", store.getState())
+export default store

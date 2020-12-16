@@ -10,53 +10,61 @@ const Search = () => {
     const userInStore = useSelector((state: any) => state.user);
     const dispatch = useDispatch();
 
-    // const [cat, setCat] = useState(false);
-    // const [city, setCity] = useState(false);
+    const [category, setCategory] = useState("");
+    const [city, setCity] = useState("");
 
     const handleClick = () => {
-        axios.post(`http://localhost:8000/`,{})    // sending data
+        axios.post(`http://localhost:8000/`,      //url for sending the request ?
+            {
+                city: city,
+                category: category
+            })
 
             .then((result: any) => {
-                console.log("axios", result.data)
-                // dispatch(store(result.data))
+                console.log("axios", result)
+                // dispatch(store(result.data))  store the values in the redux store
+
+                // redirect to the provider page  path= '/provider'
 
             })
             .catch((err: any) => {
                 console.error("err===== =>", err);
             })
     }
+    // const handleChange = () => {
+
+    // }
+    console.log(category)
 
     return (
-       
-
 
         <div>
             <input type="text" placeholder="search.."></input>
 
-            <div className="dropdown">
+            <div className="cat dropdown">
                 {/* <button className="dropbtn" onClick={()=>{setCat(!cat)}}>Category</button> */}
-                <select className="dropdown-cat">
-                    <option>Cat 1</option>
-                    <option>Cat 2</option>
-                    <option>Cat 3</option>
+                <select className="dropdown-cat" onChange={(e) => { setCategory(e.target.value) }}>
+                    <option>Electrician</option>
+                    <option>Plumber</option>
+                    <option>Carpenter</option>
                 </select>
             </div>
 
-            <div className="dropdown">
+            <div className="city dropdown">
                 {/* <button className="dropbtn" onClick={()=>{setCity(!city)}}>City</button> */}
-                <select className="dropdown-city">
-                    <option>City 1</option>
-                    <option>City 2</option>
-                    <option>City 3</option>
-                    <option>City 4</option>
-                    <option>City 5</option>
-                    <option>City 6</option>
-                    
-                    
+                <select className="dropdown-city" onChange={(e) => { setCity(e.target.value) }}>
+                    <option>Ramallah</option>
+                    <option>Nablus</option>
+                    <option>Hebron</option>
+                    <option>Jenin</option>
+                    <option>Tulkarem</option>
+                    <option>Jericho</option>
+
+
                 </select>
             </div>
             <button onClick={handleClick}>Submit</button>
-            
+
         </div>
     )
 }
