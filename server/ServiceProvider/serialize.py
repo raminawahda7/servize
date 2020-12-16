@@ -23,11 +23,12 @@ from User.serialize import ProviderUserSerializer
 class  ServiceProviderSerializer(serializers.ModelSerializer):
     name = serializers.CharField(source='provider.name',read_only=True )
     users= ProviderUserSerializer(many=True, read_only=True)
+    catname= serializers.CharField(source='categoryId',read_only=True)
     # Categories=CategoryProviderSerializer(many=True, read_only=True)
     class Meta:
         model=ServiceProvider
         # fields=('provider','name','phone','city','role','picture','users','categoryId')
-        fields=('name','phone','city','picture','users')
+        fields=('name','phone','city','picture','users','catname')
 
 
 
