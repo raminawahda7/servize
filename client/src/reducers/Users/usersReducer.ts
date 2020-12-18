@@ -1,11 +1,10 @@
-import { STORE_USER, DispatchUserTypes } from '../../actions/actionTypes';
-// import {store} from '../../actions/Users/usersActions';
+import { User, STORE_USER, STORE_DATA, DispatchUserTypes } from '../../actions/actionTypes';
 
 export interface State {
-    user: any[] | any,
+    user: User |any,
     // prov: {name:string, description:string, img: string}
 }
-export const initState: State = { user: false }
+export const initState: State = { user: null }
 // const initState = {
 //     user: null,
 
@@ -18,9 +17,11 @@ export const initState: State = { user: false }
 const usersReducer = (state: State = initState, action: DispatchUserTypes): State => {
     switch (action.type) {
         case STORE_USER:
-            return { ...state, user: action.payload }
+            // return { ...state, user: action.payload }
             // return { ...state, user: [action.payload, ...state.user] }
-            // return { user:[...state.user, action.payload] }
+            return { ...state , user: action.payload }
+        case STORE_DATA:
+            return { ...state, user: action.payload }
         default:
             return state
     }
