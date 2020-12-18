@@ -15,7 +15,8 @@ export default function ProviderProf() {
             <div className="row">
                 <div className="profile-nav col-md-3">
                     <div className="panel">
-                        <div className="user-heading round">
+                        {/* <div className="user-heading round"> */}
+                        <div>
                             <a href="#">
                                 <img src="https://i.pinimg.com/236x/e0/10/33/e0103395bedca2f42a6dc1cddf5c557e.jpg" alt="img" className="img" />
                             </a>
@@ -64,6 +65,6 @@ export default function ProviderProf() {
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }

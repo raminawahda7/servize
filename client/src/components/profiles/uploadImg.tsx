@@ -53,20 +53,3 @@ export default function UploadImg() {
     );
 }
 
-// import React from "react";
-// import { useForm } from "react-hook-form";
-
-// export default function UploadImg() {
-//     const { register, handleSubmit } = useForm()
-
-//     const onSubmit = (data: any) => {
-//         console.log(data)
-//     }
-
-//     return (
-//         <form onSubmit={handleSubmit(onSubmit)}>
-//             <input ref={register} type="file" name="picture" />
-//             <button>Submit</button>
-//         </form>
-//     );
-// }
