@@ -6,7 +6,6 @@ import usersReducer, {State} from './Users/usersReducer';
 const persistConfig = {
     key: 'root',
     storage,
-    whitelist: ['user'],
     debug: true
 }
 

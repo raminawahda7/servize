@@ -1,10 +1,15 @@
 export const STORE_USER = 'STORE_USER';
-
+export const STORE_DATA = 'STORE_DATA';
 
 export interface Userstore {
     type: typeof STORE_USER,
     payload: User 
   
+}
+export interface Userdata {
+    type: typeof STORE_DATA,
+    payload: User
+
 }
 
 // export type Category={
@@ -23,4 +28,4 @@ export type User = UserIerface | null | string
 
 // export type Value = boolean
 
-export type DispatchUserTypes= Userstore;
+export type DispatchUserTypes = Userstore | Userdata;
