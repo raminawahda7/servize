@@ -16,7 +16,7 @@ const ProviderCard = ({ prov }: { prov: any }) => {
 
     return (
         <div className="card" style={{ display: "inline-block", width: "20%" }}>
-            <img src={prov.img} alt="Avatar" />
+            <img src={prov.picture} alt="Avatar" />
             <div className="container">
                 <h4><b>{prov.name}</b></h4>
                 {/* <p>Architect Engineer</p> */}

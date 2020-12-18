@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Signup from './components/Signup/Signup';
 import Login from './components/Login/Login';
 import Catagories from './components/catagories/Catagories';
@@ -17,6 +17,7 @@ import ProviderContainer from "./components/Provider-container/Provider-containe
 import Activate from './components/Activate';
 import StarRating from './components/rates/StarRate';
 import HomePage from "./pages/HomePage";
+import Map from './components/map/map';
 // import Categories from "./components/Categories-container/Categories-container";
 // import Main from "./components/Main-view/Main-view";
 // import Search from './components/search/Search';
@@ -26,8 +27,8 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-
-        <Navbar />
+        < Map />
+        {/* <Navbar /> */}
         {/* <Cataegories /> */}
         {/* <ProviderProf /> */}
         {/* <ProviderView /> */}
@@ -41,11 +42,11 @@ function App() {
 
         <Switch>
 
-          <Route exact path="/" component={HomePage} />
+          {/* <Route exact path="/" component={HomePage} /> */}
           {/* <Route exact path="/" component={Main} /> */}
-          {/* <Route path="/prov/signup" component={ProviderSignup} />
+          {/* <Route path="/prov/signup" component={ProviderSignup} /> */}
           <Route path="/user/signup" component={Signup} />
-          <Route path="/user/login" component={Login} /> */}
+          <Route path="/user/login" component={Login} />
           {/* <Route path="/providerProfile" exact component={() => < ProviderProf/>} /> */}
           <Route path="/provider" component={ProviderContainer} />
           <Route path="/auth/users/reset_password/" component={ForgotPassword} />
@@ -55,7 +56,7 @@ function App() {
 
         </Switch>
 
-        <Footer />
+        {/* <Footer /> */}
 
       </div>
     </BrowserRouter>
