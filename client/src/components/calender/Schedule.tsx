@@ -37,9 +37,9 @@ function Schedule() {
                 </ResourceDirective>
             </ResourcesDirective> */}
             <Inject services={[Day, Week, Month, DragAndDrop, Resize, TimelineViews]} />
-            <style lang="scss">
+            {/* <style lang="scss">
                 @import "ej2-vue-buttons/styles/material.scss";
-</style>
+</style> */}
         </ScheduleComponent>
     )
 }

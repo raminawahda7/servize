@@ -1,10 +1,27 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaStar } from 'react-icons/fa';
-import './StarRate.css'
+import './StarRate.css';
+
+import useAxios from 'axios-hooks'
 
 const StarRating = () => {
     const [rating, setRating] = useState<any | null>(null);
     const [hover, setHover] = useState<any | null>(null);
+
+    const [{ data, loading, error, response }, refetch] = useAxios({
+        method: 'POST',
+        url: `http://localhost:3000/auth/starrates`,
+    });
+    const [text, setText] = useState('');
+
+    useEffect(() => {
+        if (data && data.ad && data.ad.rates) {
+            setText(data.ad.rates);
+        } else if (error) {
+            setText(error.message);
+        }
+    }, [data, error]);
+
 
     return (
         <div>
@@ -26,6 +43,7 @@ const StarRating = () => {
                             onMouseEnter={() => setHover(ratingValue)}
                             onMouseLeave={() => setHover(null)}
                         />
+                        {loading && <p>loading</p>}
                     </label>
                 );
             })}
