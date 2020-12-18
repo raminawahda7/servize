@@ -1,4 +1,4 @@
-import { STORE_USER, DispatchUserTypes } from '../actionTypes';
+import { STORE_USER, STORE_DATA, DispatchUserTypes } from '../actionTypes';
 import { Dispatch } from "redux";
 import axios from "axios";
 
@@ -19,6 +19,10 @@ export const store = (username: string, email: string, password: string) => asyn
     catch(e){
         console.log("action error",e)
     }
+}
+export const add = (username: string, email: string) => (dispatch: Dispatch<DispatchUserTypes>) => {
+    // console.log(username, email, password )
+    dispatch({ type: STORE_DATA, payload: { username, email} })
 }
 // export const store = (z:any) => {
 //     return {
