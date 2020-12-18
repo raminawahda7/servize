@@ -1,15 +1,16 @@
 import React from 'react';
 import {BrowserRouter as Router, Switch, Route, } from 'react-router-dom';
+import {render} from 'react-dom';
 import Signup from './components/Signup/Signup';
 import Login from './components/Login/Login';
 import Catagories from './components/catagories/Catagories';
 import ProviderProf from './components/profiles/ProviderProf';
 import ProviderView from './components/profiles/ProviderView'
-import UserView from './components/profiles/UserView'
+import UserView from './components/profiles/UserView';
 import UserProf from './components/profiles/UserProf'
 // import './App.css';
 
-import ProviderSignup from './components/Provider-signup/Provider-signup'
+
 import Navbar from "./components/Nav-bar/Nav-bar";
 import Categories from "./components/Categories-container/Categories-container";
 import Footer from "./components/Footer/Footer";
@@ -28,12 +29,11 @@ function App() {
   return (
     <Router>
       <div className="App">
-
-        <Navbar />
+ 
         {/* <Navbar /> */}
         {/* <Search /> */}
         {/* <Catagories /> */}
-        {/* <ProviderProf /> */}
+        <ProviderProf />
         {/* <ProviderView /> */}
         {/* <UserView /> */}
         {/* <UserProf /> */}

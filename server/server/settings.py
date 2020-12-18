@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'rest_framework',         # add this
     
     # add name of applications here
-    'cal.apps.CalConfig',
+    # 'cal.apps.CalConfig',
     'Category',
     'ServiceProvider',
     'Location',
@@ -49,6 +49,9 @@ INSTALLED_APPS = [
     'User',
     'djoser',
     'accounts',
+    'calendarapp',
+    
+    
 
 
 ]

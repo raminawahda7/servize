@@ -22,5 +22,5 @@ urlpatterns = [
                                                                      #You have to setup PASSWORD_RESET_CONFIRM_URL.
 
     path('auth/users/reset_password_confirm/', include('djoser.urls')),   #Use this endpoint to finish reset password process
-    path('', include('cal.urls')),                                        # add urls for cal app
+    path('calender/', include('calendarapp.urls')),                                        # add urls for calender app
 ]

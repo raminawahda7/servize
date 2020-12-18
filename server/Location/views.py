@@ -11,3 +11,6 @@ class CityList(generics.ListCreateAPIView):
 # class AreaList(generics.ListCreateAPIView):
 #     queryset=Area.objects.all()
 #     serializer_class=AreaSerializer
+
+
+
