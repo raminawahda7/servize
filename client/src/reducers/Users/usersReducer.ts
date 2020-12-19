@@ -5,7 +5,7 @@ export interface State {
     user: any[] | any,
     // prov: {name:string, description:string, img: string}
 }
-export const initState: State = { user: [] }
+export const initState: State = { user: false }
 // const initState = {
 //     user: null,
 
@@ -19,6 +19,8 @@ const usersReducer = (state: State = initState, action: DispatchUserTypes): Stat
     switch (action.type) {
         case STORE_USER:
             return { ...state, user: action.payload }
+            // return { ...state, user: [action.payload, ...state.user] }
+            // return { user:[...state.user, action.payload] }
         default:
             return state
     }
