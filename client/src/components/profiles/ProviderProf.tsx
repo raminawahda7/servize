@@ -6,9 +6,10 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import RoomIcon from '@material-ui/icons/Room';
 import StarRating from '../rates/StarRate';
-import Calender from '../CalendarEvent/Calender';
+// import Calender from '../CalendarEvent/Calender';
 
 // import Context from '../utils/context';
+// import Schedule from './components/calender/Schedule';
 import './ProviderProf.css'
 
 import UploadImg from '../profiles/uploadImg';
@@ -223,7 +224,8 @@ export default function ProviderProf() {
                                         </div>
                                         <div className="bio-desk">
                                             <h4 className="purple"></h4>
-                                            <Calender/>
+                                            {/* <Calender/> */}
+                                            {/* <Schedule/> */}
                                         </div>
                                     </div>
                                 </div>

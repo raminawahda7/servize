@@ -34,4 +34,4 @@ yarn-error.log*
 
 #django
 pyvenv.cfg
-server/__pycache__/
+
