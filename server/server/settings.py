@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corsheaders',            # add this 
     'rest_framework',         # add this
-    
+    'django_filters',
+
     # add name of applications here
     'Category',
     'ServiceProvider',
