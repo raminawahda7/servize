@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 
+from django import django_heroku
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -25,7 +27,7 @@ SECRET_KEY = '!ju*wb_1y5dcdijc&u&_+mt80mz)jg01-^4_#j-+hm6wd_f7#6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["https://servize-web.herokuapp.com"]
 
 
 # Application definition
@@ -188,7 +190,9 @@ DJOSER = {
 
 
 
-
+STATIC_ROOT = Path(__file__, "staticfiles").resolve().parent.parent
 
 STATIC_URL = '/static/'
 AUTH_USER_MODEL = 'accounts.UserAccount'
+
+django_heroku.setting(locals())
