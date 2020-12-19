@@ -6,7 +6,7 @@ class User(models.Model):
     email = models.EmailField()
     image = models.CharField(max_length=256)
     phone =models.IntegerField(default=00000)
-    UserAccount = models.OneToOneField(UserAccount,unique=True,on_delete=models.CASCADE)
+    UserAccount = models.ForeignKey(UserAccount,on_delete=models.CASCADE)
    
    
    
