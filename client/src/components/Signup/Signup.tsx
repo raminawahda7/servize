@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { appendErrors, useForm } from 'react-hook-form';
+import { store } from '../../actions/Users/usersActions';
+import { connect } from 'react-redux'
+import { State } from '../../reducers/Users/usersReducer'
 import { Link } from 'react-router-dom';
 // import './Signup.css';
 
@@ -12,7 +15,7 @@ interface FormData {
     phone: number;
     password: string;
 }
-const Signup = () => {
+const Signup = (props:any) => {
 
 
     // const openForm= () =>{
@@ -34,23 +37,24 @@ const Signup = () => {
         <div id="signup" className="center styled">
             <form id="signup-form"
                 onSubmit={handleSubmit((formData) => {
-                    console.log(formData)
-                  
-                    axios.post(`http://localhost:8000/auth/users/`, {
-                        name: formData.username,
-                        email: formData.email,
-                        password: formData.password,
+                    
+                    props.store(formData.username, formData.email, formData.password);
+                    console.log(props)
+                    // axios.post(`http://localhost:8000/auth/users/`, {
+                    //     name: formData.username,
+                    //     email: formData.email,
+                    //     password: formData.password,
                        
-                    })
+                    // })
 
-                        .then((result: any) => {
-                            console.log(result)
-                            window.location.href="/user/login" 
+                    //     .then((result: any) => {
+                    //         console.log(result)
+                    //         window.location.href="/user/login" 
 
-                        })
-                        .catch((err: any) => {
-                            console.error("err===== =>", err);
-                        })
+                    //     })
+                    //     .catch((err: any) => {
+                    //         console.error("err===== =>", err);
+                    //     })
                 })}
             >
                 <h1>Sign Up</h1>
@@ -88,5 +92,11 @@ const Signup = () => {
     );
 }
 
-export default Signup;
+const mapStateToProps = (state: State) => ({
+    user: state.user,
+})
+
+const mapDispatchToProps = { store }
+
+export default connect(mapStateToProps, mapDispatchToProps)(Signup);
 

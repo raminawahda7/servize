@@ -2,17 +2,17 @@ import { combineReducers } from 'redux';
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import usersReducer, {State} from './Users/usersReducer';
+import providersReducer from './Providers/providersReducer';
 
 const persistConfig = {
     key: 'root',
     storage,
-    whitelist: [],
-    blacklist: [],
     debug: true
 }
 
-const rootReducer = combineReducers<State>({
+const rootReducer = combineReducers({
     user: usersReducer,
+    providers: providersReducer,
 
 });
 // const rootReducer = usersReducer;
