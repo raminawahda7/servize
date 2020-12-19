@@ -34,7 +34,7 @@ function App() {
     <BrowserRouter>
       <div className="App">
         {/* < Map /> */}
-        {/* <Navbar /> */}
+        <Navbar />
         {/* <Cataegories /> */}
         {/* <ProviderProf /> */}
         {/* <ProviderView /> */}
@@ -62,6 +62,7 @@ function App() {
           <Route exact path='/password/reset/confirm/:uid/:token' component={ResetPasswordConfirm} />
           {/* <Route path="/activate/:uid/:token" component={Activate} /> */}
           <Route path="/profiles/provider" component={ProviderProf} />
+          {/* <Route path="/profiles/provider" component={Schedule} /> */}
           <Route path="/profiles/providerview" component={ProviderView} />
           <Route path="/profiles/user" component={UserProf} />
           <Route path="/profiles/userview" component={UserView} />
@@ -69,7 +70,7 @@ function App() {
 
         </Switch>
 
-        {/* <Footer /> */}
+        <Footer />
 
       </div>
     </BrowserRouter>
