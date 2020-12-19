@@ -2,6 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": false,
+  "main": "./../server/manage.py",
   "author": "Fire Starters RBK PLUS",
   "homepage": "https://raptors-hotels.herokuapp.com/",
   "license": "MIT License",

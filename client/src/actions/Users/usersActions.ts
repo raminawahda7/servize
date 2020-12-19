@@ -24,9 +24,4 @@ export const add = (username: string, email: string) => (dispatch: Dispatch<Disp
     // console.log(username, email, password )
     dispatch({ type: STORE_DATA, payload: { username, email} })
 }
-// export const store = (z:any) => {
-//     return {
-//         type: actionTypes.STORE_USER,
-//         payload: z
-//     }
-// }
+
