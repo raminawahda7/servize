@@ -10,6 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
+import os
+
 from pathlib import Path
 
 from django import django_heroku
@@ -27,7 +29,7 @@ SECRET_KEY = '!ju*wb_1y5dcdijc&u&_+mt80mz)jg01-^4_#j-+hm6wd_f7#6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["https://servize-web.herokuapp.com"]
+ALLOWED_HOSTS = ["https://servize-web.herokuapp.com", "127.0.0.1"]
 
 
 # Application definition
@@ -190,7 +192,8 @@ DJOSER = {
 
 
 
-STATIC_ROOT = Path(__file__, "staticfiles").resolve().parent.parent
+# STATIC_ROOT = Path(__file__, "staticfiles").resolve().parent.parent
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 STATIC_URL = '/static/'
 AUTH_USER_MODEL = 'accounts.UserAccount'
