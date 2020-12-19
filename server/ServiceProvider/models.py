@@ -14,6 +14,10 @@ class ServiceProvider(models.Model):
         return self.provider.name
 
 
+class CategoryProvider(models.Model):
+    serviceProvider = models.ForeignKey(ServiceProvider, on_delete=models.CASCADE,related_name='Categories')
+    def __str__(self):
+        return self
 # class CategoryProvider(models.Model):
 #     categoryId = models.ForeignKey(Category, on_delete=models.CASCADE,default=1,related_name='providers')
 #     serviceProviderId = models.ForeignKey(ServiceProvider, on_delete=models.CASCADE,related_name='Categories')
