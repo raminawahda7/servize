@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Form from 'react-bootstrap/Form'
 import InstagramIcon from '@material-ui/icons/Instagram';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
@@ -7,8 +8,10 @@ import RoomIcon from '@material-ui/icons/Room';
 // import Context from '../utils/context';
 import './ProviderProf.css'
 
+import UploadImg from '../profiles/uploadImg';
+import StarRating from '../rates/StarRate';
 
-export default function ProviderView() {
+export default function ProviderProf() {
     // const context = useContext(Context)
 
     // const Profile = (props) => {
@@ -17,38 +20,14 @@ export default function ProviderView() {
             <div className="row">
                 <div className="profile-nav col-md-3">
                     <div className="panel">
-                        <div className="user-heading round">
-                            <a href="#">
-                                <img src="https://i.pinimg.com/236x/4d/25/5f/4d255fadc15c380d8b03c7ef25a4c97b.jpg" alt="img" className="img" />
-                            </a>
-                            <h1>Name</h1>
-                        </div>
-
-                        <div className="panel-body bio-graph-info">
-                            <h1>Deatils</h1>
-                            <div className="row">
-                                <div className="bio-row">
-                                    <p><span>Name</span></p>
-                                </div>
-                                <div className="bio-row">
-                                    <span>Email </span>
-                                </div>
-                                <div className="bio-row">
-                                    <span>Occupation </span>
-                                </div>
-                                <div className="bio-row">
-                                    <span>City </span>
-                                </div>
-                                <div className="bio-row">
-                                    <span>Area </span>
-                                </div>
-                                <div className="bio-row">
-                                    <span>Phone </span>
-                                </div>
-                            </div>
-                        </div>
+                        {/* <div className="user-heading round"> */}
+                        <a href="#">
+                            <img src="https://i.pinimg.com/236x/4d/25/5f/4d255fadc15c380d8b03c7ef25a4c97b.jpg" alt="img" className="img" />
+                        </a>
+                        <h1>Name</h1>
+                        {/* </div> */}
                         <div>
-                            <ul className="nav nav-pills">
+                            <br></br><ul className="nav nav-pills">
                                 <li>
                                     <a href="https://www.google.com/maps/search/?api=1"><RoomIcon style={{ color: "blue", fontSize: "x-large" }} stroke={"blue"} stroke-width={1} /></a>
                                 </li>
@@ -61,15 +40,144 @@ export default function ProviderView() {
                                 <li>
                                     <a href="https://www.twitter.com/" ><TwitterIcon style={{ color: "blue", fontSize: "x-large" }} stroke={"blue"} stroke-width={1} /></a>
                                 </li>
-                            </ul>
+                            </ul> <br></br>
+                            <div><StarRating /></div>
                         </div>
-                        <div className="bio-desk">
-                            <h4 className="purple"></h4>
-                            <p>Started : </p>
+
+                    </div>
+                </div>
+                <div className="profile-info col-md-9">
+                    <div className="panel">
+                    </div>
+                    <div className="panel">
+                        <div className="bio-graph-heading">
+                            Helllllllllo
+                    </div>
+                    </div><br></br>
+                    <br></br><div className="panel-body bio-graph-info"><br></br>
+                        <h1>Deatils</h1>
+                        <div className="row">
+                            <div className="bio-row">
+                                <p><span>Name</span></p>
+                            </div>
+                            <div className="bio-row">
+                                <span>Email </span>
+                            </div><br></br>
+                            <div className="bio-row">
+                                <span>Occupation </span>
+                            </div><br></br>
+                            <div className="bio-row">
+                                <span>City </span>
+                            </div><br></br>
+                            <br></br><div className="bio-row">
+                                <span>Phone </span>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div className="bio-desk">
+                        <h4 className="red"></h4>
+                        <p>Started : 15 July</p>
+                    </div>
+                    <div>
+                        <div className="row">
+                            <div className="col-md-6">
+                                <div className="panel">
+                                    <div className="panel-body">
+                                        <div className="bio-chart">
+                                            {/* <div style={{ display: "inline", width: "20rem", height: "20rem" }}>
+                                                <canvas width="100"
+                                                height="100px"></canvas><input className="knob" data-width="100"
+                                                    data-height="100" data-displayprevious="true" data-thickness=".2" value="35"
+                                                    data-fgcolor="#e06b7d" data-bgcolor="#e8e8e8" />
+                                            </div> */}
+                                        </div>
+                                        {/* <div className="bio-desk">
+                                            <h4 className="red"></h4>
+                                            <p>Started : 15 July</p>
+                                            <p></p>
+                                        </div> */}
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-md-6">
+                                <div className="panel">
+                                    <div className="panel-body">
+                                        <div className="bio-chart">
+                                            {/* <div style={{ display: "inline", width: "20rem", height: "20rem" }}><canvas width="100"
+                                                height="100px"></canvas><input className="knob" data-width="100"
+                                                    data-height="100" data-displayprevious="true" data-thickness=".2" value="63"
+                                                    data-fgcolor="#4CC5CD" data-bgcolor="#e8e8e8" />
+                                            </div> */}
+                                        </div>
+                                        {/* <div className="bio-desk">
+                                            <h4 className="terques"> </h4>
+                                            <Form>
+                                                <Form.Group>
+                                                    <div><UploadImg /></div>
+                                                    <Form.File id="exampleFormControlFile1" label="Example file input" />
+                                                </Form.Group>
+                                            </Form>
+                                        </div> */}
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-md-6">
+                                <div className="panel">
+                                    <div className="panel-body">
+                                        <div className="bio-chart">
+                                            {/* <div style={{ display: "inline", width: "20rem", height: "20rem" }}><canvas width="100"
+                                                height="100px"></canvas><input className="knob" data-width="100"
+                                                    data-height="100" data-displayprevious="true" data-thickness=".2" value="75"
+                                                    data-fgcolor="#96be4b" data-bgcolor="#e8e8e8" />
+                                            </div> */}
+                                        </div>
+                                        <div className="bio-desk">
+                                            <h4 className="green"></h4>
+                                            {/* <p>Started : 15 July</p>
+                                            <p>Deadline : 15 August</p> */}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-md-6">
+                                <div className="panel">
+                                    <div className="panel-body">
+                                        <div className="bio-chart">
+                                            {/* <div style={{ display: "inline", width: "20rem", height: "20rem" }}><canvas width="100"
+                                                height="100px"></canvas><input className="knob" data-width="100"
+                                                    data-height="100" data-displayprevious="true" data-thickness=".2" value="50"
+                                                    data-fgcolor="#cba4db" data-bgcolor="#e8e8e8" />
+                                            </div> */}
+                                        </div>
+                                        <div className="bio-desk">
+                                            <h4 className="purple"></h4>
+                                            {/* <p>Started : 15 July</p>
+                                            <p>Deadline : 15 August</p> */}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div >
+        </div>
     )
-}    
+}
+
+
+// {/* <h1>{props.profile.profile.nickname}</h1>
+// <br />
+// <img src={props.profile.profile.picture} alt="" />
+// <br />
+// <h4> {props.profile.profile.email}</h4>
+// <br />
+// <h5> {props.profile.profile.name} </h5>
+// <br />
+// <h6> Email Verified: </h6>
+// {props.profile.profile.email_verified ? <p>Yes</p> : <p>No</p>}
+// <br /> */}
+
+
+// export default Profile;

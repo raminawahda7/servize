@@ -2,9 +2,6 @@ import React, { useState } from 'react';
 import { appendErrors, useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBInput } from 'mdbreact';
-import '../Provider-container/Provider-card/node_modules/@fortawesome/fontawesome-free/css/all.min.css';
-import '../Provider-container/Provider-card/node_modules/bootstrap-css-only/css/bootstrap.min.css';
-import '../Provider-container/Provider-card/node_modules/mdbreact/dist/css/mdb.css';
 const axios = require('axios');
 
 interface FormData {
