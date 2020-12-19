@@ -15,10 +15,9 @@ class CityList(generics.ListCreateAPIView):
 #     serializer_class=AreaSerializer
 
 @api_view(['POST'])
-def CatLoc(request):
+def ProvLoc(request):
     city = City.objects.all().filter(name=request.data['name'])
-    
-    # cat=city.objects.all().filter(catname=city.serviceproviders['catename'])
     seralizer = CitySerializer(city,many=True)
+
     return Response (seralizer.data)
-# {"name":"Nablus","catename":"Electricians"}
+# {"name":"Nablus","categories":"Electricians"}
