@@ -33,7 +33,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        < Map />
+        {/* < Map /> */}
         {/* <Navbar /> */}
         {/* <Cataegories /> */}
         {/* <ProviderProf /> */}
@@ -50,7 +50,7 @@ function App() {
 
         <Switch>
 
-          {/* <Route exact path="/" component={HomePage} /> */}
+          <Route exact path="/" component={HomePage} />
           {/* <Route exact path="/" component={Main} /> */}
           {/* <Route path="/prov/signup" component={ProviderSignup} /> */}
           <Route path="/user/signup" component={Signup} />
