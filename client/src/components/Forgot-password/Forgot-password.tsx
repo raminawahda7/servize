@@ -16,7 +16,7 @@ const ForgotPassword = () => {
         let input = $('#forgot-form').serializeArray();
         // console.log(input[0].value);
         // const [email, setEmail] = useState("")
-        dispatch(store(input))
+        // dispatch(store(input))
         // setEmail("");
 
         let options = {
