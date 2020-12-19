@@ -6,6 +6,7 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import RoomIcon from '@material-ui/icons/Room';
 // import Context from '../utils/context';
+import Schedule from '../components/calender/Schedule';
 import './ProviderProf.css'
 
 import UploadImg from '../profiles/uploadImg';
