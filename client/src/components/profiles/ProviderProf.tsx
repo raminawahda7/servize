@@ -10,6 +10,7 @@ import './ProviderProf.css'
 
 import UploadImg from '../profiles/uploadImg';
 import StarRating from '../rates/StarRate';
+// import Schedule from '../components/calender/Schedule'
 
 import { Link, Redirect } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
@@ -68,6 +69,7 @@ export default function ProviderProf() {
                     <div className="panel">
                         {/* <div className="user-heading round"> */}
                         <div>
+                            {/* <Schedule /> */}
                             <a href="#">
                                 <img src="https://i.pinimg.com/236x/4d/25/5f/4d255fadc15c380d8b03c7ef25a4c97b.jpg" alt="img" className="img" />
                             </a>

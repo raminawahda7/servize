@@ -46,7 +46,7 @@ function App() {
         {/* <ProviderSignup />  */}
         {/* <Search /> */}
         {/* <Calendar /> */}
-        <Schedule />
+        {/* <Schedule /> */}
 
         <Switch>
 
