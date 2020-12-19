@@ -26,10 +26,7 @@ class UserAccount(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(max_length=255, unique=True)
     name = models.CharField(max_length=255)
     is_active = models.BooleanField(default=True)
-<<<<<<< HEAD
-=======
     is_serviceProvider = models.BooleanField(default=False)
->>>>>>> 76375ae9a8ba3168310b94373e8c0c443eeca22a
     is_staff = models.BooleanField(default=False)
 
     objects = UserAccountManager()

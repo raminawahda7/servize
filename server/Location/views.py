@@ -14,10 +14,6 @@ class CityList(generics.ListCreateAPIView):
 #     queryset=Area.objects.all()
 #     serializer_class=AreaSerializer
 
-<<<<<<< HEAD
-
-
-=======
 @api_view(['POST'])
 def ProvLoc(request):
     city = City.objects.all().filter(name=request.data['name'])
@@ -25,4 +21,3 @@ def ProvLoc(request):
 
     return Response (seralizer.data)
 # {"name":"Nablus","categories":"Electricians"}
->>>>>>> 76375ae9a8ba3168310b94373e8c0c443eeca22a
