@@ -15,12 +15,18 @@ import ResetPassword from "./components/Reset-password/Reset-password";
 import ResetPasswordConfirm from "./components/Reset-password/Reset-password-confirm"
 import ProviderContainer from "./components/Provider-container/Provider-container";
 import Activate from './components/Activate';
+// import Search from './components/search/Search';
+
+import Calendar from './components/calender/Calender';
+import Schedule from './components/calender/Schedule'
+
+
+import './App.css';
 import StarRating from './components/rates/StarRate';
 import HomePage from "./pages/HomePage";
 import Map from './components/map/map';
 // import Categories from "./components/Categories-container/Categories-container";
 // import Main from "./components/Main-view/Main-view";
-// import Search from './components/search/Search';
 // import './App.css';
 
 function App() {
@@ -39,6 +45,8 @@ function App() {
         <Signup /> */}
         {/* <ProviderSignup />  */}
         {/* <Search /> */}
+        {/* <Calendar /> */}
+        <Schedule />
 
         <Switch>
 
@@ -53,6 +61,11 @@ function App() {
           <Route path="/reset/:token" component={ResetPassword} />
           <Route exact path='/password/reset/confirm/:uid/:token' component={ResetPasswordConfirm} />
           {/* <Route path="/activate/:uid/:token" component={Activate} /> */}
+          <Route path="/profiles/provider" component={ProviderProf} />
+          <Route path="/profiles/providerview" component={ProviderView} />
+          <Route path="/profiles/user" component={UserProf} />
+          <Route path="/profiles/userview" component={UserView} />
+
 
         </Switch>
 
