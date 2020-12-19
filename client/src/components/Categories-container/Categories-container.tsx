@@ -2,7 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { store } from '../../actions/Users/usersActions';
+import { connect } from 'react-redux'
 import CategoriesCard from "./Categories-card";
+import { State} from '../../reducers/Users/usersReducer'
+
 // import '@fortawesome/fontawesome-free/css/all.min.css';
 // import 'bootstrap-css-only/css/bootstrap.min.css';
 // import 'mdbreact/dist/css/mdb.css';
@@ -12,10 +15,12 @@ const $ = require('jquery');
 
 
 
-const Categories = () => {
-    const userInStore = useSelector((state: any) => state.user);
-    const dispatch = useDispatch();
-    console.log("store ===> ", userInStore)
+const Categories = (props:any) => {
+    // const userInStore = useSelector((state: any) => state.user);
+    // const dispatch = useDispatch();
+    const userInStore = props.user.user;
+    // console.log("store ===> ", userInStore)
+    console.log("store ===> ", props.user.user)
     // axios.get(`http://localhost:8000/category/`)
 
     //     .then((result: any) => {
@@ -32,12 +37,12 @@ const Categories = () => {
     if (userInStore !== undefined) {
         return (
             <div className="list">
-                {userInStore.map((user: any, index: any) =>
+                {/* {userInStore.map((user: any, index: any) =>
                     <CategoriesCard
                         key={index}
                         user={user}
                     />
-                )}
+                )} */}
             </div>
         )
     }
@@ -123,4 +128,10 @@ const Categories = () => {
     // );
 }
 
-export default Categories;
+const mapStateToProps = (state: State) => ({
+    user: state.user,
+})
+
+const mapDispatchToProps = { store }
+
+export default connect(mapStateToProps, mapDispatchToProps)(Categories);

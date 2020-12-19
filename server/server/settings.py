@@ -10,7 +10,11 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
+import os
+
 from pathlib import Path
+
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +29,7 @@ SECRET_KEY = '!ju*wb_1y5dcdijc&u&_+mt80mz)jg01-^4_#j-+hm6wd_f7#6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["servize-web.herokuapp.com", "127.0.0.1"]
 
 
 # Application definition
@@ -39,11 +43,16 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corsheaders',            # add this 
     'rest_framework',         # add this
-    
+    'django_filters',
+
     # add name of applications here
     'Category',
     'ServiceProvider',
+<<<<<<< HEAD
      'Location',
+=======
+    'Location',
+>>>>>>> da31cd6b6289b694fd41ee2a858fa70301b3ad7e
     'Reviews',
     # 'cal'
     'User',
@@ -97,7 +106,11 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'servizeDB', 
         'USER': 'postgres', 
+<<<<<<< HEAD
         'PASSWORD': '12345',
+=======
+        'PASSWORD': 'student',
+>>>>>>> da31cd6b6289b694fd41ee2a858fa70301b3ad7e
         'HOST': 'localhost', 
         'PORT': '5432',
     }
@@ -188,7 +201,10 @@ DJOSER = {
 
 
 
-
+# STATIC_ROOT = Path(__file__, "staticfiles").resolve().parent.parent
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 STATIC_URL = '/static/'
 AUTH_USER_MODEL = 'accounts.UserAccount'
+
+django_heroku.settings(locals())

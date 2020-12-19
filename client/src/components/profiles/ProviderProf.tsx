@@ -5,6 +5,7 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import RoomIcon from '@material-ui/icons/Room';
+import StarRating from '../rates/StarRate';
 // import Context from '../utils/context';
 import './ProviderProf.css'
 
