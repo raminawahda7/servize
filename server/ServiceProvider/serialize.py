@@ -27,7 +27,7 @@ class  ServiceProviderSerializer(serializers.ModelSerializer):
     catname = serializers.CharField(source='categoryId',read_only=True )
     class Meta:
         model=ServiceProvider
-        fields=('provider','name','phone','city','role','picture','users','catname')
+        fields=('provider','name','phone','city','role','picture','users','catname','categoryId')
         # fields=('name','phone','city','picture','users','categoryId')
 
 
