@@ -5,7 +5,7 @@ import Login from './components/Login/Login';
 import Catagories from './components/catagories/Catagories';
 import ProviderProf from './components/profiles/ProviderProf';
 import ProviderView from './components/profiles/ProviderView'
-import UserView from './components/profiles/UserView'
+import UserView from './components/profiles/UserView';
 import UserProf from './components/profiles/UserProf'
 import ProviderSignup from './components/Provider-signup/Provider-signup'
 import Navbar from "./components/Nav-bar/Nav-bar";
