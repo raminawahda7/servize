@@ -43,8 +43,7 @@ INSTALLED_APPS = [
     # add name of applications here
     'Category',
     'ServiceProvider',
-    'SubCategory',
-    'Location',
+     'Location',
     'Reviews',
     # 'cal'
     'User',
@@ -98,7 +97,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'servizeDB', 
         'USER': 'postgres', 
-        'PASSWORD': 'rami871995',
+        'PASSWORD': '12345',
         'HOST': 'localhost', 
         'PORT': '5432',
     }
