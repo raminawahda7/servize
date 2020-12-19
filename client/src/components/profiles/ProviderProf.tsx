@@ -5,11 +5,15 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import RoomIcon from '@material-ui/icons/Room';
+import StarRating from '../rates/StarRate';
+// import Calender from '../CalendarEvent/Calender';
+
 // import Context from '../utils/context';
+// import Schedule from './components/calender/Schedule';
 import './ProviderProf.css'
 
 import UploadImg from '../profiles/uploadImg';
-import StarRating from '../rates/StarRate';
+
 
 import { Link, Redirect } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
@@ -203,8 +207,7 @@ export default function ProviderProf() {
                                         </div>
                                         <div className="bio-desk">
                                             <h4 className="green"></h4>
-                                            {/* <p>Started : 15 July</p>
-                                            <p>Deadline : 15 August</p> */}
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -221,8 +224,8 @@ export default function ProviderProf() {
                                         </div>
                                         <div className="bio-desk">
                                             <h4 className="purple"></h4>
-                                            {/* <p>Started : 15 July</p>
-                                            <p>Deadline : 15 August</p> */}
+                                            {/* <Calender/> */}
+                                            {/* <Schedule/> */}
                                         </div>
                                     </div>
                                 </div>

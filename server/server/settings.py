@@ -46,14 +46,17 @@ INSTALLED_APPS = [
     'django_filters',
 
     # add name of applications here
+    # 'cal.apps.CalConfig',
     'Category',
     'ServiceProvider',
     'Location',
     'Reviews',
-    # 'cal'
     'User',
     'djoser',
     'accounts',
+    # 'calendarapp',
+    
+    
 
 
 ]
