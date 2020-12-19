@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { GoogleMap, LoadScript, Marker, InfoWindow  } from '@react-google-maps/api';
 import { useSelector, useDispatch } from 'react-redux';
-require('dotenv').config();
+require('dotenv').config({ path: __dirname + '/./../../../.env' });
 
 const Map = () => {
     const API_KEY : any = process.env.GOOGLE_MAPS_API
@@ -60,7 +60,7 @@ const Map = () => {
 
     return (
         <LoadScript
-            googleMapsApiKey="AIzaSyDxGtz9Bm2e0RnLmrmiis4ivnnqisE2OJo">
+            googleMapsApiKey="">
             <GoogleMap mapContainerStyle={mapStyles} zoom={13} center={ defaultCenter}>
                 {/* <Marker position ={currentPosition}/> */}
                 {/* {

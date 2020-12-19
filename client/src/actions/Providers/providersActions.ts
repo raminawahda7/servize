@@ -1,4 +1,4 @@
-import { STORE_USER, STORE_DATA, DispatchUserTypes } from '../actionTypes';
+import { GET_PROV, DispatchProvTypes } from '../actionTypes';
 import { Dispatch } from "redux";
 import axios from "axios";
 
@@ -20,8 +20,8 @@ import axios from "axios";
 //         console.log("action error", e)
 //     }
 // }
-export const getProv = (username: string, email: string) => (dispatch: Dispatch<DispatchUserTypes>) => {
+export const getProv = (city: string, providers: object) => (dispatch: Dispatch<DispatchProvTypes>) => {
     // console.log(username, email, password )
-    dispatch({ type: STORE_DATA, payload: { username, email } })
+    dispatch({ type: GET_PROV, payload: { city, providers } })
 }
 

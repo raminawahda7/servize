@@ -1,12 +1,12 @@
-import { GET_PROV} from '../../actions/actionTypes';
+import { AllProv, GET_PROV, DispatchProvTypes} from '../../actions/actionTypes';
 
 export interface State {
-    providers:  | any,
+    providers: AllProv | any,
     // prov: {name:string, description:string, img: string}
 }
 export const initState: State = { providers: null }
-/
-const providersReducer = (state: State = initState, action: DispatchUserTypes): State => {
+
+const providersReducer = (state: State = initState, action: DispatchProvTypes): State => {
     switch (action.type) {
         case GET_PROV:
             // return { ...state, user: action.payload }

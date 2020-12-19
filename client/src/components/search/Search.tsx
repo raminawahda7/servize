@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { store } from '../../actions/Users/usersActions';
+import { getProv } from '../../actions/Providers/providersActions';
 import ProviderContainer from "../Provider-container/Provider-container";
 import './Search.css';
 const axios = require('axios');
@@ -33,7 +33,7 @@ const Search = () => {
 
                 .then((result: any) => {
                     console.log("axios", result.data)
-                    // dispatch(store(result.data))  store the values in the redux store
+                    dispatch(getProv(result.data[0].name, result.data[0].serviceProviders))  
                     // setResults(result.data)
                     // redirect to the provider page  path= '/provider'
 

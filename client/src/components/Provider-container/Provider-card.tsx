@@ -20,7 +20,7 @@ const ProviderCard = ({ prov }: { prov: any }) => {
             <div className="container">
                 <h4><b>{prov.name}</b></h4>
                 {/* <p>Architect Engineer</p> */}
-                <button onClick={handleClick}>Learn More</button>
+                <button onClick={handleClick}>Learn More {prov.catname}</button>
             </div>
         </div>
 
