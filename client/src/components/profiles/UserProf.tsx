@@ -8,8 +8,45 @@ import RoomIcon from '@material-ui/icons/Room';
 // import Context from '../utils/context';
 import './ProviderProf.css'
 
+import { Link, Redirect } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { store } from '../../actions/Users/usersActions';
+const axios = require('axios');
+const $ = require('jquery');
+
 
 export default function ProviderProf() {
+    const userInStore = useSelector((state: any) => state.user);
+    const dispatch = useDispatch();
+    const handleClick = (e: any) => {
+        e.preventDefault();
+
+        let options = {
+            url: `http://localhost:8000/user/`,
+            method: 'get',
+        }
+
+        axios(options)
+            .then((results: any) => {
+                console.log("axios", results.data);
+                dispatch(store(results.data))
+
+            })
+            .catch((err: any) => {
+                console.error("err===== =>", err);
+            })
+    }
+    // .then(response => response.json())
+    //         .then(data => {
+    //             let resultObject={}
+    //             data.map(element=>{
+    //                 if(element.provider){
+    //                     resultObject[element.providerId]={
+    //                         image:element.provider.image,
+    //                         name:element.name
+    //                     }
+
+
     return (
         <div className="container bootstrap snippets bootdey">
             <div className="row">
