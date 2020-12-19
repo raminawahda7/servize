@@ -34,7 +34,7 @@ function App() {
     <BrowserRouter>
       <div className="App">
         {/* < Map /> */}
-        <Navbar />
+        {/* <Navbar /> */}
         {/* <Cataegories /> */}
         {/* <ProviderProf /> */}
         {/* <ProviderView /> */}
