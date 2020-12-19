@@ -1,5 +1,5 @@
 # from django.contrib import admin
-# from Location.models import City
+# from cal.models import Event
 
 # # Register your models here.
-# admin.site.register(cal)
+# admin.site.register(Event)
