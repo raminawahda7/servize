@@ -1,5 +1,6 @@
 export const STORE_USER = 'STORE_USER';
 export const STORE_DATA = 'STORE_DATA';
+export const GET_PROV = 'GET_PROV';
 
 export interface Userstore {
     type: typeof STORE_USER,
