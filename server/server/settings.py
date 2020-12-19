@@ -46,14 +46,17 @@ INSTALLED_APPS = [
     'django_filters',
 
     # add name of applications here
+    # 'cal.apps.CalConfig',
     'Category',
     'ServiceProvider',
     'Location',
     'Reviews',
-    # 'cal'
     'User',
     'djoser',
     'accounts',
+    # 'calendarapp',
+    
+    
 
 
 ]
@@ -102,7 +105,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'servizeDB', 
         'USER': 'postgres', 
-        'PASSWORD': '12345',
+        'PASSWORD': 'student',
         'HOST': 'localhost', 
         'PORT': '5432',
     }
