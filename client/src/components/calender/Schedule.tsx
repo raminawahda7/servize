@@ -23,14 +23,14 @@ function Schedule() {
     // const groupData = {
     //     resources: ['Resources']
     // };
-    // const remoteData = new DataManager({
-    //     url: 'https://js.syncfusion.com/demos/ejservices/api/Schedule/LoadData',
-    //     adaptor: new WebApiAdaptor,
-    //     crossDomain: true
-    // });
+    const remoteData = new DataManager({
+        url: 'https://js.syncfusion.com/demos/ejservices/api/Schedule/LoadData',
+        adaptor: new WebApiAdaptor,
+        crossDomain: true
+    });
 
     return (
-        <ScheduleComponent height='550px' currentView='Month' selectedDate={new Date(2019, 0, 11)} eventSettings={localData} >
+        <ScheduleComponent height='400px' width='800' currentView='Month' selectedDate={new Date(2019, 0, 11)} eventSettings={localData} >
             {/* <ResourcesDirective>
                 <ResourceDirective field='ResourceID' title='ResourceName' name="Resources">
 
