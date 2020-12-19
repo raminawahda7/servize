@@ -10,6 +10,22 @@ const StarRating = () => {
     const [rating, setRating] = useState<any | null>(null);
     const [hover, setHover] = useState<any | null>(null);
 
+    const handleclick = (ratingValue: any) => {
+        setRating(ratingValue)
+        axios.post(`http://localhost:8000/reviews/`, {
+            "stars": null,
+            "user": null,
+            "servicProvider": null
+        })
+            .then((results: any) => {
+                console.log("axios", results);
+                // dispatch(store(results.data))
+
+            })
+            .catch((err: any) => {
+                console.error("err===== =>", err);
+            })
+    }
     // const [{ data, loading, error, response }, refetch] = useAxios({
     //     method: 'POST',
     //     url: `http://localhost:8000/reviews/`,
@@ -38,7 +54,7 @@ const StarRating = () => {
                             type="radio"
                             name="rating"
                             value={ratingValue}
-                            onClick={() => setRating(ratingValue)}
+                            onClick={() => handleclick(ratingValue)}
                         />
                         <FaStar
                             className='star'
