@@ -5,7 +5,7 @@ import Categories from "../components/Categories-container/Categories-container"
 require('dotenv').config();
 
 const HomePage = () => {
-    console.log(process.env.api)
+    console.log("adsadasd",process.env.API)
     return ( 
         <div>
             <Main />

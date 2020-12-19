@@ -18,5 +18,6 @@ class CityList(generics.ListCreateAPIView):
 def ProvLoc(request):
     city = City.objects.all().filter(name=request.data['name'])
     seralizer = CitySerializer(city,many=True)
+
     return Response (seralizer.data)
 # {"name":"Nablus","categories":"Electricians"}
