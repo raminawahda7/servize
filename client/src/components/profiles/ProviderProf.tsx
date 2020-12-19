@@ -11,10 +11,55 @@ import './ProviderProf.css'
 import UploadImg from '../profiles/uploadImg';
 import StarRating from '../rates/StarRate';
 
-export default function ProviderProf() {
-    // const context = useContext(Context)
+import { Link, Redirect } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { store } from '../../actions/Users/usersActions';
+const axios = require('axios');
+const $ = require('jquery');
 
-    // const Profile = (props) => {
+export default function ProviderProf() {
+
+    const userInStore = useSelector((state: any) => state.user);
+    const dispatch = useDispatch();
+    // const handleClick = (e: any) => {
+    //     e.preventDefault();
+    axios.get(`http://localhost:8000/serviceprovider/`)
+        .then((results: any) => {
+            console.log("axios", results);
+            // dispatch(store(results.data))
+
+        })
+        .catch((err: any) => {
+            console.error("err===== =>", err);
+        })
+
+
+    // let options = {
+    //     url: `http://localhost:8000/serviceprovider/`,
+    //     method: 'get',
+    // }
+
+    // axios(options)
+    //     .then((results: any) => {
+    //         console.log("axios", results.data);
+    //         // dispatch(store(results.data))
+
+    //     })
+    //     .catch((err: any) => {
+    //         console.error("err===== =>", err);
+    //     })
+    // }
+
+    // .then(response => response.json())
+    //         .then(data => {
+    //             let resultObject={}
+    //             data.map(element=>{
+    //                 if(element.provider){
+    //                     resultObject[element.providerId]={
+    //                         image:element.provider.image,
+    //                         name:element.name
+    //                     }
+
     return (
         <div className="container bootstrap snippets bootdey">
             <div className="row">
