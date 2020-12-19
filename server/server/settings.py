@@ -48,11 +48,7 @@ INSTALLED_APPS = [
     # add name of applications here
     'Category',
     'ServiceProvider',
-<<<<<<< HEAD
-     'Location',
-=======
     'Location',
->>>>>>> da31cd6b6289b694fd41ee2a858fa70301b3ad7e
     'Reviews',
     # 'cal'
     'User',
@@ -106,11 +102,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'servizeDB', 
         'USER': 'postgres', 
-<<<<<<< HEAD
         'PASSWORD': '12345',
-=======
-        'PASSWORD': 'student',
->>>>>>> da31cd6b6289b694fd41ee2a858fa70301b3ad7e
         'HOST': 'localhost', 
         'PORT': '5432',
     }
