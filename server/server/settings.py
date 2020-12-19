@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corsheaders',            # add this 
     'rest_framework',         # add this
-    
+    'django_filters',
+
     # add name of applications here
     'Category',
     'ServiceProvider',
@@ -97,7 +98,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'servizeDB', 
         'USER': 'postgres', 
-        'PASSWORD': 'student',
+        'PASSWORD': 'rami871995',
         'HOST': 'localhost', 
         'PORT': '5432',
     }
