@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { GoogleMap, LoadScript, Marker, InfoWindow  } from '@react-google-maps/api';
 import { useSelector, useDispatch } from 'react-redux';
-// require('dotenv').config();
+require('dotenv').config();
 
 const Map = () => {
     const API_KEY : any = process.env.GOOGLE_MAPS_API
-    console.log(process.env.HELP)
-    // const [currentPosition, setCurrentPosition] = useState({});
+    console.log(process.env)
+    const [currentPosition, setCurrentPosition] = useState({});
     // const success = (position:any) => {
     //     const currentPosition = {
     //         lat: position.coords.latitude,
@@ -60,7 +60,7 @@ const Map = () => {
 
     return (
         <LoadScript
-            googleMapsApiKey={API_KEY}>
+            googleMapsApiKey="AIzaSyDxGtz9Bm2e0RnLmrmiis4ivnnqisE2OJo">
             <GoogleMap mapContainerStyle={mapStyles} zoom={13} center={ defaultCenter}>
                 {/* <Marker position ={currentPosition}/> */}
                 {/* {

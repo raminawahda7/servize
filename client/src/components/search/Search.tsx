@@ -28,7 +28,7 @@ const Search = () => {
             await axios.get(`http://localhost:8000/location/city/`,      //url for sending the request ?
                 {
                     city: city,
-                    category: category
+                    // category: category
                 })
 
                 .then((result: any) => {
