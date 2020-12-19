@@ -11,7 +11,9 @@ function Calender() {
   var CLIENT_ID = "794934029408-i23pehij26138rok16uipdnffs9jok26.apps.googleusercontent.com"
   var API_KEY = "AIzaSyDxUkAcb9EiZ4gPFNIKTnKInDcmBT7sads"
   var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
+
   var SCOPES = "https://www.googleapis.com/auth/calendar.readonly";
+
 
 
   const handleClick = () => {
@@ -25,7 +27,7 @@ function Calender() {
         scope: SCOPES,
       })
 
-      gapi.client.load('calendar', 'v3', () => console.log('bam!'))
+      gapi.client.load('calendar', 'v3', () => console.log('hellooo!'))
 
       gapi.auth2.getAuthInstance().signIn()
       .then(() => {

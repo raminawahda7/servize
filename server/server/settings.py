@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     'User',
     'djoser',
     'accounts',
-    'calendarapp',
+    # 'calendarapp',
     
     
 
