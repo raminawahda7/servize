@@ -18,16 +18,16 @@ const Navbar = () => {
     }
 
     const test = () => {
-        axios.get(`http://localhost:8000/category/`)
+    //     axios.post(`http://localhost:8000/category/`)
 
-            .then((result: any) => {
-                console.log("axios", result.data)
-                dispatch(store(result.data))
+    //         .then((result: any) => {
+    //             console.log("axios", result.data)
+    //             dispatch(store(result.data))
 
-            })
-            .catch((err: any) => {
-                console.error("err===== =>", err);
-            })
+    //         })
+    //         .catch((err: any) => {
+    //             console.error("err===== =>", err);
+    //         })
 
     }
 
@@ -38,7 +38,7 @@ const Navbar = () => {
             </div>
 
             <div>
-                Area
+                City
             </div>
 
             <div>
@@ -47,6 +47,9 @@ const Navbar = () => {
 
             <div>
                 Price
+            </div>
+            <div>
+                Rating
             </div>
         </div>
        

@@ -29,7 +29,7 @@ export default function ProviderProf() {
         axios(options)
             .then((results: any) => {
                 console.log("axios", results.data);
-                dispatch(store(results.data))
+                // dispatch(store(results.data))
 
             })
             .catch((err: any) => {

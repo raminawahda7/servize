@@ -14,6 +14,7 @@ import StarRating from '../rates/StarRate';
 import { Link, Redirect } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { store } from '../../actions/Users/usersActions';
+
 const axios = require('axios');
 const $ = require('jquery');
 
