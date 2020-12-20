@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Signup from './components/Signup/Signup';
+import Usertype from './components/Signup/Usertype';
 import Login from './components/Login/Login';
 import Catagories from './components/catagories/Catagories';
 import ProviderProf from './components/profiles/ProviderProf';
@@ -25,7 +26,7 @@ import './App.css';
 import StarRating from './components/rates/StarRate';
 import HomePage from "./pages/HomePage";
 import Map from './components/map/map';
-// import Categories from "./components/Categories-container/Categories-container";
+import Categories from "./components/Categories-container/Categories-container";
 // import Main from "./components/Main-view/Main-view";
 // import './App.css';
 
@@ -34,8 +35,8 @@ function App() {
     <BrowserRouter>
       <div className="App">
         {/* < Map /> */}
-        <Navbar />
-        {/* <Cataegories /> */}
+        {/* <Navbar /> */}
+        {/* <Categories /> */}
         {/* <ProviderProf /> */}
         {/* <ProviderView /> */}
         {/* <UserView /> */}
@@ -50,9 +51,10 @@ function App() {
 
         <Switch>
 
-          <Route exact path="/" component={HomePage} />
+          {/* <Route exact path="/" component={HomePage} /> */}
+          <Route exact path="/usertype" component={Usertype} />
           {/* <Route exact path="/" component={Main} /> */}
-          {/* <Route path="/prov/signup" component={ProviderSignup} /> */}
+          <Route path="/prov/signup" component={ProviderSignup} />
           <Route path="/user/signup" component={Signup} />
           <Route path="/user/login" component={Login} />
           {/* <Route path="/providerProfile" exact component={() => < ProviderProf/>} /> */}
@@ -70,7 +72,7 @@ function App() {
 
         </Switch>
 
-        <Footer />
+        {/* <Footer /> */}
 
       </div>
     </BrowserRouter>
