@@ -9,7 +9,7 @@ import StarRating from '../rates/StarRate';
 // import Calender from '../CalendarEvent/Calender';
 
 // import Context from '../utils/context';
-// import Schedule from './components/calender/Schedule';
+import Schedule from '../calender/Schedule';
 import './ProviderProf.css'
 
 import UploadImg from '../profiles/uploadImg';
@@ -37,219 +37,132 @@ export default function ProviderProf() {
             console.error("err===== =>", err);
         })
 
-
-    // let options = {
-    //     url: `http://localhost:8000/serviceprovider/`,
-    //     method: 'get',
-    // }
-
-    // axios(options)
-    //     .then((results: any) => {
-    //         console.log("axios", results.data);
-    //         // dispatch(store(results.data))
-
-    //     })
-    //     .catch((err: any) => {
-    //         console.error("err===== =>", err);
-    //     })
-    // }
-
-    // .then(response => response.json())
-    //         .then(data => {
-    //             let resultObject={}
-    //             data.map(element=>{
-    //                 if(element.provider){
-    //                     resultObject[element.providerId]={
-    //                         image:element.provider.image,
-    //                         name:element.name
-    //                     }
-
     return (
-        <div className="container bootstrap snippets bootdey">
-            <div className="row">
-                <div className="profile-nav col-md-3">
-                    <div className="panel">
-                        {/* <div className="user-heading round"> */}
-                        <div>
-                            {/* <Schedule /> */}
-                            <a href="#">
-                                <img src="https://i.pinimg.com/236x/4d/25/5f/4d255fadc15c380d8b03c7ef25a4c97b.jpg" alt="img" className="img" />
-                            </a>
-                            <h1>Name</h1>
+        <div className="container emp-profile">
+            <form method="post">
+                <div className="row">
+                    <div className="col-md-4">
+                        <div className="profile-img">
+                            <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" className="avatar img-circle img-thumbnail" alt="avatar" />
+                            <div className="file btn btn-lg btn-primary">
+                                Change Photo
+                                <input type="file" name="file" />
+                            </div>
                         </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="profile-head">
+                            {/* <h5>
+                                Kshiti Ghelani
+                                    </h5> */}
+                            <h6>
+                                Service Provider Name
+                                    </h6>
 
-                        <ul className="nav nav-pills nav-stacked">
-                            <li><a href="#"> <i className="fa fa-edit"></i> Edit profile</a></li><br /><br></br>
-                            <li className="active"><a href="#"> <i className="fa fa-user"></i> Profile</a></li>
-                            {/* <li><a href="#"> <i className="fa fa-calendar"></i> Recent Activity <span
-                                className="label label-warning pull-right r-activity">  </span></a></li> */}
-                        </ul>
-                        <div>
-                            <br></br><ul className="nav nav-pills">
-                                <li>
-                                    <a href="https://www.google.com/maps/search/?api=1"><RoomIcon style={{ color: "blue", fontSize: "x-large" }} stroke={"blue"} stroke-width={1} /></a>
+                            <ul className="nav nav-tabs" id="myTab" role="tablist">
+                                <li className="nav-item">
+                                    <a className="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
                                 </li>
-                                <li>
-                                    <a href="https://www.facebook.com/" ><FacebookIcon style={{ color: "blue", fontSize: "x-large" }} stroke={"blue"} stroke-width={1} /></a>
+                                <li className="nav-item">
+                                    <a className="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Timeline</a>
                                 </li>
-                                <li>
-                                    <a href="https://www.instagram.com/" ><InstagramIcon style={{ color: "blue", fontSize: "x-large" }} stroke={"blue"} stroke-width={1} /></a>
-                                </li>
-                                <li>
-                                    <a href="https://www.twitter.com/" ><TwitterIcon style={{ color: "blue", fontSize: "x-large" }} stroke={"blue"} stroke-width={1} /></a>
-                                </li>
-                            </ul> <br></br>
-                            <div><StarRating /></div>
+                            </ul>
                         </div>
-                        <div className="bio-desk">
-                            <h4 className="terques"> </h4>
-                            <Form>
-                                <Form.Group>
-                                    <div><UploadImg /></div>
-                                    <Form.File id="exampleFormControlFile1" label="Example file input" />
-                                </Form.Group>
-                            </Form>
-                        </div>
+                    </div>
+                    <div className="col-md-2">
+                        <input type="submit" className="profile-edit-btn" name="btnAddMore" value="Edit Profile" />
                     </div>
                 </div>
-                <div className="profile-info col-md-9">
-                    <div className="panel">
-                        <form>
-                            <br></br><textarea placeholder="Describe your services"
-                                className="form-control input-lg p-text-area"></textarea>
-                        </form>
-                        <footer className="panel-footer">
-                            <button className="btn btn-warning pull-right">Post</button>
-                        </footer>
-                    </div>
-                    <div className="panel">
-                        <div className="bio-graph-heading">
-                            Helllllllllo
-                    </div>
-                    </div><br></br>
-                    <br></br><div className="panel-body bio-graph-info"><br></br>
-                        <h1>Deatils</h1>
-                        <div className="row">
-                            <div className="bio-row">
-                                <p><span>Name</span></p>
-                            </div>
-                            <div className="bio-row">
-                                <span>Email </span>
-                            </div><br></br>
-                            <div className="bio-row">
-                                <span>Occupation </span>
-                            </div><br></br>
-                            <div className="bio-row">
-                                <span>City </span>
-                            </div><br></br>
-                            <br></br><div className="bio-row">
-                                <span>Phone </span>
-                            </div>
-
+                <div className="row">
+                    <div className="col-md-4">
+                        <div className="profile-work">
+                            <ul className="nav nav-pills">
+                                <li>
+                                    <a href="https://www.google.com/maps/search/?api=1">
+                                        <RoomIcon style={{ color: "blue", fontSize: "x-large" }} stroke={"blue"}
+                                            stroke-width={1} /></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.facebook.com/">
+                                        <FacebookIcon style={{ color: "blue", fontSize: "x-large" }}
+                                            stroke={"blue"} stroke-width={1} /></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/">
+                                        <InstagramIcon style={{ color: "blue", fontSize: "x-large" }}
+                                            stroke={"blue"} stroke-width={1} /></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.twitter.com/">
+                                        <TwitterIcon style={{ color: "blue", fontSize: "x-large" }}
+                                            stroke={"blue"} stroke-width={1} /></a>
+                                </li>
+                            </ul>
+                            <br></br><p className="proile-rating"><StarRating /></p><br></br>
+                            <div><UploadImg /></div>
                         </div>
                     </div>
-                    <div className="bio-desk">
-                        <h4 className="red"></h4>
-                        <p>Started : 15 July</p>
-                    </div>
-                    <div>
-                        <div className="row">
-                            <div className="col-md-6">
-                                <div className="panel">
-                                    <div className="panel-body">
-                                        <div className="bio-chart">
-                                            {/* <div style={{ display: "inline", width: "20rem", height: "20rem" }}>
-                                                <canvas width="100"
-                                                height="100px"></canvas><input className="knob" data-width="100"
-                                                    data-height="100" data-displayprevious="true" data-thickness=".2" value="35"
-                                                    data-fgcolor="#e06b7d" data-bgcolor="#e8e8e8" />
-                                            </div> */}
-                                        </div>
-                                        {/* <div className="bio-desk">
-                                            <h4 className="red"></h4>
-                                            <p>Started : 15 July</p>
-                                            <p></p>
-                                        </div> */}
+                    <div className="col-md-8">
+                        <div className="tab-content profile-tab" id="myTabContent">
+                            <div className="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <div className="row">
+                                    <div className="col-md-6">
+                                        <label>Name</label>
+                                    </div>
+                                    <div className="col-md-6">
+                                        <p>Kshiti123</p>
+                                    </div>
+                                </div>
+                                <div className="row">
+                                    <div className="col-md-6">
+                                        <label>Email</label>
+                                    </div>
+                                    <div className="col-md-6">
+                                        <p>kshitighelani@gmail.com</p>
+                                    </div>
+                                </div>
+                                <div className="row">
+                                    <div className="col-md-6">
+                                        <label>Occupation</label>
+                                    </div>
+                                    <div className="col-md-6">
+                                        <p>Electrical</p>
+                                    </div>
+                                </div>
+                                <div className="row">
+                                    <div className="col-md-6">
+                                        <label>Phone</label>
+                                    </div>
+                                    <div className="col-md-6">
+                                        <p>123 456 7890</p>
+                                    </div>
+                                </div>
+                                <div className="row">
+                                    <div className="col-md-6">
+                                        <label>City</label>
+                                    </div>
+                                    <div className="col-md-6">
+                                        <p>City</p>
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-md-6">
-                                <div className="panel">
-                                    <div className="panel-body">
-                                        <div className="bio-chart">
-                                            {/* <div style={{ display: "inline", width: "20rem", height: "20rem" }}><canvas width="100"
-                                                height="100px"></canvas><input className="knob" data-width="100"
-                                                    data-height="100" data-displayprevious="true" data-thickness=".2" value="63"
-                                                    data-fgcolor="#4CC5CD" data-bgcolor="#e8e8e8" />
-                                            </div> */}
-                                        </div>
-                                        {/* <div className="bio-desk">
-                                            <h4 className="terques"> </h4>
-                                            <Form>
-                                                <Form.Group>
-                                                    <div><UploadImg /></div>
-                                                    <Form.File id="exampleFormControlFile1" label="Example file input" />
-                                                </Form.Group>
-                                            </Form>
-                                        </div> */}
-                                    </div>
+                            <div className="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                <div className="row">
+                                    <Schedule />
                                 </div>
-                            </div>
-                            <div className="col-md-6">
-                                <div className="panel">
-                                    <div className="panel-body">
-                                        <div className="bio-chart">
-                                            {/* <div style={{ display: "inline", width: "20rem", height: "20rem" }}><canvas width="100"
-                                                height="100px"></canvas><input className="knob" data-width="100"
-                                                    data-height="100" data-displayprevious="true" data-thickness=".2" value="75"
-                                                    data-fgcolor="#96be4b" data-bgcolor="#e8e8e8" />
-                                            </div> */}
-                                        </div>
-                                        <div className="bio-desk">
-                                            <h4 className="green"></h4>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-md-6">
-                                <div className="panel">
-                                    <div className="panel-body">
-                                        <div className="bio-chart">
-                                            {/* <div style={{ display: "inline", width: "20rem", height: "20rem" }}><canvas width="100"
-                                                height="100px"></canvas><input className="knob" data-width="100"
-                                                    data-height="100" data-displayprevious="true" data-thickness=".2" value="50"
-                                                    data-fgcolor="#cba4db" data-bgcolor="#e8e8e8" />
-                                            </div> */}
-                                        </div>
-                                        <div className="bio-desk">
-                                            <h4 className="purple"></h4>
-                                            {/* <Calender/> */}
-                                            {/* <Schedule/> */}
-                                        </div>
+                                <div className="row">
+                                    <div className="col-md-12">
+                                        <label>Your Bio</label><br />
+                                        <p>Your detail description</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </form>
         </div>
     )
 }
 
 
-// {/* <h1>{props.profile.profile.nickname}</h1>
-// <br />
-// <img src={props.profile.profile.picture} alt="" />
-// <br />
-// <h4> {props.profile.profile.email}</h4>
-// <br />
-// <h5> {props.profile.profile.name} </h5>
-// <br />
-// <h6> Email Verified: </h6>
-// {props.profile.profile.email_verified ? <p>Yes</p> : <p>No</p>}
-// <br /> */}
-
-
-// export default Profile;
