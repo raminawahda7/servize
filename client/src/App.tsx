@@ -19,7 +19,7 @@ import ProviderContainer from "./components/Provider-container/Provider-containe
 import Activate from './components/Activate';
 // import Search from './components/search/Search';
 
-import Calendar from './components/calender/Calender';
+// import Calendar from './components/calender/Calender';
 import Schedule from './components/calender/Schedule'
 
 
