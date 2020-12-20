@@ -5,6 +5,7 @@ from Location.serialize import CitySerializer
 from Location.filter import CityFilter
 from rest_framework.decorators import api_view  
 from rest_framework.response import Response
+# from django.contrib.auth.decorators import login_required
 
 class CityList(generics.ListCreateAPIView):
     queryset = City.objects.all()
@@ -14,6 +15,7 @@ class CityList(generics.ListCreateAPIView):
 #     queryset=Area.objects.all()
 #     serializer_class=AreaSerializer
 
+# @login_required
 @api_view(['POST'])
 def ProvLoc(request):
     city = City.objects.all().filter(name=request.data['name'])
