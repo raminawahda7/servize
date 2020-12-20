@@ -14,7 +14,7 @@ import os
 
 from pathlib import Path
 
-import django_heroku
+# import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corsheaders',            # add this 
     'rest_framework',         # add this
-    'django_filters',
+    # 'django_filters',
 
     # add name of applications here
     # 'cal.apps.CalConfig',
@@ -54,7 +54,8 @@ INSTALLED_APPS = [
     'User',
     'djoser',
     'accounts',
-    # 'calendarapp',
+    'schedule',
+    
     
     
 
@@ -202,4 +203,4 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 STATIC_URL = '/static/'
 AUTH_USER_MODEL = 'accounts.UserAccount'
 
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
