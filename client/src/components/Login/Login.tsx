@@ -40,7 +40,7 @@ export default function Login() {
                                 })
 
                                 .then((result: any) => {
-                                    console.log(result)
+                                    console.log("post",result)
                                     setAccess(result.data.access);
                                     setRefresh(result.data.refresh);
                                     // window.location.href="/"
@@ -67,7 +67,7 @@ export default function Login() {
                                     })
                                     if(res.status == 200){
                                         // test for status you want, etc
-                                        console.log(res.status)
+                                        console.log("get",res.status)
                                         localStorage.setItem("access_token", access);
                                         localStorage.setItem("refresh_token", refresh);
                                     }    
