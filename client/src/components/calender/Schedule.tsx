@@ -1,5 +1,7 @@
 import React from 'react';
-import { Inject, ScheduleComponent, Day, Week, WorkWeek, Month, Agenda, EventSettingsModel, ResourcesDirective, ResourceDirective, GroupModel, DragAndDrop, Resize, TimelineViews } from '@syncfusion/ej2-react-schedule';
+import * as ReactDOM from "react-dom";
+import { Inject, ScheduleComponent, Day, Week, Month, Agenda, EventSettingsModel } from '@syncfusion/ej2-react-schedule';
+//ResourcesDirective, ResourceDirective, GroupModel, DragAndDrop, Resize, TimelineViews } from '@syncfusion/ej2-react-schedule';
 import { DataManager, WebApiAdaptor } from '@syncfusion/ej2-data';
 
 // import { render } from '@testing-library/react';
@@ -10,7 +12,8 @@ import { DataManager, WebApiAdaptor } from '@syncfusion/ej2-data';
 function Schedule() {
     // public render() {
 
-    const localData = {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    let localData: EventSettingsModel = {
         dataSource: [{
             // Id: Number,
             // Subject: String,
@@ -23,24 +26,17 @@ function Schedule() {
     // const groupData = {
     //     resources: ['Resources']
     // };
-    const remoteData = new DataManager({
-        url: 'https://js.syncfusion.com/demos/ejservices/api/Schedule/LoadData',
-        adaptor: new WebApiAdaptor,
-        crossDomain: true
-    });
+    // const remoteData = new DataManager({
+    //     url: 'https://js.syncfusion.com/demos/ejservices/api/Schedule/LoadData',
+    //     adaptor: new WebApiAdaptor,
+    //     crossDomain: true
+    // });
 
+    // const render(){
     return (
-        <ScheduleComponent height='400px' width='800' currentView='Month' selectedDate={new Date(2019, 0, 11)} eventSettings={localData} >
-            {/* <ResourcesDirective>
-                <ResourceDirective field='ResourceID' title='ResourceName' name="Resources">
-
-                </ResourceDirective>
-            </ResourcesDirective> */}
-            <Inject services={[Day, Week, Month, DragAndDrop, Resize, TimelineViews]} />
-            {/* <style lang="scss">
-                @import "ej2-vue-buttons/styles/material.scss";
-</style> */}
-        </ScheduleComponent>
+        <ScheduleComponent height='400px' width='800' currentView='Month' selectedDate={new Date(2020, 0, 11)} eventSettings={localData} >
+            <Inject services={[Day, Week, Month, Agenda]} />
+        </ ScheduleComponent >
     )
 }
 
