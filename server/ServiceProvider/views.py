@@ -6,6 +6,8 @@ from ServiceProvider.filter import ServiceProviderFilter
 from rest_framework.decorators import api_view  
 from rest_framework.response import Response
 
+# from ServiceProvider.serializers2 import TestSerializer
+
 
 class ServiceProviderList(generics.ListCreateAPIView):
     queryset=ServiceProvider.objects.all()
@@ -14,6 +16,10 @@ class ServiceProviderList(generics.ListCreateAPIView):
 class ImageList(generics.ListCreateAPIView):
     queryset=Image.objects.all()
     serializer_class=ImageSerializer
+
+# class TestList(generics.ListAPIView):
+#     queryset=Image.objects.all()
+#     serializer_class=TestSerializer
 
 
 

@@ -26,6 +26,8 @@ export interface Provider {
 export type UserIerface = {
     username: string,
     email: string,
+    status?: number,
+    id?: number
 }
 
 export type ProvIerface = {

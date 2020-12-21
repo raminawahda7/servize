@@ -1,55 +1,72 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import Select from 'react-select';
 import { appendErrors, useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBInput } from 'mdbreact';
 const axios = require('axios');
 
 interface FormData {
     name: string;
-    email: string;
-    password: string;
-    re_password: string;
     city: string;
     phone: number;
+    provider: string,
+    role: any,
+    picture: any,
+    category: any
 }
 
 const ProviderSignup = () => {
-    const { register, handleSubmit, errors } = useForm<FormData>();
+    const userInStore = useSelector((state: any) => state.user);
+    const dispatch = useDispatch();
+    // const { handleSubmit, errors,register } = useForm<FormData>();
     const [submitting, setSubmitting] = useState<boolean>(false);
     const [serverErrors, setServerErrors] = useState<Array<string>>([]);
+
+    const { register, handleSubmit } = useForm<FormData>({
+        defaultValues: {
+            picture: "null"
+        }
+    })
+    const [test, setTest] = useState([]); // don't detete 
+    const [category, setCategory] = useState([]);
+    const [city, setCity] = useState();
+    const [pcity, setpCity] = useState({});
+    useEffect(() => {
+        axios.get(`http://localhost:8000/location/city/`)
+
+            .then((result: any) => {
+                console.log("loc", result)
+                setCity(result.data.map((d: { pk: any; name: any; }) => ({
+                    "value": d.pk,
+                    "label": d.name
+
+                })))
+
+
+            })
+            .catch((err: any) => {
+                console.error("err===== =>", err);
+            })
+        // setpCity();  
+    },[test])
+    console.log("city", pcity)
+    
 
     return (
         <div id="signup" className="center styled">
             <form id="signup-form"
                 onSubmit={handleSubmit((formData) => {
                     console.log(formData)
-                    // let options = {
-                    //     url: `http://localhost:8000/auth/users/`,
-                    //     method: 'post',
-                    //     data: {
-                    //         name: formData.name,
-                    //         email: formData.email,
-                    //         password: formData.password,
-                    //         re_password: formData.re_password,
-                    //         Phone: formData.phone,
-                    //         city: formData.city,
-                    //     }
-                    // }
 
-                    // axios(options)
-                    //     .then((results: any) => {
-                    //         console.log("axios", results);
-
-                    //     })
-                    //     .catch((err: any) => {
-                    //         console.error("err===== =>", err);
-                    //     })
-
-                    axios.post(`http://localhost:8000/auth/users/`, {
-                        name: formData.name,
-                        email: formData.email,
-                        password: formData.password,
-                        re_password: formData.password
+                    axios.post(`http://localhost:8000/serviceprovider/`, {
+                        categoryId: "1",
+                        phone: formData.phone,
+                        city: "1",
+                        provider: userInStore.user.id,
+                        role: "null",
+                        picture: formData.picture
+        
                     })
 
                         .then((result: any) => {
@@ -65,32 +82,51 @@ const ProviderSignup = () => {
                 <h1>Provider Sign Up</h1>
                 <br />
                 <div className="column">
-                    <label htmlFor="name">Name:</label>
+                    {/* <label htmlFor="name">Name:</label>
                     <input type="text" className="text" id="name" name="name" ref={register({ required: "required" })} />
-                    <div className="name error" ></div>
+                    <div className="name error" ></div> */}
 
-                    <label htmlFor="email" >Email:</label>
-                    <input type="email" className="text" id="email" name="email" ref={register({ required: "required" })} />
-                    <div className="email error" ></div>
+                    <label htmlFor="email" >Category:</label>
+                    {/* <select className="dropdown-cat" onChange={(e) => { setCategory(e.target.value) }}>
+                        <option>Electrician</option>
+                        <option>Plumber</option>
+                        <option>Carpenter</option>
+                    </select> */}
+                    
 
                     <label htmlFor="phone" >Phone:</label>
                     <input type="text" className="text" id="phone" name="phone" ref={register({ required: "required" })} />
                     <div className="phone error" ></div>
 
                     <label htmlFor="city" >City:</label>
-                    <input type="text" className="text" id="city" name="city" ref={register({ required: "required" })} />
-                    <div className="city error" ></div>
+                    {/* <select className="dropdown-city" onChange={(e) => { setCity(e.target.value) }}>
+                        <option>Ramallah</option>
+                        <option>Nablus</option>
+                        <option>Hebron</option>
+                        <option>Jenin</option>
+                        <option>Tulkarem</option>
+                        <option>Jericho</option>
+                    </select> */}
+                    <Select
+                        value={pcity}
+                        options={city}
+                        onChange={(e: { value: any; label: any; }) => { setpCity({pk:e.value, name:e.label}) }}
+                    />
 
-                    <label htmlFor="password" >Password:</label>
+                    <label htmlFor="picture">Picture:</label>
+                    <input type="text" className="picture" id="picture" name="picture" ref={register} />
+                    <div className="name error" ></div>
+
+                    {/* <label htmlFor="password" >Password:</label>
                     <input type="password" className="text" id="password" name="password" ref={register({ required: "required" })} />
 
                     <label htmlFor="re_password" >Confirm Password:</label>
                     <input type="password" className="text" id="re_password" name="re_password" ref={register({ required: "required" })} />
-                    <div className="password error" ></div>
+                    <div className="password error" ></div> */}
                 </div>
                 <br />
 
-                <div className="password-req" >8 characters or longer. Combine upper and lowercase letters and numbers</div><br />
+                {/* <div className="password-req" >8 characters or longer. Combine upper and lowercase letters and numbers</div><br /> */}
                 <p >Already have an account? <Link to="/user/login" style={{ textDecoration: "none" }}>Sign In</Link></p>
                 <button className="button" >Sign Up</button><br />
 
