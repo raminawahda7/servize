@@ -10,7 +10,7 @@ import StarRating from '../rates/StarRate';
 
 // import Context from '../utils/context';
 import Schedule from '../calender/Schedule';
-import './ProviderProf.css'
+import './ProviderView.css'
 
 import UploadImg from '../profiles/uploadImg';
 
@@ -37,6 +37,7 @@ export default function ProviderProf() {
             console.error("err===== =>", err);
         })
 
+
     return (
         <div className="container emp-profile">
             <form method="post">
@@ -56,6 +57,7 @@ export default function ProviderProf() {
                                 Kshiti Ghelani
                                     </h5> */}
                             <h6>
+                                {/* {providers.} */}
                                 Service Provider Name
                                     </h6>
 

@@ -1,107 +1,122 @@
 import React, { useContext } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Form from 'react-bootstrap/Form'
 import InstagramIcon from '@material-ui/icons/Instagram';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import RoomIcon from '@material-ui/icons/Room';
 // import Context from '../utils/context';
-import './ProviderProf.css'
-
-import { Link, Redirect } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
-import { store } from '../../actions/Users/usersActions';
-const axios = require('axios');
-const $ = require('jquery');
+import './UserView.css'
 
 
-export default function ProviderProf() {
-    const userInStore = useSelector((state: any) => state.user);
-    const dispatch = useDispatch();
-    const handleClick = (e: any) => {
-        e.preventDefault();
+export default function UserView() {
+    // const context = useContext(Context)
 
-        let options = {
-            url: `http://localhost:8000/user/`,
-            method: 'get',
-        }
-
-        axios(options)
-            .then((results: any) => {
-                console.log("axios", results.data);
-                // dispatch(store(results.data))
-
-            })
-            .catch((err: any) => {
-                console.error("err===== =>", err);
-            })
-    }
-    // .then(response => response.json())
-    //         .then(data => {
-    //             let resultObject={}
-    //             data.map(element=>{
-    //                 if(element.provider){
-    //                     resultObject[element.providerId]={
-    //                         image:element.provider.image,
-    //                         name:element.name
-    //                     }
-
-
+    // const Profile = (props) => {
     return (
-        <div className="container bootstrap snippets bootdey">
-            <div className="row">
-                <div className="profile-nav col-md-3">
-                    <div className="panel">
-                        {/* <div className="user-heading round"> */}
-                        <div>
-                            <a href="#">
-                                <img src="https://i.pinimg.com/236x/e0/10/33/e0103395bedca2f42a6dc1cddf5c557e.jpg" alt="img" className="img" />
-                            </a>
-                            <h1>Name</h1>
-                        </div>
-                        <ul className="nav nav-pills nav-stacked">
-                            <li className="active"><a href="#"> <i className="fa fa-user"></i> Profile</a></li>
-                            {/* <li><a href="#"> <i className="fa fa-calendar"></i> Recent Activity <span
-                                className="label label-warning pull-right r-activity">9</span></a></li> */}
-                            <li><a href="#"> <i className="fa fa-edit"></i> Edit profile</a></li>
-                        </ul>
-                        <footer className="panel-footer">
-                            {/* <button className="btn btn-warning pull-right">Post</button> */}
-                            <ul className="nav nav-pills">
-                                <li>
-                                    <a href="https://www.google.com/maps/search/?api=1"><RoomIcon style={{ color: "blue", fontSize: "x-large" }} stroke={"blue"} stroke-width={1} /></a>
-                                </li>
-                                <li>
-                                    <a href="https://www.facebook.com/" ><FacebookIcon style={{ color: "blue", fontSize: "x-large" }} stroke={"blue"} stroke-width={1} /></a>
-                                </li>
-                                <li>
-                                    <a href="https://www.instagram.com/" ><InstagramIcon style={{ color: "blue", fontSize: "x-large" }} stroke={"blue"} stroke-width={1} /></a>
-                                </li>
-                                <li>
-                                    <a href="https://www.twitter.com/" ><TwitterIcon style={{ color: "blue", fontSize: "x-large" }} stroke={"blue"} stroke-width={1} /></a>
-                                </li>
-                            </ul>
-                        </footer>
-                        <div className="panel-body bio-graph-info">
-                            <h1>Deatils</h1>
-                            <div className="row">
-                                <div className="bio-row">
-                                    <p><span>Name</span></p>
+        <div className="page-content page-container" id="page-content">
+            <div className="padding">
+                <div className="row container d-flex justify-content-center">
+                    <div className="col-xl-6 col-md-12">
+                        <div className="card user-card-full">
+                            <div className="row m-l-0 m-r-0">
+                                <div className="col-sm-4 bg-c-lite-green user-profile">
+                                    <div className="card-block text-center text-white">
+                                        <div className="m-b-25">
+                                            <img src="https://i.pinimg.com/236x/e0/10/33/e0103395bedca2f42a6dc1cddf5c557e.jpg"
+                                                className="img-radius" alt="User-Profile-Image" /> </div>
+                                        <h6 className="f-w-600">Name</h6>
+                                        <p>job</p> <i className=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
+                                    </div>
+                                    <ul className="nav nav-pills nav-stacked">
+                                        <li><a href="#"> <i className="fa fa-edit"></i> Edit profile</a></li><br /><br></br>
+                                        <li className="active"><a href="#"> <i className="fa fa-user"></i> Profile</a></li>
+                                        {/* <li><a href="#"> <i className="fa fa-calendar"></i> Recent Activity <span
+                                className="label label-warning pull-right r-activity">  </span></a></li> */}
+                                    </ul>
                                 </div>
-                                <div className="bio-row">
-                                    <span>Email </span>
-                                </div>
-                                <div className="bio-row">
-                                    <span>City </span>
-                                </div>
-                                <div className="bio-row">
-                                    <span>Phone </span>
+                                <div className="col-sm-8">
+                                    <div className="card-block">
+                                        <h6 className="m-b-20 p-b-5 b-b-default f-w-600">Information</h6>
+                                        <div className="row">
+                                            <div className="col-sm-6">
+                                                <p className="m-b-10 f-w-600">Email</p>
+                                                <h6 className="text-muted f-w-400">rntng@gmail.com</h6>
+                                            </div>
+                                            <div className="col-sm-6">
+                                                <p className="m-b-10 f-w-600">Phone</p>
+                                                <h6 className="text-muted f-w-400">98979989898</h6>
+                                            </div>
+                                        </div>
+                                        {/* <footer className="panel-footer">
+                                           
+                                        </footer> */}
+                                        <div className="row">
+                                            <div className="col-sm-6">
+                                                <p className="m-b-10 f-w-600">Recent</p>
+                                                <h6 className="text-muted f-w-400">******</h6>
+                                            </div>
+                                            <div className="col-sm-6">
+                                                <p className="m-b-10 f-w-600">Most Viewed</p>
+                                                <h6 className="text-muted f-w-400">*****</h6>
+                                            </div>
+                                            <ul className="nav nav-pills">
+                                                <li>
+                                                    <a href="https://www.google.com/maps/search/?api=1">
+                                                        <RoomIcon style={{ color: "blue", fontSize: "x-large" }} stroke={"blue"}
+                                                            stroke-width={1} /></a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://www.facebook.com/">
+                                                        <FacebookIcon style={{ color: "blue", fontSize: "x-large" }}
+                                                            stroke={"blue"} stroke-width={1} /></a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://www.instagram.com/">
+                                                        <InstagramIcon style={{ color: "blue", fontSize: "x-large" }}
+                                                            stroke={"blue"} stroke-width={1} /></a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://www.twitter.com/">
+                                                        <TwitterIcon style={{ color: "blue", fontSize: "x-large" }}
+                                                            stroke={"blue"} stroke-width={1} /></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <ul className="social-link list-unstyled m-t-40 m-b-10">
+                                            <li><a href="#!" data-toggle="tooltip" data-placement="bottom" title=""
+                                                data-original-title="facebook" data-abc="true"><i
+                                                    className="mdi mdi-facebook feather icon-facebook facebook"
+                                                    aria-hidden="true"></i></a></li>
+                                            <li><a href="#!" data-toggle="tooltip" data-placement="bottom" title=""
+                                                data-original-title="twitter" data-abc="true"><i
+                                                    className="mdi mdi-twitter feather icon-twitter twitter"
+                                                    aria-hidden="true"></i></a></li>
+                                            <li><a href="#!" data-toggle="tooltip" data-placement="bottom" title=""
+                                                data-original-title="instagram" data-abc="true"><i
+                                                    className="mdi mdi-instagram feather icon-instagram instagram"
+                                                    aria-hidden="true"></i></a></li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div >
+        </div>
     )
 }
+
+
+// {/* <h1>{props.profile.profile.nickname}</h1>
+// <br />
+// <img src={props.profile.profile.picture} alt="" />
+// <br />
+// <h4> {props.profile.profile.email}</h4>
+// <br />
+// <h5> {props.profile.profile.name} </h5>
+// <br />
+// <h6> Email Verified: </h6>
+// {props.profile.profile.email_verified ? <p>Yes</p> : <p>No</p>}
+// <br /> */}
+

@@ -1,7 +1,6 @@
 import React from 'react';
 import * as ReactDOM from "react-dom";
 import { Inject, ScheduleComponent, Day, Week, Month, Agenda, EventSettingsModel } from '@syncfusion/ej2-react-schedule';
-//ResourcesDirective, ResourceDirective, GroupModel, DragAndDrop, Resize, TimelineViews } from '@syncfusion/ej2-react-schedule';
 import { DataManager, WebApiAdaptor } from '@syncfusion/ej2-data';
 
 // import { render } from '@testing-library/react';
@@ -23,9 +22,6 @@ function Schedule() {
         }]
     };
 
-    // const groupData = {
-    //     resources: ['Resources']
-    // };
     // const remoteData = new DataManager({
     //     url: 'https://js.syncfusion.com/demos/ejservices/api/Schedule/LoadData',
     //     adaptor: new WebApiAdaptor,
@@ -34,7 +30,7 @@ function Schedule() {
 
     // const render(){
     return (
-        <ScheduleComponent height='400px' width='800' currentView='Month' selectedDate={new Date(2020, 0, 11)} eventSettings={localData} >
+        <ScheduleComponent height='400px' width='600' currentView='Month' selectedDate={new Date(2020, 0, 11)} eventSettings={localData} >
             <Inject services={[Day, Week, Month, Agenda]} />
         </ ScheduleComponent >
     )

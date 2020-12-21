@@ -26,22 +26,6 @@ const StarRating = () => {
                 console.error("err===== =>", err);
             })
     }
-    // const [{ data, loading, error, response }, refetch] = useAxios({
-    //     method: 'POST',
-    //     url: `http://localhost:8000/reviews/`,
-    // });
-    // console.log("hello");
-    // const [text, setText] = useState('');
-
-    // useEffect(() => {
-    //     if (data && data.ad && data.ad.rates) {
-    //         setText(data.ad.rates);
-    //     } else if (error) {
-    //         setText(error.message);
-    //     }
-    // }, [data, error]);
-
-
 
     return (
         <div>

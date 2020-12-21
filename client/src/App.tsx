@@ -17,12 +17,12 @@ import ProviderContainer from "./components/Provider-container/Provider-containe
 import Activate from './components/Activate';
 // import Search from './components/search/Search';
 
-import Calendar from './components/calender/Calender';
+// import Calendar from './components/calender/Calender';
 import Schedule from './components/calender/Schedule'
 
 
 import './App.css';
-import StarRating from './components/rates/StarRate';
+// import StarRating from './components/rates/StarRate';
 import HomePage from "./pages/HomePage";
 import Map from './components/map/map';
 // import Categories from "./components/Categories-container/Categories-container";
@@ -46,7 +46,7 @@ function App() {
         {/* <ProviderSignup />  */}
         {/* <Search /> */}
         {/* <Calendar /> */}
-        {/* <Schedule /> */}
+        <Schedule />
 
         <Switch>
 
