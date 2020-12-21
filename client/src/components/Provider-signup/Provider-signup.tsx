@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Select from 'react-select';
 import { appendErrors, useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
@@ -28,20 +29,28 @@ const ProviderSignup = () => {
         }
     })
     const [test, setTest] = useState([]); // don't detete 
-    const [category, setCategory] = useState("");
-    const [city, setCity] = useState("");
+    const [category, setCategory] = useState([]);
+    const [city, setCity] = useState();
+    const [pcity, setpCity] = useState({});
     useEffect(() => {
         axios.get(`http://localhost:8000/location/city/`)
 
             .then((result: any) => {
                 console.log("loc", result)
+                setCity(result.data.map((d: { pk: any; name: any; }) => ({
+                    "value": d.pk,
+                    "label": d.name
+
+                })))
+
 
             })
             .catch((err: any) => {
                 console.error("err===== =>", err);
             })
-
+        // setpCity();  
     },[test])
+    console.log("city", pcity)
     
 
     return (
@@ -78,25 +87,31 @@ const ProviderSignup = () => {
                     <div className="name error" ></div> */}
 
                     <label htmlFor="email" >Category:</label>
-                    <select className="dropdown-cat" onChange={(e) => { setCategory(e.target.value) }}>
+                    {/* <select className="dropdown-cat" onChange={(e) => { setCategory(e.target.value) }}>
                         <option>Electrician</option>
                         <option>Plumber</option>
                         <option>Carpenter</option>
-                    </select>
+                    </select> */}
+                    
 
                     <label htmlFor="phone" >Phone:</label>
                     <input type="text" className="text" id="phone" name="phone" ref={register({ required: "required" })} />
                     <div className="phone error" ></div>
 
                     <label htmlFor="city" >City:</label>
-                    <select className="dropdown-city" onChange={(e) => { setCity(e.target.value) }}>
+                    {/* <select className="dropdown-city" onChange={(e) => { setCity(e.target.value) }}>
                         <option>Ramallah</option>
                         <option>Nablus</option>
                         <option>Hebron</option>
                         <option>Jenin</option>
                         <option>Tulkarem</option>
                         <option>Jericho</option>
-                    </select>
+                    </select> */}
+                    <Select
+                        value={pcity}
+                        options={city}
+                        onChange={(e: { value: any; label: any; }) => { setpCity({pk:e.value, name:e.label}) }}
+                    />
 
                     <label htmlFor="picture">Picture:</label>
                     <input type="text" className="picture" id="picture" name="picture" ref={register} />
