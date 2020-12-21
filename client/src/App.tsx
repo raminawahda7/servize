@@ -27,7 +27,7 @@ import StarRating from './components/rates/StarRate';
 import HomePage from "./pages/HomePage";
 import Map from './components/map/map';
 import Categories from "./components/Categories-container/Categories-container";
-// import Main from "./components/Main-view/Main-view";
+import Main from "./components/Main-view/Main-view";
 // import './App.css';
 
 function App() {
@@ -35,7 +35,7 @@ function App() {
     <BrowserRouter>
       <div className="App">
         {/* < Map /> */}
-        {/* <Navbar /> */}
+        <Navbar />
         {/* <Categories /> */}
         {/* <ProviderProf /> */}
         {/* <ProviderView /> */}
