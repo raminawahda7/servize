@@ -6,7 +6,7 @@ import { State } from '../../reducers/Users/usersReducer'
 import { Link, Redirect } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import Usertype from './Usertype'
-// import './Signup.css';
+import './Signup.css';
 
 const axios = require('axios');
 const $ = require('jquery');
