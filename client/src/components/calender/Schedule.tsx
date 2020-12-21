@@ -1,10 +1,16 @@
 import React from 'react';
+import { enableRipple } from '@syncfusion/ej2-base';
+import * as dataSource from './datasource.json';
 import { Inject, ScheduleComponent, Day, Week, WorkWeek, Month, Agenda, EventSettingsModel, ResourcesDirective, ResourceDirective, GroupModel, DragAndDrop, Resize, TimelineViews } from '@syncfusion/ej2-react-schedule';
 import { DataManager, WebApiAdaptor } from '@syncfusion/ej2-data';
+// import *  dataSource from './datasource.json';
+import { extend } from '@syncfusion/ej2-base';
 
 // import { render } from '@testing-library/react';
 // import './Schedule.css';
 // import { Data } from '@syncfusion/ej2-react-grids';
+
+
 
 
 function Schedule() {
@@ -23,11 +29,11 @@ function Schedule() {
     // const groupData = {
     //     resources: ['Resources']
     // };
-    const remoteData = new DataManager({
-        url: 'https://js.syncfusion.com/demos/ejservices/api/Schedule/LoadData',
-        adaptor: new WebApiAdaptor,
-        crossDomain: true
-    });
+    // const remoteData = new DataManager({
+    //     url: 'https://js.syncfusion.com/demos/ejservices/api/Schedule/LoadData',
+    //     adaptor: new WebApiAdaptor,
+    //     crossDomain: true
+    // });
 
     return (
         <ScheduleComponent height='400px' width='800' currentView='Month' selectedDate={new Date(2019, 0, 11)} eventSettings={localData} >
