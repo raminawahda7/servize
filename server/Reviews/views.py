@@ -7,5 +7,5 @@ class ReviewsList(generics.ListCreateAPIView):
     queryset=Reviews.objects.all()
     serializer_class=ReviewsSerializer
 
-    def get_queryset(self):
-        return Reviews.objects.annotate(avg_rating=Avg('rating')).order_by('-avg_rating')
+    # def get_queryset(self):
+    #     return Reviews.objects.annotate(avg_rating=Avg('rating')).order_by('-avg_rating')

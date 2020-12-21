@@ -1,8 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Signup from './components/Signup/Signup';
-import SignupSer from './components/Activation/Choose';
-
 import Login from './components/Login/Login';
 import Catagories from './components/catagories/Catagories';
 import ProviderProf from './components/profiles/ProviderProf';
@@ -68,8 +66,6 @@ function App() {
           <Route path="/profiles/providerview" component={ProviderView} />
           <Route path="/profiles/user" component={UserProf} />
           <Route path="/profiles/userview" component={UserView} />
-          <Route path="/user/signup/signupser" component={SignupSer} />
-
           
 
 
