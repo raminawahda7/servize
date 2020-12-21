@@ -6,7 +6,7 @@ from ServiceProvider.models import ServiceProvider
 
 class Schedule(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    provider = models.ForeignKey(ServiceProvider, on_delete=models.CASCADE,related_name='events')
+    provider = models.ForeignKey(ServiceProvider, on_delete=models.CASCADE)
     StartTime = models.DateTimeField(auto_now=False, auto_now_add=False)
     EndTime = models.DateTimeField(auto_now=False, auto_now_add=False)
     Subject = models.CharField(max_length=20, unique=True)
