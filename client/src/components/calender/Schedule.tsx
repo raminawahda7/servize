@@ -2,10 +2,14 @@ import React from 'react';
 import * as ReactDOM from "react-dom";
 import { Inject, ScheduleComponent, Day, Week, Month, Agenda, EventSettingsModel } from '@syncfusion/ej2-react-schedule';
 import { DataManager, WebApiAdaptor } from '@syncfusion/ej2-data';
+// import *  dataSource from './datasource.json';
+import { extend } from '@syncfusion/ej2-base';
 
 // import { render } from '@testing-library/react';
 // import './Schedule.css';
 // import { Data } from '@syncfusion/ej2-react-grids';
+
+
 
 
 function Schedule() {

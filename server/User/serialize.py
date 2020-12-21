@@ -4,7 +4,7 @@ from User.models import User,ProviderUser
 
 class ProviderUserSerializer(serializers.ModelSerializer):
     providerName = serializers.CharField(source='providerId.provider.name', read_only=True)
-    providerName = serializers.CharField(source='providerId.provider.id', read_only=True)
+    # providerName = serializers.CharField(source='providerId.provider.id', read_only=True)
     userName=serializers.CharField(source='userId.user.name', read_only=True)
 
     class Meta:

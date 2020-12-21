@@ -16,44 +16,49 @@ const $ = require('jquery');
 
 
 const Categories = (props:any) => {
+    const[cat, setCat] = useState([]);
+    const [test, setTest] = useState([]);
     // const userInStore = useSelector((state: any) => state.user);
     // const dispatch = useDispatch();
-    const userInStore = props.user.user;
+    // const userInStore = props.user.user;
     // console.log("store ===> ", userInStore)
-    console.log("store ===> ", props.user.user)
-    // axios.get(`http://localhost:8000/category/`)
+    console.log("store ===> ", cat)
 
-    //     .then((result: any) => {
-    //         console.log("axios", result.data)
-    //         dispatch(store(result.data))
+    useEffect(() =>{
+        axios.get(`http://localhost:8000/category/`)
 
-    //     })
-    //     .catch((err: any) => {
-    //         console.error("err===== =>", err);
-    //     })
+            .then((result: any) => {
+                console.log("axios", result.data)
+                // dispatch(store(result.data))
+                setCat(result.data)
 
-    // }, [userInStore])
+            })
+            .catch((err: any) => {
+                console.error("err===== =>", err);
+            })
+    },[test])
+    
 
-    if (userInStore !== undefined) {
+    // if (userInStore !== undefined) {
         return (
             <div className="list">
-                {/* {userInStore.map((user: any, index: any) =>
+                {cat.map((user: any, index: any) =>
                     <CategoriesCard
                         key={index}
                         user={user}
                     />
-                )} */}
+                )}
             </div>
         )
-    }
-    else {
-        return (
-            <div className="list">
-                {/* <h1>Hello</h1> */}
-            </div>
-        )
+    // }
+    // else {
+    //     return (
+    //         <div className="list">
+    //             {/* <h1>Hello</h1> */}
+    //         </div>
+    //     )
 
-    }
+    // }
 
     // <div id="cat-img" className="carousel slide carousel-multi-item" data-ride="carousel">
 
