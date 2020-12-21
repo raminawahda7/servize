@@ -9,7 +9,8 @@ export const store = (username: string, email: string, password: string) => asyn
 
             .then((result: any) => {
                 console.log("axios",result)
-                dispatch({ type: STORE_USER, payload: { username: result.data.name, email: result.data.email } })
+                dispatch({ type: STORE_USER, payload: { username: result.data.name, email: result.data.email , status: result.status, id: result.data.id} })
+                window.location.href = "/usertype"
 
             })
             .catch((err: any) => {
