@@ -16,6 +16,16 @@ interface FormData {
     category: any
 }
 
+interface SelectCity {
+    pk: any,
+    name: any,
+}
+
+const sCity: SelectCity = {
+    pk: null,
+    name: null
+}
+
 const ProviderSignup = () => {
     const userInStore = useSelector((state: any) => state.user);
     const dispatch = useDispatch();
@@ -29,12 +39,14 @@ const ProviderSignup = () => {
         }
     })
     const [test, setTest] = useState([]); // don't detete 
+
     const [category, setCategory] = useState([]);
+    const [selectCategory, setSelectCategory] = useState({});
+
     const [city, setCity] = useState();
-    const [pcity, setpCity] = useState({});
+    const [selectCity, setSelectCity] = useState(sCity);
     useEffect(() => {
         axios.get(`http://localhost:8000/location/city/`)
-
             .then((result: any) => {
                 console.log("loc", result)
                 setCity(result.data.map((d: { pk: any; name: any; }) => ({
@@ -42,15 +54,25 @@ const ProviderSignup = () => {
                     "label": d.name
 
                 })))
-
-
             })
             .catch((err: any) => {
                 console.error("err===== =>", err);
             })
-        // setpCity();  
+
+        axios.get(`http://localhost:8000/location/city/`)
+            .then((result: any) => {
+                console.log("cat", result)
+                setCity(result.data.map((d: { pk: any; name: any; }) => ({
+                    "value": d.pk,
+                    "label": d.name
+                })))
+            })
+            .catch((err: any) => {
+                console.error("err===== =>", err);
+            })
+ 
     },[test])
-    console.log("city", pcity)
+    // console.log("selectCity", selectCity)
     
 
     return (
@@ -62,7 +84,7 @@ const ProviderSignup = () => {
                     axios.post(`http://localhost:8000/serviceprovider/`, {
                         categoryId: "1",
                         phone: formData.phone,
-                        city: "1",
+                        city: selectCity,
                         provider: userInStore.user.id,
                         role: "null",
                         picture: formData.picture
@@ -92,6 +114,11 @@ const ProviderSignup = () => {
                         <option>Plumber</option>
                         <option>Carpenter</option>
                     </select> */}
+                    <Select
+                        value={selectCategory}
+                        options={category}
+                        onChange={(e: { value: any; label: any; }) => { setSelectCategory({ pk: e.value, name: e.label }) }}
+                    />
                     
 
                     <label htmlFor="phone" >Phone:</label>
@@ -108,9 +135,9 @@ const ProviderSignup = () => {
                         <option>Jericho</option>
                     </select> */}
                     <Select
-                        value={pcity}
+                        value={selectCity}
                         options={city}
-                        onChange={(e: { value: any; label: any; }) => { setpCity({pk:e.value, name:e.label}) }}
+                        onChange={(e: { value: any; label: any; }) => { setSelectCity({pk:e.value, name:e.label}) }}
                     />
 
                     <label htmlFor="picture">Picture:</label>
