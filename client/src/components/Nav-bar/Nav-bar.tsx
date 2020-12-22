@@ -41,34 +41,33 @@ const Navbar = () => {
 
     }
 
-    // const openClick = () => {
-    //     document.getElementById("mySidenav").style.width = "250px"
+    const openClick = () => {
+        document.getElementById("mySidenav").style.width = "250px"
+        console.log("gggg")
+    }
+    const closeClick = () => {
+        document.getElementById("mySidenav").style.width = "0";
 
-    // }
-    // const closeClick = () => {
-    //     document.getElementById("mySidenav").style.width = "0";
-
-    // }
+    }
 
     return (
         <header id="nav-bar">
             <nav>
-              
-                {/* <div id="mySidenav" className="sidenav">
-                    <div className="menu-icon" onClick={openClick}>
-                        <i className="fa fa-bars fa-2x"></i>
-                    </div>
+                <span className="menu-icon" onClick={openClick}>
+                    <i className="fa fa-bars fa-2x"></i>
+                </span>
+                <div id="mySidenav" className="sidenav">
                     <a href="javascript:void(0)" className="closebtn" onClick={closeClick}>&times;</a>
                     <a href="#">About</a>
-                    <a href="#">Services</a>
-                    <a href="#">Clients</a>
+                    <a href="#">{t("how_it_works")}</a>
+                    <a href="#">Browse Jobs</a>
                     <a href="#">Contact</a>
-                </div> */}
+                </div>
                 
-                <a className="logo">
-                    <Link to="/">{t("app_name")}</Link>
+                <a href="/" className="logo">
+                    {t("app_name")}
                 </a>
-                <div className="menu">
+                <span className="menu">
                     <ul>
                         <li className="pc-view"><a href="#">{t("how_it_works")}</a></li>
                         <li className="pc-view"><a href="#">Browse Jobs</a></li>
@@ -103,7 +102,7 @@ const Navbar = () => {
                             <option value="ar">عربي</option>
                         </select>
                     </div> */}
-                </div>
+                </span>
             </nav>
 
         </header>
