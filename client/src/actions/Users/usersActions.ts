@@ -1,8 +1,8 @@
-import { STORE_USER, STORE_DATA, ADD_ROLE, DispatchUserTypes } from '../actionTypes';
+import { STORE_USER, STORE_DATA, USER_LOGIN, ADD_ROLE, DispatchUserTypes } from '../actionTypes';
 import { Dispatch } from "redux";
 import axios from "axios";
 
-export const store = (username: string, email: string, password: string) => async (dispatch: Dispatch<DispatchUserTypes>) => {
+export const signUp = (username: string, email: string, password: string) => async (dispatch: Dispatch<DispatchUserTypes>) => {
     // console.log(username, email, password )
     try {
         await axios.post(`http://localhost:8000/auth/users/`, { name: username, password: password, email: email })
@@ -21,6 +21,12 @@ export const store = (username: string, email: string, password: string) => asyn
         console.log("action error",e)
     }
 }
+
+export const logIn = (username: string, email: string, id: number) => async (dispatch: Dispatch<DispatchUserTypes>) => {
+    // console.log(username, email, password )
+    dispatch({ type: USER_LOGIN, payload: { username, email, id } })
+}
+
 export const addRole = (role: string) => (dispatch: Dispatch<DispatchUserTypes>) => {
     // console.log(username, email, password )
     dispatch({ type: ADD_ROLE, payload: role})
