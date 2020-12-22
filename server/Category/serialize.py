@@ -7,3 +7,8 @@ class  CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model=Category
         fields=('catName','catImage','pk' ,'providers')
+
+class  JustCategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model=Category
+        fields=('catName','catImage','pk')
