@@ -1,10 +1,11 @@
-import { User, STORE_USER, STORE_DATA, DispatchUserTypes } from '../../actions/actionTypes';
+import { User, STORE_USER, STORE_DATA, ADD_ROLE, DispatchUserTypes } from '../../actions/actionTypes';
 
 export interface State {
     user: User |any,
+    role: string |any,
     // prov: {name:string, description:string, img: string}
 }
-export const initState: State = { user: null }
+export const initState: State = { user: null, role: null }
 // const initState = {
 //     user: null,
 
@@ -15,6 +16,7 @@ export const initState: State = { user: null }
 // }   
 // type A = ReturnType<typeof store>; 
 const usersReducer = (state: State = initState, action: DispatchUserTypes): State => {
+    console.log("actiontype", action.type)
     switch (action.type) {
         case STORE_USER:
             // return { ...state, user: action.payload }
@@ -22,6 +24,8 @@ const usersReducer = (state: State = initState, action: DispatchUserTypes): Stat
             return { ...state , user: action.payload }
         case STORE_DATA:
             return { ...state, user: action.payload }
+        case ADD_ROLE:
+            return { ...state, role: action.payload }
         default:
             return state
     }

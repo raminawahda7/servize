@@ -9,6 +9,7 @@ import ProviderView from './components/profiles/ProviderView'
 import UserView from './components/profiles/UserView';
 import UserProf from './components/profiles/UserProf'
 import ProviderSignup from './components/Provider-signup/Provider-signup'
+import UsersSignup from './components/Users-signup/Users-signup'
 import Navbar from "./components/Nav-bar/Nav-bar";
 import Footer from "./components/Footer/Footer";
 import ForgotPassword from "./components/Forgot-password/Forgot-password";
@@ -29,6 +30,7 @@ import Map from './components/map/map';
 import Categories from "./components/Categories-container/Categories-container";
 import Main from "./components/Main-view/Main-view";
 // import './App.css';
+import Test from "./components/Categories-container/test";
 
 function App() {
   return (
@@ -36,6 +38,7 @@ function App() {
       <div className="App">
         {/* < Map /> */}
         <Navbar />
+        {/* <Test/> */}
         {/* <Categories /> */}
         {/* <ProviderProf /> */}
         {/* <ProviderView /> */}
@@ -51,10 +54,11 @@ function App() {
 
         <Switch>
 
-          {/* <Route exact path="/" component={HomePage} /> */}
+          <Route exact path="/" component={HomePage} />
           <Route exact path="/usertype" component={Usertype} />
           {/* <Route exact path="/" component={Main} /> */}
           <Route path="/prov/signup" component={ProviderSignup} />
+          <Route path="/client/signup" component={UsersSignup} />
           <Route path="/user/signup" component={Signup} />
           <Route path="/user/login" component={Login} />
           {/* <Route path="/providerProfile" exact component={() => < ProviderProf/>} /> */}
