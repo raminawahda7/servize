@@ -3,6 +3,7 @@ import Select from 'react-select';
 import { appendErrors, useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+import { addRole } from '../../actions/Users/usersActions';
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBInput } from 'mdbreact';
 const axios = require('axios');
 
@@ -16,6 +17,24 @@ interface FormData {
     category: any
 }
 
+interface SelectCity {
+    pk: any,
+    name: any,
+}
+const sCity: SelectCity = {
+    pk: null,
+    name: null
+}
+
+
+interface SelectCategory {
+    pk: any,
+    catName: any,
+}
+const sCategory: SelectCategory = {
+    pk: null,
+    catName: null
+}
 const ProviderSignup = () => {
     const userInStore = useSelector((state: any) => state.user);
     const dispatch = useDispatch();
@@ -29,12 +48,14 @@ const ProviderSignup = () => {
         }
     })
     const [test, setTest] = useState([]); // don't detete 
+
     const [category, setCategory] = useState([]);
+    const [selectCategory, setSelectCategory] = useState(sCategory);
+
     const [city, setCity] = useState();
-    const [pcity, setpCity] = useState({});
+    const [selectCity, setSelectCity] = useState(sCity);
     useEffect(() => {
         axios.get(`http://localhost:8000/location/city/`)
-
             .then((result: any) => {
                 console.log("loc", result)
                 setCity(result.data.map((d: { pk: any; name: any; }) => ({
@@ -42,15 +63,26 @@ const ProviderSignup = () => {
                     "label": d.name
 
                 })))
-
-
             })
             .catch((err: any) => {
                 console.error("err===== =>", err);
             })
-        // setpCity();  
+
+        axios.get(`http://localhost:8000/category/just`)
+            .then((result: any) => {
+                console.log("cat", result)
+                setCategory(result.data.map((d: { pk: any; catName: any; }) => ({
+                    "value": d.pk,
+                    "label": d.catName
+                })))
+            })
+            .catch((err: any) => {
+                console.error("err===== =>", err);
+            })
+ 
     },[test])
-    console.log("city", pcity)
+    console.log("selectCity", selectCity)
+    console.log("selectCategory", selectCategory)
     
 
     return (
@@ -60,17 +92,22 @@ const ProviderSignup = () => {
                     console.log(formData)
 
                     axios.post(`http://localhost:8000/serviceprovider/`, {
-                        categoryId: "1",
+                        categoryId: selectCategory.pk,
                         phone: formData.phone,
-                        city: "1",
+                        city: selectCity.pk,
                         provider: userInStore.user.id,
-                        role: "null",
+                        // role: "ServiceProvider",
                         picture: formData.picture
         
                     })
 
                         .then((result: any) => {
-                            console.log(result)
+                            console.log("axios",result)
+                            dispatch(addRole(result.data.role)) 
+                            if(result.status === 201){
+                                window.location.href = "/";
+
+                            }
 
                         })
                         .catch((err: any) => {
@@ -92,6 +129,11 @@ const ProviderSignup = () => {
                         <option>Plumber</option>
                         <option>Carpenter</option>
                     </select> */}
+                    <Select
+                        value={selectCategory}
+                        options={category}
+                        onChange={(e: { value: any; label: any; }) => { setSelectCategory({ pk: e.value, catName: e.label }) }}
+                    />
                     
 
                     <label htmlFor="phone" >Phone:</label>
@@ -108,9 +150,9 @@ const ProviderSignup = () => {
                         <option>Jericho</option>
                     </select> */}
                     <Select
-                        value={pcity}
+                        value={selectCity}
                         options={city}
-                        onChange={(e: { value: any; label: any; }) => { setpCity({pk:e.value, name:e.label}) }}
+                        onChange={(e: { value: any; label: any; }) => { setSelectCity({pk:e.value, name:e.label}) }}
                     />
 
                     <label htmlFor="picture">Picture:</label>

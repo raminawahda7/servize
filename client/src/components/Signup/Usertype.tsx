@@ -22,7 +22,7 @@ const Usertype = (props: any) => {
             <br />
             <div className="user-type">
 
-                <button type="button" className="user" ><Link to= "/">User</Link></button>
+                <button type="button" className="user" ><Link to= "/client/signup">User</Link></button>
                 <button type="button" className="prov" ><Link to="/prov/signup">Provider</Link></button>
 
             </div>

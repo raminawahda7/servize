@@ -1,0 +1,72 @@
+import { WithStyles } from '@material-ui/styles';
+import React from 'react';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// import Carousel from 'react-bootstrap/Carousel'
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
+import './test.css'
+
+
+
+const Test = () => {
+    const responsive = {
+        desktop: {
+            breakpoint: { max: 3000, min: 1024 },
+            items: 3,
+            slidesToSlide: 3 // optional, default to 1.
+        },
+        tablet: {
+            breakpoint: { max: 1024, min: 464 },
+            items: 2,
+            slidesToSlide: 2 // optional, default to 1.
+        },
+        mobile: {
+            breakpoint: { max: 464, min: 0 },
+            items: 1,
+            slidesToSlide: 1 // optional, default to 1.
+        }
+    }
+    
+    return (
+        
+    <Carousel
+        swipeable={false}
+        draggable={false}
+        showDots={true}
+        responsive={responsive}
+        // ssr={true} // means to render carousel on server-side.
+        infinite={true}
+    >
+            <div className="card1">
+                <img src="https://picsum.photos/180/100" />
+                <p>description="React Carousel with Server Side Rendering Support – Part 2"
+                headline="w3js.com - web front-end studio"</p>
+               
+            </div>
+            <div className="card1">
+                <img src="https://picsum.photos/180/100" />
+                <p>description="React Carousel with Server Side Rendering Support – Part 2"
+                headline="w3js.com - web front-end studio"</p>
+                
+            </div>
+                
+            
+           
+            <div className="card1">
+                <img src="https://picsum.photos/180/100" />
+                <p>description="React Carousel with Server Side Rendering Support – Part 2"
+                headline="w3js.com - web front-end studio"</p>
+
+            </div>
+            <div className="card1">
+                <img src="https://picsum.photos/180/100" />
+                <p>description="React Carousel with Server Side Rendering Support – Part 2"
+                headline="w3js.com - web front-end studio"</p>
+
+            </div>
+    </Carousel>
+       
+    );
+}
+
+export default Test;
