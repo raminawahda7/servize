@@ -20,12 +20,20 @@ interface SelectCity {
     pk: any,
     name: any,
 }
-
 const sCity: SelectCity = {
     pk: null,
     name: null
 }
 
+
+interface SelectCategory {
+    pk: any,
+    catName: any,
+}
+const sCategory: SelectCategory = {
+    pk: null,
+    catName: null
+}
 const ProviderSignup = () => {
     const userInStore = useSelector((state: any) => state.user);
     const dispatch = useDispatch();
@@ -41,7 +49,7 @@ const ProviderSignup = () => {
     const [test, setTest] = useState([]); // don't detete 
 
     const [category, setCategory] = useState([]);
-    const [selectCategory, setSelectCategory] = useState({});
+    const [selectCategory, setSelectCategory] = useState(sCategory);
 
     const [city, setCity] = useState();
     const [selectCity, setSelectCity] = useState(sCity);
@@ -59,12 +67,12 @@ const ProviderSignup = () => {
                 console.error("err===== =>", err);
             })
 
-        axios.get(`http://localhost:8000/location/city/`)
+        axios.get(`http://localhost:8000/category/just`)
             .then((result: any) => {
                 console.log("cat", result)
-                setCity(result.data.map((d: { pk: any; name: any; }) => ({
+                setCategory(result.data.map((d: { pk: any; catName: any; }) => ({
                     "value": d.pk,
-                    "label": d.name
+                    "label": d.catName
                 })))
             })
             .catch((err: any) => {
@@ -72,7 +80,8 @@ const ProviderSignup = () => {
             })
  
     },[test])
-    // console.log("selectCity", selectCity)
+    console.log("selectCity", selectCity)
+    console.log("selectCategory", selectCategory)
     
 
     return (
@@ -82,17 +91,21 @@ const ProviderSignup = () => {
                     console.log(formData)
 
                     axios.post(`http://localhost:8000/serviceprovider/`, {
-                        categoryId: "1",
+                        categoryId: selectCategory.pk,
                         phone: formData.phone,
-                        city: selectCity,
+                        city: selectCity.pk,
                         provider: userInStore.user.id,
-                        role: "null",
+                        // role: "ServiceProvider",
                         picture: formData.picture
         
                     })
 
                         .then((result: any) => {
-                            console.log(result)
+                            console.log("axios",result)
+                            // if(result.status === 201){
+                            //     window.location.href = "/";
+
+                            // }
 
                         })
                         .catch((err: any) => {
@@ -117,7 +130,7 @@ const ProviderSignup = () => {
                     <Select
                         value={selectCategory}
                         options={category}
-                        onChange={(e: { value: any; label: any; }) => { setSelectCategory({ pk: e.value, name: e.label }) }}
+                        onChange={(e: { value: any; label: any; }) => { setSelectCategory({ pk: e.value, catName: e.label }) }}
                     />
                     
 

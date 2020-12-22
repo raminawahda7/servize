@@ -9,6 +9,7 @@ import ProviderView from './components/profiles/ProviderView'
 import UserView from './components/profiles/UserView';
 import UserProf from './components/profiles/UserProf'
 import ProviderSignup from './components/Provider-signup/Provider-signup'
+import UsersSignup from './components/Users-signup/Users-signup'
 import Navbar from "./components/Nav-bar/Nav-bar";
 import Footer from "./components/Footer/Footer";
 import ForgotPassword from "./components/Forgot-password/Forgot-password";
@@ -57,6 +58,7 @@ function App() {
           <Route exact path="/usertype" component={Usertype} />
           {/* <Route exact path="/" component={Main} /> */}
           <Route path="/prov/signup" component={ProviderSignup} />
+          <Route path="/client/signup" component={UsersSignup} />
           <Route path="/user/signup" component={Signup} />
           <Route path="/user/login" component={Login} />
           {/* <Route path="/providerProfile" exact component={() => < ProviderProf/>} /> */}
@@ -75,7 +77,7 @@ function App() {
 
         </Switch>
 
-        <Footer />
+        {/* <Footer /> */}
 
       </div>
     </BrowserRouter>
