@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { appendErrors, useForm } from 'react-hook-form';
-import { store } from '../../actions/Users/usersActions';
+import { signUp } from '../../actions/Users/usersActions';
 import { connect } from 'react-redux'
 import { State } from '../../reducers/Users/usersReducer'
 import { Link, Redirect } from 'react-router-dom';
@@ -41,7 +41,7 @@ const Signup = (props: any) => {
             <form id="signup-form"
                 onSubmit={handleSubmit((formData) => {
 
-                    props.store(formData.username, formData.email, formData.password);
+                    props.signUp(formData.username, formData.email, formData.password);
                     // console.log(props)
 
                     // if (userInStore.user.status === 201) {
@@ -65,7 +65,6 @@ const Signup = (props: any) => {
                 })}
             >
                 <h1>Sign Up</h1>
-                <br />
                 <div className="column">
                     <label htmlFor="username">User Name:</label>
                     <input type="text" className="text" id="username" name="username" ref={register({ required: "required" })} />
@@ -86,11 +85,9 @@ const Signup = (props: any) => {
                     <input type="password" className="text" id="confirmPassword" name="confirmPassword" ref={register({ required: "required" })} />
                     <div className="password error" ></div>
                 </div>
-                <br />
 
+                <button className="button" >Sign Up</button>
                 <button className="btn cancel" onClick={closeForm}>Close</button>
-
-                <button className="button" >Sign Up</button><br />
 
                 <div className="password-req" >8 characters or longer. Combine upper and lowercase letters and numbers</div><br />
                 <p >Already have an account? <Link to="/user/login" style={{ textDecoration: "none" }}>Sign In</Link></p>
@@ -105,7 +102,7 @@ const mapStateToProps = (state: State) => ({
     user: state.user,
 })
 
-const mapDispatchToProps = { store }
+const mapDispatchToProps = { signUp }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Signup);
 

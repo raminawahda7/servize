@@ -1,4 +1,5 @@
 export const STORE_USER = 'STORE_USER';
+export const USER_LOGIN = 'USER_LOGIN';
 export const ADD_ROLE = 'ADD_ROLE';
 export const STORE_DATA = 'STORE_DATA';
 export const GET_PROV = 'GET_PROV';
@@ -6,6 +7,10 @@ export const GET_PROV = 'GET_PROV';
 export interface Userstore {
     type: typeof STORE_USER,
     payload: User 
+}
+export interface Userlogin{
+    type: typeof USER_LOGIN,
+    payload: User
 }
 
 export interface UserRole {
@@ -42,7 +47,6 @@ export type ProvIerface = {
 }
 
 
-
 export type User = UserIerface | null | string
 
 export type AllProv = ProvIerface | null | any[] 
@@ -51,6 +55,6 @@ export type AllProv = ProvIerface | null | any[]
 
 // export type Value = boolean
 
-export type DispatchUserTypes = Userstore | Userdata | UserRole;
+export type DispatchUserTypes = Userstore | Userdata | UserRole | Userlogin;
 
 export type DispatchProvTypes = Provider ;

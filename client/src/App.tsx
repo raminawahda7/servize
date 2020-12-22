@@ -70,14 +70,14 @@ function App() {
           <Route path="/profiles/provider" component={ProviderProf} />
           {/* <Route path="/profiles/provider" component={Schedule} /> */}
           <Route path="/profiles/providerview" component={ProviderView} />
-          <Route path="/profiles/user" component={UserProf} />
+          <Route path="/user/profiles/user" component={UserProf} />
           <Route path="/profiles/userview" component={UserView} />
           
 
 
         </Switch>
 
-        {/* <Footer /> */}
+        <Footer />
 
       </div>
     </BrowserRouter>
