@@ -103,19 +103,26 @@ WSGI_APPLICATION = 'server.wsgi.application'
 # setting database
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': BASE_DIR / 'db.sqlite3',
         # 'ENGINE': 'django.db.backends.postgresql_psycopg2',
         # 'NAME': 'servizeDB', 
         # 'USER': 'postgres', 
         # 'PASSWORD': 'student',
         # 'HOST': 'localhost', 
         # 'PORT': '5432',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'dcai2j5vv3j7rb', 
+        'USER': 'xzpvenqzayufyx', 
+        'PASSWORD': '23eeef6f4629a13267628996fcf4abd9f27ad52c8fbbbb407a498597b255d0cc',
+        'HOST': 'ec2-34-200-106-49.compute-1.amazonaws.com', 
+        'PORT': '5432',
     }
 }
-import dj_database_url
-db_from_env = dj_database_url.config(conn_max_age=600)
-DATABASES['default'].update(db_from_env) 
+
+# import dj_database_url
+# db_from_env = dj_database_url.config(conn_max_age=600)
+# DATABASES['default'].update(db_from_env) 
 
 
 #setting email for verfication
@@ -161,7 +168,7 @@ USE_TZ = True
 CORS_ALLOW_ALL_ORIGINS=True
 
 CORS_ORIGIN_WHITELIST = (
-    'http://localhost:8000', 'https://0.0.0.0'
+    'http://localhost:8000',
 )
 
 # Static files (CSS, JavaScript, Images)
