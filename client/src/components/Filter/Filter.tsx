@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { store } from '../../actions/Users/usersActions';
+// import { signUp } from '../../actions/Users/usersActions';
 import './Nav-bar.css';
 const axios = require('axios');
 const $ = require('jquery');
