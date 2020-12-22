@@ -12,6 +12,10 @@ class  CitySerializer(serializers.ModelSerializer):
         model=City
         fields=['name','pk','catProviders']
          
+class  JustCitySerializer(serializers.ModelSerializer):
+    class Meta:
+        model=City
+        fields=['name','pk']
 
 # class  AreaSerializer(serializers.ModelSerializer):
 #     class Meta:

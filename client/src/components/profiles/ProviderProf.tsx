@@ -26,19 +26,19 @@ export default function ProviderProf() {
 
     const userInStore = useSelector((state: any) => state.user);
     const dispatch = useDispatch();
-    // const handleClick = (e: any) => {
-    //     e.preventDefault();
-    axios.get(`http://localhost:8000/serviceprovider/`)
+    const handleClick = (e: any) => {
+        axios.post(`http://localhost:8000/serviceprovider/servProv/`,
+        {
+            provider:"2",
+        })
         .then((results: any) => {
             console.log("axios", results);
-            // dispatch(store(results.data))
-
         })
         .catch((err: any) => {
             console.error("err===== =>", err);
         })
 
-
+    }
     // let options = {
     //     url: `http://localhost:8000/serviceprovider/`,
     //     method: 'get',
@@ -76,6 +76,7 @@ export default function ProviderProf() {
                                 <img src="https://i.pinimg.com/236x/4d/25/5f/4d255fadc15c380d8b03c7ef25a4c97b.jpg" alt="img" className="img" />
                             </a>
                             <h1>Name</h1>
+                            <button className = "button" onClick={handleClick}>Submit</button>
                         </div>
 
                         <ul className="nav nav-pills nav-stacked">

@@ -5,5 +5,6 @@ app_name='User'
 
 
 urlpatterns=[
-    path('',UserList.as_view())
+    path('',UserList.as_view()),
+    # path('provideruser/',ProviderUserList.as_view())
  ]
