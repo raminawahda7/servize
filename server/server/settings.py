@@ -161,7 +161,7 @@ USE_TZ = True
 CORS_ALLOW_ALL_ORIGINS=True
 
 CORS_ORIGIN_WHITELIST = (
-    'http://localhost:8000', '0.0.0.0'
+    'http://localhost:8000', 'https://0.0.0.0'
 )
 
 # Static files (CSS, JavaScript, Images)
