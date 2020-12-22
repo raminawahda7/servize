@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { store } from '../../actions/Users/usersActions';
+import { signUp } from '../../actions/Users/usersActions';
 import { connect } from 'react-redux'
 import CategoriesCard from "./Categories-card";
 import { State} from '../../reducers/Users/usersReducer'
@@ -137,6 +137,6 @@ const mapStateToProps = (state: State) => ({
     user: state.user,
 })
 
-const mapDispatchToProps = { store }
+const mapDispatchToProps = { signUp }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Categories);

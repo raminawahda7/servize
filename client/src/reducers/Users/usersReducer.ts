@@ -1,4 +1,4 @@
-import { User, STORE_USER, STORE_DATA, ADD_ROLE, DispatchUserTypes } from '../../actions/actionTypes';
+import { User, STORE_USER, STORE_DATA, ADD_ROLE, USER_LOGIN, DispatchUserTypes } from '../../actions/actionTypes';
 
 export interface State {
     user: User |any,
@@ -22,10 +22,16 @@ const usersReducer = (state: State = initState, action: DispatchUserTypes): Stat
             // return { ...state, user: action.payload }
             // return { ...state, user: [action.payload, ...state.user] }
             return { ...state , user: action.payload }
+            
+        case USER_LOGIN:
+            return { ...state, user: action.payload }
+
         case STORE_DATA:
             return { ...state, user: action.payload }
+
         case ADD_ROLE:
             return { ...state, role: action.payload }
+
         default:
             return state
     }
