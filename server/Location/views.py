@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import generics
 from Location.models import City
-from Location.serialize import CitySerializer
+from Location.serialize import CitySerializer,JustCitySerializer
 from Location.filter import CityFilter
 from rest_framework.decorators import api_view  
 from rest_framework.response import Response
@@ -10,6 +10,10 @@ from rest_framework.response import Response
 class CityList(generics.ListCreateAPIView):
     queryset = City.objects.all()
     serializer_class = CitySerializer
+
+class JustCityList(generics.ListCreateAPIView):
+    queryset = City.objects.all()
+    serializer_class = JustCitySerializer
 
 # class AreaList(generics.ListCreateAPIView):
 #     queryset=Area.objects.all()

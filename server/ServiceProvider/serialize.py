@@ -24,7 +24,7 @@ class  ServiceProviderSerializer(serializers.ModelSerializer):
     name = serializers.CharField(source='provider.name',read_only=True )
     users= ProviderUserSerializer(many=True, read_only=True)
     catname= serializers.CharField(source='categoryId',read_only=True)
-    reservations=serializers.CharField(source='shecdul',read_only=True)
+    reservations=serializers.CharField(source='schedule',read_only=True)
 
     # events= serializers.CharField(source='events',read_only=True)
 
