@@ -29,6 +29,7 @@ import Map from './components/map/map';
 import Categories from "./components/Categories-container/Categories-container";
 import Main from "./components/Main-view/Main-view";
 // import './App.css';
+import Test from "./components/Categories-container/test";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
       <div className="App">
         {/* < Map /> */}
         <Navbar />
+        {/* <Test/> */}
         {/* <Categories /> */}
         {/* <ProviderProf /> */}
         {/* <ProviderView /> */}
@@ -51,7 +53,7 @@ function App() {
 
         <Switch>
 
-          {/* <Route exact path="/" component={HomePage} /> */}
+          <Route exact path="/" component={HomePage} />
           <Route exact path="/usertype" component={Usertype} />
           {/* <Route exact path="/" component={Main} /> */}
           <Route path="/prov/signup" component={ProviderSignup} />
@@ -72,7 +74,7 @@ function App() {
 
         </Switch>
 
-        {/* <Footer /> */}
+        <Footer />
 
       </div>
     </BrowserRouter>
