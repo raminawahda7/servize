@@ -3,6 +3,7 @@ import Select from 'react-select';
 import { appendErrors, useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+import { addRole } from '../../actions/Users/usersActions';
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBInput } from 'mdbreact';
 const axios = require('axios');
 
@@ -102,10 +103,11 @@ const ProviderSignup = () => {
 
                         .then((result: any) => {
                             console.log("axios",result)
-                            // if(result.status === 201){
-                            //     window.location.href = "/";
+                            dispatch(addRole(result.data.role)) 
+                            if(result.status === 201){
+                                window.location.href = "/";
 
-                            // }
+                            }
 
                         })
                         .catch((err: any) => {

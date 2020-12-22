@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Select from 'react-select';
+import {addRole} from '../../actions/Users/usersActions';
 import { appendErrors, useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
@@ -12,6 +12,8 @@ interface FormData {
 }
 const UsersSignup = () => {
     const userInStore = useSelector((state: any) => state.user);
+    const dispatch = useDispatch();
+
     const [submitting, setSubmitting] = useState<boolean>(false);
     const [serverErrors, setServerErrors] = useState<Array<string>>([]);
 
@@ -35,10 +37,11 @@ const UsersSignup = () => {
 
                         .then((result: any) => {
                             console.log("axios",result)
-                            // if (result.status === 201) {
-                            //     window.location.href = "/";
+                            dispatch(addRole(result.data.role)) 
+                            if (result.status === 201) {
+                                window.location.href = "/";
 
-                            // }
+                            }
 
                         })
                         .catch((err: any) => {
