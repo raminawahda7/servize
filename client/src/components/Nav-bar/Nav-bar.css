@@ -9,7 +9,7 @@
 } */
 
 /*side nav*/
-/* .sidenav {
+.sidenav {
   height: 100%;
   width: 0;
   position: fixed;
@@ -46,11 +46,12 @@
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
-} */
+}
 /*side nav*/
 
 /*******/
 .logo {
+      text-decoration: none;
       line-height: 50px;
       position: fixed;
       float: left;
@@ -65,13 +66,13 @@ nav {
       position: fixed;
       width: 100%;
       line-height: 50px;
-      background-color:cornsilk;
+      background-color:rgb(209, 83, 51);;
 }
 
 nav ul {
       line-height: 50px;
       list-style: none;
-      background: cornsilk;
+      background: rgb(209, 83, 51);
       overflow: hidden;
       color: rgb(0, 0, 0);
       padding: 0;
@@ -89,8 +90,11 @@ nav ul li {
       display: inline-block;
       padding: 10px 10px;;
 }
+.menu-icon {
+     display: none;
+}
 
-nav ul li a {
+.menu a {
       text-decoration: none;
       color: rgb(0, 0, 0);
       font-size: 16px;
@@ -102,10 +106,9 @@ nav ul li a {
     display: none;
     text-align: left;
   }
-  
-  .header-right {
-    float: none;
-  }
+  .menu-icon {
+     display: inline-block;
+}
 }
 /* 
 .menu-icon {
