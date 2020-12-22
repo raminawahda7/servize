@@ -35,6 +35,7 @@ ALLOWED_HOSTS = ["servize-web.herokuapp.com", "127.0.0.1","localhost"]
 # Application definition
 
 INSTALLED_APPS = [
+    'accounts',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -53,7 +54,7 @@ INSTALLED_APPS = [
     'Reviews',
     'User',
     'djoser',
-    'accounts',
+    
     'schedule',
     
     
