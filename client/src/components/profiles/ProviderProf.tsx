@@ -6,8 +6,8 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import RoomIcon from '@material-ui/icons/Room';
 import StarRating from '../rates/StarRate';
-import Calender from '../CalendarEvent/Calender';
-
+import Schedules from '../calender/Schedule';
+// import CalenderEvent from '../CalendarEvent/cal';
 // import Context from '../utils/context';
 import './ProviderProf.css'
 
@@ -69,8 +69,9 @@ export default function ProviderProf() {
             <div className="row">
                 <div className="profile-nav col-md-3">
                     <div className="panel">
-                        {/* <div className="user-heading round"> */}
+                       
                         <div>
+                            
                             <a href="#">
                                 <img src="https://i.pinimg.com/236x/4d/25/5f/4d255fadc15c380d8b03c7ef25a4c97b.jpg" alt="img" className="img" />
                             </a>
@@ -223,7 +224,9 @@ export default function ProviderProf() {
                                         </div>
                                         <div className="bio-desk">
                                             <h4 className="purple"></h4>
-                                            <Calender/>
+                                            {/* <CalenderEvent/> */}
+                                            {/* <Calender/> */}
+                                            {/* <Schedules/> */}
                                         </div>
                                     </div>
                                 </div>

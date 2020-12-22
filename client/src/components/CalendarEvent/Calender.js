@@ -8,7 +8,7 @@ function Calender() {
   /* 
     Update with your own Client Id and Api key 
   */
-  var CLIENT_ID = "794934029408-i23pehij26138rok16uipdnffs9jok26.apps.googleusercontent.com"
+  var CLIENT_ID = "185283466398-8g9alqi1absmp2hnpj741unmgbnfv68k.apps.googleusercontent.com"
   var API_KEY = "AIzaSyDxUkAcb9EiZ4gPFNIKTnKInDcmBT7sads"
   var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
 
@@ -38,11 +38,11 @@ function Calender() {
           'description': 'Really great refreshments',
           'start': {
             'dateTime': '2020-06-28T09:00:00-07:00',
-            'timeZone': 'America/Los_Angeles'
+            'timeZone': 'Eastern European Time'
           },
           'end': {
             'dateTime': '2020-06-28T17:00:00-07:00',
-            'timeZone': 'America/Los_Angeles'
+            'timeZone': 'Eastern European Time'
           },
           'recurrence': [
             'RRULE:FREQ=DAILY;COUNT=2'
