@@ -16,11 +16,12 @@ import ForgotPassword from "./components/Forgot-password/Forgot-password";
 import ResetPassword from "./components/Reset-password/Reset-password";
 import ResetPasswordConfirm from "./components/Reset-password/Reset-password-confirm"
 import ProviderContainer from "./components/Provider-container/Provider-container";
+import ServiceProvider from "../src/components/ServiceProvider/ServiceProvider"
+import Booking from "./components/booking/Booking"
 import Activate from './components/Activate';
 // import Search from './components/search/Search';
 
-// import Calendar from './components/calender/Calender';
-import Schedule from './components/calender/Schedule'
+
 
 import Header from "./components/Header/Header";
 
@@ -53,7 +54,9 @@ function App() {
         {/* <Search /> */}
         {/* <Calendar /> */}
         {/* <Schedule /> */}
-        {/* <Header /> */}
+        {/* <Header />
+        <ServiceProvider/> */}
+        {/* <Booking/> */}
 
         <Switch>
 
