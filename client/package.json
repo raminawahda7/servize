@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "author": "Fire Starters RBK PLUS",
-  "proxy": "http://localhost:8000",
   "homepage": "https://servize-web.herokuapp.com/",
   "license": "MIT License",
   "dependencies": {
