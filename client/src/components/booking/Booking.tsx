@@ -31,12 +31,13 @@ export default function Booking() {
                                         <input id="name" name="name" type="text" placeholder="Name" className="form-control input-md"></input>
                                     </div>
                                 </div>
-								<div className='col-md-6'>
-                                    <div className="form-group">
+								 <div className='col-md-6'>
+                                    {/* <div className="form-group">
                                         <label className="control-label" htmlFor="name">ServiceProvider Name</label>
                                         <input id="ServiceProvider Name" name="ServiceProvider Name" type="text" placeholder="ServiceProvider Name" className="form-control input-md"></input>
-                                    </div>
+                                    </div> */}
                                 </div>
+                                
 								<div className="col-md-6">
                                     <div className="form-group">
                                         <label className="control-label" htmlFor="Phone Number">Phone Number</label>
@@ -44,16 +45,16 @@ export default function Booking() {
                                     </div>
                                 </div>
                                 
-                                <div className="col-md-6">
+                                {/* <div className="col-md-6">
                                     <div className="form-group">
                                         <label className="control-label" htmlFor="email">Email</label>
                                         <input id="email" name="email" type="text" placeholder="E-Mail" className="form-control input-md"></input>
                                     </div>
-                                </div>
+                                </div> */}
                               
                                 <div className="col-md-6">
                                     <div className="form-group">
-                                        <label className="control-label" htmlFor="date">Preferred Date & Time </label>
+                                        <label className="control-label" htmlFor="date">Preferred Date </label>
                                         {/* <input id="date" name="date" type="text" placeholder="dd/mm/yyyy" className="form-control input-md"></input> */}
                                         <DatePicker selected={startDate} onChange={date => setStartDate(date)} />
 
@@ -71,8 +72,8 @@ export default function Booking() {
  
                                         </input>
                                     </div>
-                                </div>
-                                <div className="col-md-12">
+                                   </div>
+                                 <div className="col-md-12">
                                     <div className="form-group">
                                         <button id="singlebutton" name="singlebutton" className="btn btn-default">Make A Booking</button>
                                     </div>
@@ -85,7 +86,7 @@ export default function Booking() {
                 <div className="col-md-6">
                     <div className="well-block">
                         <div className="well-title">
-                            <h2>Why Appointment with Us</h2>
+                            <h2>Why Booking with Us</h2>
                         </div>
                         <div className="feature-block">
                             <div className="feature feature-blurb-text">
