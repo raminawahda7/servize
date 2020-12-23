@@ -1,10 +1,14 @@
-import React, { useEffect, useCallback, useState } from 'react';
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import FontAwesome from 'react-fontawesome';
 import ReactDOM from 'react-dom';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from 'react-responsive-carousel';
+// import { Carousel } from 'react-responsive-carousel';
+// import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 // import faStyles from 'font-awesome/css/font-awesome.css'
+
+// import { Carousel } from 'mdb-ui-kit';
 
 import './Header.css'
 
@@ -12,74 +16,65 @@ import './Header.css'
 
 export default function Header() {
 
-    return (
-        <div className="wrapper">
-            <div className="container">
-                <div className="row">
-                    <div className="col-md-12">
-                        <header id="header">
-
-                            <div className="slider">
-                                <div id="carousel-example-generic" className="carousel slide" data-ride="carousel">
-                                    {/* Wrapper for slides   */}
-                                    <div className="carousel-inner" role="listbox">
-                                        <div className="item active">
-                                            <img src="http://placehold.it/1200x400/F34336/F34336&text=WORDPRESS THEME DEVELOPER" />
-                                        </div>
-                                        <div className="item">
-                                            <img src="http://placehold.it/1200x400/20BFA9/ffffff&text=CLEAN %26 SMART" />
-                                        </div>
-                                    </div>
-
-                                    {/* Controls  */}
-                                    <a className="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-                                        <span className="fa fa-angle-left" aria-hidden="true"></span>
-                                        <span className="sr-only">Previous</span>
-                                    </a>
-                                    <a className="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-                                        <span className="fa fa-angle-right" aria-hidden="true"></span>
-                                        <span className="sr-only">Next</span>
-                                    </a>
-                                </div>
-                            </div>
-                            {/* slider  */}
-                            <nav className="navbar navbar-default">
-                                {/* Brand and toggle get grouped for better mobile display  */}
-                                <div className="navbar-header">
-
-                                    <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainNav">
-                                        <span className="sr-only">Toggle navigation</span>
-                                        <span className="icon-bar"></span>
-                                        <span className="icon-bar"></span>
-                                        <span className="icon-bar"></span>
-                                    </button>
-                                    {/* <a className="navbar-brand" href="#"><img className="img-responsive" src="http://rolyart.ro/wp-content/uploads/2016/07/roland-maruntelu-freelancer-romania.jpg" /></a>
-                                    <span className="site-name"><b>Roland</b> Maruntelu</span>
-                                    <span className="site-description">worpress theme developer</span> */}
-                                </div>
-
-                                {/* Collect the nav links, forms, and other content for toggling  */}
-                                {/* <div className="collapse navbar-collapse" id="mainNav" >
-                                    <ul className="nav main-menu navbar-nav">
-                                        <li><a href="#"><i className="fa fa-home"></i> HOME</a></li>
-                                        <li><a href="#">Link</a></li>
-                                        <li><a href="#">Link</a></li>
-                                    </ul>
-
-                                    <ul className="nav  navbar-nav navbar-right">
-                                        <li><a href="#"><i className="fa fa-facebook"></i></a></li>
-                                        <li><a href="#"><i className="fa fa-twitter"></i></a></li>
-                                        <li><a href="#"><i className="fa fa-google-plus"></i></a></li>
-                                    </ul>
-                                </div> */}
-                                {/* /.navbar-collapse  */}
-                            </nav>
-
-                        </header>
-                        {/* /#HEADER */}
-                    </div>
-                </div>
-            </div>
-        </div>
-    )
+	return (
+		<React.Fragment>
+			<nav className="navbar navbar-expand-lg navbar-light fixed-top">
+				<div className="container">
+					<a className="navbar-brand" href="#">Creativo</a> <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" className="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button"><span className="navbar-toggler-icon"></span></button>
+					<div className="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul className="navbar-nav ml-auto">
+							<li className="nav-item active">
+								<a className="nav-link" href="#">Home</a>
+							</li>
+							<li className="nav-item">
+								<a className="nav-link" href="#">About</a>
+							</li>
+							<li className="nav-item">
+								<a className="nav-link" href="#">Portfolio</a>
+							</li>
+							<li className="nav-item">
+								<a className="nav-link" href="#">Services</a>
+							</li>
+							<li className="nav-item">
+								<a className="nav-link" href="#">Contact</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+			<div className="carousel slide" data-ride="carousel" id="carouselExampleIndicators">
+				<ol className="carousel-indicators">
+					<li className="active" data-slide-to="0" data-target="#carouselExampleIndicators"></li>
+					<li data-slide-to="1" data-target="#carouselExampleIndicators"></li>
+					<li data-slide-to="2" data-target="#carouselExampleIndicators"></li>
+				</ol>
+				<div className="carousel-inner">
+					<div className="carousel-item active">
+						<img alt="First slide" className="d-block w-100" src="https://t4.ftcdn.net/jpg/03/19/42/81/240_F_319428113_xtWoSqCOX9gEQtdJpel4QukCLEg5TJEH.jpg" />
+						<div className="carousel-caption d-none d-md-block">
+							<h5 className="animated bounceInRight" style={{ animationDelay: "1s" }} >Web Development</h5>
+							<p className="animated bounceInLeft" style={{ animationDelay: "2s" }}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, nulla, tempore. Deserunt excepturi quas vero.</p>
+							<p className="animated bounceInRight" style={{ animationDelay: "3s" }}><a href="#">More Info</a></p>
+						</div>
+					</div>
+					<div className="carousel-item">
+						<img alt="Second slide" className="d-block w-100" src="https://i.postimg.cc/SQXZtrTZ/2.jpg" />
+						<div className="carousel-caption d-none d-md-block">
+							<h5 className="animated slideInDown" style={{ animationDelay: "1s" }}>web design</h5>
+							<p className="animated fadeInUp" style={{ animationDelay: "2s" }}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, nulla, tempore. Deserunt excepturi quas vero.</p>
+							<p className="animated zoomIn" style={{ animationDelay: "3s" }}><a href="#">More Info</a></p>
+						</div>
+					</div>
+					<div className="carousel-item">
+						<img alt="Third slide" className="d-block w-100" src="https://i.postimg.cc/Jh4x3cH5/3.jpg" />
+						<div className="carousel-caption d-none d-md-block">
+							<h5 className="animated zoomIn" style={{ animationDelay: "1s" }} >Digital Marketing</h5>
+							<p className="animated fadeInLeft" style={{ animationDelay: "2s" }}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, nulla, tempore. Deserunt excepturi quas vero.</p>
+							<p className="animated zoomIn" style={{ animationDelay: "3s" }}><a href="#">More Info</a></p>
+						</div>
+					</div>
+				</div><a className="carousel-control-prev" data-slide="prev" href="#carouselExampleIndicators" role="button"><span aria-hidden="true" className="carousel-control-prev-icon"></span> <span className="sr-only">Previous</span></a> <a className="carousel-control-next" data-slide="next" href="#carouselExampleIndicators" role="button"><span aria-hidden="true" className="carousel-control-next-icon"></span> <span className="sr-only">Next</span></a>
+			</div>
+		</React.Fragment >
+	)
 }
