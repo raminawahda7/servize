@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect,useContext } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Form from 'react-bootstrap/Form';
 import InstagramIcon from '@material-ui/icons/Instagram';
@@ -6,8 +6,9 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import RoomIcon from '@material-ui/icons/Room';
 import StarRating from '../rates/StarRate';
-// import Calender from '../CalendarEvent/Calender';
-
+// import Schedules from '../calender/Schedule';
+import Schedules from '../calender/CalEvent'
+// import CalenderEvent from '../CalendarEvent/cal';
 // import Context from '../utils/context';
 import Schedule from '../calender/Schedule';
 import './ProviderView.css'
@@ -21,6 +22,13 @@ const axios = require('axios');
 const $ = require('jquery');
 
 export default function ProviderProf() {
+//for upload image 
+
+// state = { selectedFile: null }
+
+// fileChangedHandler = event => {
+//   this.setState({ selectedFile: event.target.files[0] })
+// }
 
     const [test, setTest] = useState([]);
 

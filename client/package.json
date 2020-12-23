@@ -33,6 +33,7 @@
     "dotenv": "^8.2.0",
     "gapi-client": "0.0.3",
     "googleapis": "^66.0.0",
+    "http2": "^3.3.7",
     "i18next": "^19.8.4",
     "i18next-http-backend": "^1.0.21",
     "jquery": "^3.5.1",

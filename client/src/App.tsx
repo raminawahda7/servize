@@ -16,11 +16,11 @@ import ForgotPassword from "./components/Forgot-password/Forgot-password";
 import ResetPassword from "./components/Reset-password/Reset-password";
 import ResetPasswordConfirm from "./components/Reset-password/Reset-password-confirm"
 import ProviderContainer from "./components/Provider-container/Provider-container";
+import ServiceProvider from "../src/components/ServiceProvider/ServiceProvider"
 import Activate from './components/Activate';
 // import Search from './components/search/Search';
 
-// import Calendar from './components/calender/Calender';
-import Schedule from './components/calender/Schedule'
+
 
 import Header from "./components/Header/Header";
 
@@ -70,7 +70,7 @@ function App() {
           <Route path="/reset/:token" component={ResetPassword} />
           <Route exact path='/password/reset/confirm/:uid/:token' component={ResetPasswordConfirm} />
           {/* <Route path="/activate/:uid/:token" component={Activate} /> */}
-          <Route path="/profiles/provider" component={ProviderProf} />
+          {/* <Route path="/profiles/provider" component={ProviderProf} /> */}
           {/* <Route path="/profiles/provider" component={Schedule} /> */}
           <Route path="/profiles/providerview" component={ProviderView} />
           <Route path="/user/profiles/user" component={UserProf} />
