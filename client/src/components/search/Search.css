@@ -52,7 +52,7 @@
   position: relative;
   display: inline-block;
  }
- .dropdown select,.button{
+ .dropdown select,.btn-search{
    background:#0563af;
    color: #fff;
    padding:8px 70px ;
