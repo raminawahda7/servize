@@ -13,7 +13,9 @@ const ProviderCard = ({ prov }: { prov: any }) => {
     const handleClick = () => {
         
     }
+///////////////////////////////////
 
+/////////////////////////////////////////
     return (
         <div className="card" style={{ display: "inline-block", width: "20%" }}>
             <img src={prov.picture} alt="Avatar" />
