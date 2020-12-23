@@ -28,7 +28,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '!ju*wb_1y5dcdijc&u&_+mt80mz)jg01-^4_#j-+hm6wd_f7#6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["servize-web.herokuapp.com", "127.0.0.1","localhost"]
 
@@ -110,7 +110,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'servizeDB', 
         'USER': 'postgres', 
-        'PASSWORD': 'student',
+        'PASSWORD': '741987',
         'HOST': 'localhost', 
         'PORT': '5432',
         # 'ENGINE': 'django.db.backends.postgresql_psycopg2',
