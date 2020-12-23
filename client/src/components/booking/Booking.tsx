@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import FontAwesome from 'react-fontawesome';
 import './Booking.css'
-import DateTimePicker from 'react-bootstrap-date-time-picker';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+
+
+// import DateTimePicker from 'react-bootstrap-date-time-picker';
+import DateTimePicker from 'react-datetime-picker';
 
 // import 'react-datetimepicker-bootstrap';
 // import DatePicker from react-datepicker;
 
 export default function Booking() {
-
+	const [startDate, setStartDate] = useState(new Date());
     return (
 		<div className="container">
             <div className="row">
@@ -48,21 +53,17 @@ export default function Booking() {
                               
                                 <div className="col-md-6">
                                     <div className="form-group">
-                                        <label className="control-label" htmlFor="date">Preferred Date</label>
-                                        <input id="date" name="date" type="text" placeholder="dd/mm/yyyy" className="form-control input-md"></input>
+                                        <label className="control-label" htmlFor="date">Preferred Date & Time </label>
+                                        {/* <input id="date" name="date" type="text" placeholder="dd/mm/yyyy" className="form-control input-md"></input> */}
+                                        <DatePicker selected={startDate} onChange={date => setStartDate(date)} />
+
+                              
+        
+      
                                     </div>
                                 </div>
                                
-                                <div className="col-md-6">
-                                    <div className="form-group">
-                                        <label className="control-label" htmlFor="time">Preferred Time</label>
-                                        <input id="time" name="time" className="form-control" placeholder="hh:mm">
-											{/* <DateTimePicker/> */}
-                                        </input>
-                                    </div>
-                                </div>
-								
-                              
+
                                 <div className="col-md-12">
                                     <div className="form-group">
                                         <label className="control-label" htmlFor="appointmentfor">Booking For </label>
