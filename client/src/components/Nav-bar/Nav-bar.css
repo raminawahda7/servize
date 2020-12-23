@@ -9,7 +9,7 @@
 } */
 
 /*side nav*/
-/* .sidenav {
+.sidenav {
   height: 100%;
   width: 0;
   position: fixed;
@@ -46,16 +46,17 @@
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
-} */
+}
 /*side nav*/
 
 /*******/
 .logo {
+      text-decoration: none;
       line-height: 50px;
       position: fixed;
       float: left;
       margin: 10px 46px;
-      color: #fff;
+      color: rgb(0, 0, 0);
       font-weight: bold;
       font-size: 20px;
       letter-spacing: 2px;
@@ -65,13 +66,14 @@ nav {
       position: fixed;
       width: 100%;
       line-height: 50px;
-      background-color:cornsilk;
+      background: rgba(0, 0, 0, 0);
+      z-index: 1000;
 }
 
 nav ul {
       line-height: 50px;
       list-style: none;
-      background: cornsilk;
+      background: rgba(0, 0, 0, 0);
       overflow: hidden;
       color: rgb(0, 0, 0);
       padding: 0;
@@ -85,27 +87,33 @@ nav.black ul {
       background: rgb(4, 98, 240);
 }
 
+nav.black a {
+      color: rgb(255, 255, 255);
+}
+
 nav ul li {
       display: inline-block;
       padding: 10px 10px;;
 }
+.menu-icon {
+     display: none;
+}
 
-nav ul li a {
+.menu a {
       text-decoration: none;
       color: rgb(0, 0, 0);
       font-size: 16px;
 }
 
-@media screen and (max-width:650px) {
+@media screen and (max-width:700px) {
   .menu .pc-view {
     float: none;
     display: none;
     text-align: left;
   }
-  
-  .header-right {
-    float: none;
-  }
+  .menu-icon {
+     display: inline-block;
+}
 }
 /* 
 .menu-icon {

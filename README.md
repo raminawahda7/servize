@@ -14,7 +14,7 @@
 
 ### Technologies
 Project is created with:
-*  jsonwebtoken: 8.5.1
+*  Django: 3.1.4
 *  react: 17.0.1
 
 ### Launch
@@ -24,6 +24,9 @@ Project is created with:
     * $npm install
     * $npm start
 * Inside terminal #2:
+    * $pthon -m venv env
+    * $env\Scripts\activate
+    * $pip install -r requirements.txt
     * $cd server
     * $python manage.py runserver
 

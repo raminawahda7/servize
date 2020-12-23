@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { store, add } from '../../actions/Users/usersActions';
+// import { store, add } from '../../actions/Users/usersActions';
 import { connect } from 'react-redux'
 import { State } from '../../reducers/Users/usersReducer'
 import { useTranslation } from "react-i18next";
@@ -32,6 +32,18 @@ const Navbar = () => {
     const dispatch = useDispatch();
     // console.log("store ===> ", userInStore)
     // console.log("store ===> ", userInStore)
+    let token;
+    try {
+        const serializedState = localStorage.getItem("access_token");
+        console.log("token",serializedState);
+        if (serializedState === null) {
+            token = null;
+        }
+         token = JSON.parse(serializedState);
+    }
+    catch (e) {
+        console.log(e);
+    }
 
     const handleClick = () => {
         $("#signup-form").show();
@@ -41,38 +53,35 @@ const Navbar = () => {
 
     }
 
-    // const openClick = () => {
-    //     document.getElementById("mySidenav").style.width = "250px"
+    const openClick = () => {
+        document.getElementById("mySidenav").style.width = "250px"
+    }
+    const closeClick = () => {
+        document.getElementById("mySidenav").style.width = "0";
 
-    // }
-    // const closeClick = () => {
-    //     document.getElementById("mySidenav").style.width = "0";
-
-    // }
+    }
 
     return (
         <header id="nav-bar">
             <nav>
-              
-                {/* <div id="mySidenav" className="sidenav">
-                    <div className="menu-icon" onClick={openClick}>
-                        <i className="fa fa-bars fa-2x"></i>
-                    </div>
+                <span className="menu-icon" onClick={openClick}>
+                    <i className="fa fa-bars fa-2x"></i>
+                </span>
+                <div id="mySidenav" className="sidenav">
                     <a href="javascript:void(0)" className="closebtn" onClick={closeClick}>&times;</a>
                     <a href="#">About</a>
-                    <a href="#">Services</a>
-                    <a href="#">Clients</a>
+                    <a href="#">{t("how_it_works")}</a>
+                    <a href="#">Browse Jobs</a>
                     <a href="#">Contact</a>
-                </div> */}
+                </div>
                 
-                <a className="logo">
-                    <Link to="/">{t("app_name")}</Link>
+                <a href="/" className="logo">
+                    {t("app_name")}
                 </a>
-                <div className="menu">
+                <span className="menu">
                     <ul>
                         <li className="pc-view"><a href="#">{t("how_it_works")}</a></li>
                         <li className="pc-view"><a href="#">Browse Jobs</a></li>
-                        {/* <li><Link to="/prov/signup">Become a Service Provider</Link></li> */}
                         <li className="lang-dropdown">
                             {/* <button onClick={selectLang} className="lang-dropbtn">Languages</button> */}
                             < div id="lang-Dropdown pc-view" className="lang-dropdown-content"> 
@@ -81,14 +90,23 @@ const Navbar = () => {
                             </div>
 
                         </li>
-                        <li><Link to="/user/login">{t("log_in")}</Link></li>
-                        {/* <li><Link to="/user/signup">{t("join")}</Link></li> */}
-                        <li onClick={handleClick}> <a href="#">{t("join")}</a></li> 
-                         <li>
-                            <Button onClick={() => { localStorage.clear(); window.location.href = "/"; }} id="logout">
-                                Logout
+                        {token === null ?
+                        <span>
+                            <li><Link to="/user/login">{t("log_in")}</Link></li>
+                            {/* <li><Link to="/user/signup">{t("join")}</Link></li> */}
+                            <li onClick={handleClick}> <a href="#">{t("join")}</a></li>
+                        </span>
+                        :
+                        <span>
+                            <li><a href="profiles/user">Profile</a></li>
+                            <li>
+                                <Button onClick={() => { localStorage.clear(); window.location.href = "/"; }} id="logout">
+                                    Logout
                             </Button>
-                        </li>
+                            </li>
+                        </span>}
+
+                        
                     </ul>
 
                     {/* <div className="select">
@@ -103,7 +121,7 @@ const Navbar = () => {
                             <option value="ar">عربي</option>
                         </select>
                     </div> */}
-                </div>
+                </span>
             </nav>
 
         </header>

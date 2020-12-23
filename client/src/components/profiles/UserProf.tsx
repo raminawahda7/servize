@@ -7,6 +7,8 @@ import RoomIcon from '@material-ui/icons/Room';
 // import Context from '../utils/context';
 import './UserProf.css'
 
+import { Link, Redirect } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 const axios = require('axios');
 const $ = require('jquery');
 

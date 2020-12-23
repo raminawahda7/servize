@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { appendErrors, useForm } from 'react-hook-form';
-import { store } from '../../actions/Users/usersActions';
 import { connect } from 'react-redux'
 import { State } from '../../reducers/Users/usersReducer'
 import { BrowserRouter, Switch, Route, Redirect, Link } from 'react-router-dom';
@@ -22,7 +21,7 @@ const Usertype = (props: any) => {
             <br />
             <div className="user-type">
 
-                <button type="button" className="user" ><Link to= "/">User</Link></button>
+                <button type="button" className="user" ><Link to= "/client/signup">User</Link></button>
                 <button type="button" className="prov" ><Link to="/prov/signup">Provider</Link></button>
 
             </div>
