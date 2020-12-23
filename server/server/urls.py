@@ -3,6 +3,7 @@ from django.contrib import admin
 from django.urls import path,include,re_path
 
 urlpatterns = [
+    
     path('admin/', admin.site.urls),
     path('category/',include('Category.urls')),
     path('location/',include('Location.urls')),
@@ -21,6 +22,8 @@ urlpatterns = [
     path('auth/users/reset_password/', include('djoser.urls')),    #Use this endpoint to send email to user with password reset link. 
                                                                      #You have to setup PASSWORD_RESET_CONFIRM_URL.
 
-    path('auth/users/reset_password_confirm/', include('djoser.urls')),   #Use this endpoint to finish reset password process
-    # path('', include('cal.urls')),                                        # add urls for cal app
+    path('auth/users/reset_password_confirm/', include('djoser.urls')),  #Use this endpoint to finish reset password process
+   
+    path('calender/', include('schedule.urls')), 
+                                       # add urls for calender app
 ]

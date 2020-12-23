@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
-    "python.pythonPath": "c:\\Users\\mms\\Desktop\\immersive\\projects\\project phase2\\servize\\env\\Scripts\\python.exe",
-=======
-    "python.pythonPath": "C:\\Python39\\python.exe",
->>>>>>> f361066b5f9316af8ac077e4b88e55d66d6e7a36
+    "python.pythonPath": "c:\\Users\\hp\\Desktop\\thesisFix\\servize\\env\\Scripts\\python.exe",
     "python.linting.pylintEnabled": true,
     "python.linting.enabled": true,
     "git.ignoreLimitWarning": true
