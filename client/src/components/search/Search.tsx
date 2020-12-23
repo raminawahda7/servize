@@ -75,7 +75,7 @@ const Search = () => {
 
                     </select>
                 </div>
-                <button  className = "button" onClick={handleClick}>Submit</button>
+                <button  className = "btn-search" onClick={handleClick}>Submit</button>
                 {/* <ProviderContainer results={results} city={city} category={category} /> */}
             </div>
         )
