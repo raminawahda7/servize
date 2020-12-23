@@ -7,7 +7,7 @@
 .env
 server/env
 /env
-
+.vscode
 
 # testing
 /coverage
