@@ -9,10 +9,9 @@ import { extend } from '@syncfusion/ej2-base';
 // import './Schedule.css';
 // import { Data } from '@syncfusion/ej2-react-grids';
 
-
-
 Schedule.Inject(Day, Week, WorkWeek, Month, Agenda);
-
+const CALENDAR_ID: string = '5105trob9dasha31vuqek6qgp0@group.calendar.google.com';
+const PUBLIC_KEY: string = 'AIzaSyD76zjMDsL_jkenM5AAnNsORypS1Icuqxg';
 
 export default function  Schedules() {
     let localData: EventSettingsModel = {

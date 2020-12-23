@@ -6,7 +6,8 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import RoomIcon from '@material-ui/icons/Room';
 import StarRating from '../rates/StarRate';
-import Schedules from '../calender/Schedule';
+// import Schedules from '../calender/Schedule';
+import Schedules from '../calender/CalEvent'
 // import CalenderEvent from '../CalendarEvent/cal';
 // import Context from '../utils/context';
 import './ProviderProf.css'
@@ -226,7 +227,7 @@ export default function ProviderProf() {
                                             <h4 className="purple"></h4>
                                             {/* <CalenderEvent/> */}
                                             {/* <Calender/> */}
-                                            {/* <Schedules/> */}
+                                            <Schedules/>
                                         </div>
                                     </div>
                                 </div>
