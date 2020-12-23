@@ -21,6 +21,8 @@ import Activate from './components/Activate';
 // import Calendar from './components/calender/Calender';
 import Schedule from './components/calender/Schedule'
 
+import Header from "./components/Header/Header";
+
 
 import './App.css';
 // import StarRating from './components/rates/StarRate';
@@ -35,8 +37,8 @@ function App() {
     <BrowserRouter>
       <div className="App">
         {/* < Map /> */}
-        <Navbar />
-        {/* <Categories /> */}
+        {/* <Navbar /> */}
+        {/* <Catagories /> */}
         {/* <ProviderProf /> */}
         {/* <ProviderView /> */}
         {/* <UserView /> */}
@@ -47,7 +49,8 @@ function App() {
         {/* <ProviderSignup />  */}
         {/* <Search /> */}
         {/* <Calendar /> */}
-        <Schedule />
+        {/* <Schedule /> */}
+        <Header />
 
         <Switch>
 
@@ -68,7 +71,7 @@ function App() {
           <Route path="/profiles/providerview" component={ProviderView} />
           <Route path="/profiles/user" component={UserProf} />
           <Route path="/profiles/userview" component={UserView} />
-          
+
 
 
         </Switch>
