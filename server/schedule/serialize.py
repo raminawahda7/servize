@@ -7,4 +7,4 @@ from User.models import User
 class  ScheduleSerializer(serializers.ModelSerializer):
     class Meta:
         model=Schedule
-        fields=['user','provider','StartTime','EndTime','Subject']
+        fields=['user','provider','bookDate','Subject']

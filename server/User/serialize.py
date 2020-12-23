@@ -15,13 +15,14 @@ class ProviderUserSerializer(serializers.ModelSerializer):
 
 
 class  UserSerializer(serializers.ModelSerializer):
-    name = serializers.CharField(source="user.name",read_only=True)
+    # name = serializers.CharField(source="user.name",read_only=True)
+    email = serializers.CharField(source="user",read_only=True)
     providers = ProviderUserSerializer(many=True, read_only=True)
-
+    
 
     class Meta:
         model=User
-        fields=('id','pk','image','role','user','name','providers')
+        fields=('id','pk','image','role','user','email','providers')
 
 
 
