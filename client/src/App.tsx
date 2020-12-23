@@ -41,7 +41,7 @@ function App() {
         {/* < Map /> */}
         <Navbar />
         {/* <Test/> */}
-        <Catagories />
+        {/* <Catagories /> */}
         {/* <ProviderProf /> */}
         {/* <ProviderView /> */}
         {/* <UserView /> */}
@@ -70,10 +70,10 @@ function App() {
           <Route path="/reset/:token" component={ResetPassword} />
           <Route exact path='/password/reset/confirm/:uid/:token' component={ResetPasswordConfirm} />
           {/* <Route path="/activate/:uid/:token" component={Activate} /> */}
-          {/* <Route path="/profiles/provider" component={ProviderProf} /> */}
+          <Route path="/profiles/provider" component={ProviderProf} />
           {/* <Route path="/profiles/provider" component={Schedule} /> */}
           <Route path="/profiles/providerview" component={ProviderView} />
-          <Route path="/user/profiles/user" component={UserProf} />
+          <Route path="/profiles/user" component={UserProf} />
           <Route path="/profiles/userview" component={UserView} />
 
 
