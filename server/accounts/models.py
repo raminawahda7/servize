@@ -10,7 +10,10 @@ class UserAccountManager(BaseUserManager):
         user.set_password(password)
         user.is_serviceProvider=is_serviceProvider
         user.save()
+
         return user
+    
+
     
     def create_superuser(self, email, name, password ):
         user = self.create_user(email, name, password)
@@ -43,6 +46,3 @@ class UserAccount(AbstractBaseUser, PermissionsMixin):
     
     def __str__(self):
         return self.email
-
-    def is_serviceProvider(self):
-        return self.is_serviceProvider
