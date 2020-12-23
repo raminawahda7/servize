@@ -14,10 +14,11 @@ import os
 
 from pathlib import Path
 
-# import django_heroku
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+# BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
@@ -27,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '!ju*wb_1y5dcdijc&u&_+mt80mz)jg01-^4_#j-+hm6wd_f7#6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["servize-web.herokuapp.com", "127.0.0.1","localhost"]
 
@@ -35,6 +36,7 @@ ALLOWED_HOSTS = ["servize-web.herokuapp.com", "127.0.0.1","localhost"]
 # Application definition
 
 INSTALLED_APPS = [
+    'whitenoise.runserver_nostatic',
     'accounts',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -66,6 +68,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',    # add this for connection between front and back
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware', #kkkk
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -107,11 +110,21 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'servizeDB', 
         'USER': 'postgres', 
-        'PASSWORD': 'rami871995',
+        'PASSWORD': 'student',
         'HOST': 'localhost', 
         'PORT': '5432',
+        # 'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        # 'NAME': 'dcai2j5vv3j7rb', 
+        # 'USER': 'xzpvenqzayufyx', 
+        # 'PASSWORD': '23eeef6f4629a13267628996fcf4abd9f27ad52c8fbbbb407a498597b255d0cc',
+        # 'HOST': 'ec2-34-200-106-49.compute-1.amazonaws.com', 
+        # 'PORT': '5432',
     }
 }
+WHITENOISE_USE_FINDERS = True
+# import dj_database_url
+# db_from_env = dj_database_url.config(conn_max_age=600)
+# DATABASES['default'].update(db_from_env) 
 
 
 #setting email for verfication
@@ -199,9 +212,10 @@ DJOSER = {
 
 
 # STATIC_ROOT = Path(__file__, "staticfiles").resolve().parent.parent
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+# STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 STATIC_URL = '/static/'
 AUTH_USER_MODEL = 'accounts.UserAccount'
 
-# django_heroku.settings(locals())
+django_heroku.settings(locals())

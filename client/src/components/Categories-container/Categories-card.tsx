@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { store } from '../../actions/Users/usersActions';
+import { signUp } from '../../actions/Users/usersActions';
 import SubCategories from "./subCategories";
 import './Categories-card.css';
 const axios = require('axios');

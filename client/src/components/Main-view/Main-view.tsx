@@ -9,8 +9,9 @@ import './Main-view.css';
 const Main = () => {
     return (
         <div>
-             <div className="img-container">
+            <div className="img-container">
             <img className="main-img" src="https://www.saga.co.uk/contentlibrary/saga/publishing/verticals/home-and-garden/home-and-interiors/how-to-guides/builders/avoid-cowboy-builders.jpg"></img>
+                {/* <img className="main-img" src="../../client/public/test/jpg"></img> */}
         </div>
         {/* <Search/> */}
         </div>
