@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Form from 'react-bootstrap/Form'
 import InstagramIcon from '@material-ui/icons/Instagram';
@@ -6,8 +6,9 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import RoomIcon from '@material-ui/icons/Room';
 import StarRating from '../rates/StarRate';
-import Calender from '../CalendarEvent/Calender';
-
+// import Schedules from '../calender/Schedule';
+import Schedules from '../calender/CalEvent'
+// import CalenderEvent from '../CalendarEvent/cal';
 // import Context from '../utils/context';
 import './ProviderProf.css'
 
@@ -22,7 +23,24 @@ const axios = require('axios');
 const $ = require('jquery');
 
 export default function ProviderProf() {
+//for upload image 
 
+// state = { selectedFile: null }
+
+// fileChangedHandler = event => {
+//   this.setState({ selectedFile: event.target.files[0] })
+// }
+
+// uploadHandler = () => {
+//     const formData = new FormData()
+//   formData.append(
+//     'myFile',
+//     this.state.selectedFile,
+//     this.state.selectedFile.name
+//   )
+//   axios.post('my-domain.com/file-upload', formData)
+// }
+//-----------------------------------------------------------------
     const userInStore = useSelector((state: any) => state.user);
     const dispatch = useDispatch();
     // const handleClick = (e: any) => {
@@ -69,8 +87,9 @@ export default function ProviderProf() {
             <div className="row">
                 <div className="profile-nav col-md-3">
                     <div className="panel">
-                        {/* <div className="user-heading round"> */}
+                       
                         <div>
+                            
                             <a href="#">
                                 <img src="https://i.pinimg.com/236x/4d/25/5f/4d255fadc15c380d8b03c7ef25a4c97b.jpg" alt="img" className="img" />
                             </a>
@@ -215,15 +234,14 @@ export default function ProviderProf() {
                                 <div className="panel">
                                     <div className="panel-body">
                                         <div className="bio-chart">
-                                            {/* <div style={{ display: "inline", width: "20rem", height: "20rem" }}><canvas width="100"
-                                                height="100px"></canvas><input className="knob" data-width="100"
-                                                    data-height="100" data-displayprevious="true" data-thickness=".2" value="50"
-                                                    data-fgcolor="#cba4db" data-bgcolor="#e8e8e8" />
-                                            </div> */}
+                                        <input type="file" onChange={this.fileChangedHandler}/>
+                                         <button onClick={this.uploadHandler}>Upload!</button>
                                         </div>
                                         <div className="bio-desk">
                                             <h4 className="purple"></h4>
-                                            <Calender/>
+                                            {/* <CalenderEvent/> */}
+                                            {/* <Calender/> */}
+                                            <Schedules/>
                                         </div>
                                     </div>
                                 </div>
