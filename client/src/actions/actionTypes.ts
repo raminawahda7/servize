@@ -1,4 +1,5 @@
 export const STORE_USER = 'STORE_USER';
+export const USER_LOGIN = 'USER_LOGIN';
 export const ADD_ROLE = 'ADD_ROLE';
 export const STORE_DATA = 'STORE_DATA';
 export const GET_PROV = 'GET_PROV';
@@ -6,6 +7,10 @@ export const GET_PROV = 'GET_PROV';
 export interface Userstore {
     type: typeof STORE_USER,
     payload: User 
+}
+export interface Userlogin{
+    type: typeof USER_LOGIN,
+    payload: User
 }
 
 export interface UserRole {
@@ -19,15 +24,10 @@ export interface Userdata {
 
 }
 
-export interface Provider {
+export interface Providers {
     type: typeof GET_PROV,
-    payload: AllProv,
+    payload: AllProv
 }
-
-// export type Category={
-//     catName:string,
-//     catImage:string,   
-// }
 
 export type UserIerface = {
     username: string,
@@ -36,21 +36,17 @@ export type UserIerface = {
     id?: number
 }
 
-export type ProvIerface = {
-    city: string,
-    providers: object,
+export type ProvidersInt = {
+    category: string,
+    providers: any[]
 }
 
 
 
 export type User = UserIerface | null | string
 
-export type AllProv = ProvIerface | null | any[] 
+export type AllProv = ProvidersInt | null | object
 
-// export type Value = Category | null |string | any[] | boolean
+export type DispatchUserTypes = Userstore | Userdata | UserRole | Userlogin;
 
-// export type Value = boolean
-
-export type DispatchUserTypes = Userstore | Userdata | UserRole;
-
-export type DispatchProvTypes = Provider ;
+export type DispatchProvTypes = Providers ;

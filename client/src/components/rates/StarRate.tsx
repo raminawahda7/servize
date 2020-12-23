@@ -10,22 +10,22 @@ const StarRating = () => {
     const [rating, setRating] = useState<any | null>(null);
     const [hover, setHover] = useState<any | null>(null);
 
-    // const [{ data, loading, error, response }, refetch] = useAxios({
-    //     method: 'POST',
-    //     url: `http://localhost:8000/reviews/`,
-    // });
-    // console.log("hello");
-    // const [text, setText] = useState('');
+    const handleclick = (ratingValue: any) => {
+        setRating(ratingValue)
+        axios.post(`http://localhost:8000/reviews/`, {
+            "stars": null,
+            "user": null,
+            "servicProvider": null
+        })
+            .then((results: any) => {
+                console.log("axios", results);
+                // dispatch(store(results.data))
 
-    // useEffect(() => {
-    //     if (data && data.ad && data.ad.rates) {
-    //         setText(data.ad.rates);
-    //     } else if (error) {
-    //         setText(error.message);
-    //     }
-    // }, [data, error]);
-
-
+            })
+            .catch((err: any) => {
+                console.error("err===== =>", err);
+            })
+    }
 
     return (
         <div>
@@ -38,12 +38,12 @@ const StarRating = () => {
                             type="radio"
                             name="rating"
                             value={ratingValue}
-                            onClick={() => setRating(ratingValue)}
+                            onClick={() => handleclick(ratingValue)}
                         />
                         <FaStar
                             className='star'
                             color={ratingValue <= (hover || rating) ? "#ffc107" : "#e4e5e9"}
-                            size={30}
+                            size={25}
                             onMouseEnter={() => setHover(ratingValue)}
                             onMouseLeave={() => setHover(null)}
                         />
@@ -51,7 +51,7 @@ const StarRating = () => {
                     </label>
                 );
             })}
-            <p>The rating is {rating}.</p>
+            {/* <p>The rating is {rating}.</p> */}
         </div>
     );
 }
