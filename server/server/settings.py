@@ -82,7 +82,7 @@ ROOT_URLCONF = 'server.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'build')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -212,10 +212,16 @@ DJOSER = {
 
 
 # STATIC_ROOT = Path(__file__, "staticfiles").resolve().parent.parent
-# STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'build/static')
+]
+
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-STATIC_URL = '/static/'
 AUTH_USER_MODEL = 'accounts.UserAccount'
 
 django_heroku.settings(locals())
