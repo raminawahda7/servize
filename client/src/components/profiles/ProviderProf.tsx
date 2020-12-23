@@ -38,7 +38,7 @@ export default function ProviderProf() {
 //     this.state.selectedFile,
 //     this.state.selectedFile.name
 //   )
-//   axios.post('my-domain.com/file-upload', formData)
+//   axios.post('http://localhost:8000/serviceprovider/images/', formData)
 // }
 //-----------------------------------------------------------------
     const userInStore = useSelector((state: any) => state.user);
