@@ -17,7 +17,7 @@ export default function UploadImg() {
         const formData = new FormData();
         formData.append("image", image.raw);
 
-        await fetch("http://localhost:8000/serviceprovider/images/", {  //this rout just for service provider image 
+        await fetch("http://localhost:8000/serviceprovider/", {               //this rout just for service provider image 
             method: "POST",
             headers: {
                 "Content-Type": "multipart/form-data"

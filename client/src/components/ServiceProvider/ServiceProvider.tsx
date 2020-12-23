@@ -1,6 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import FontAwesome from 'react-fontawesome';
+import StarRating from '../rates/StarRate'
 
 
 import './ServiceProvider.css'
@@ -23,10 +24,11 @@ export default function ServiceProvider() {
                           <h5 className="mb-0">Mark Rockwell</h5>
                           <p className="small text-muted">CEO - Consultant</p>
                           <ul className="social mb-0 list-inline mt-3">
-                              <li className="list-inline-item m-0"><a href="#" className="social-link"><i className="fa fa-facebook-f"></i></a></li>
-                              <li className="list-inline-item m-0"><a href="#" className="social-link"><i className="fa fa-twitter"></i></a></li>
+                          <StarRating/>
+                              {/* <li className="list-inline-item m-0"><a href="#" className="social-link"><i className="fa fa-facebook-f"></i></a></li> */}
+                              {/* <li className="list-inline-item m-0"><a href="#" className="social-link"><i className="fa fa-twitter"></i></a></li>
                               <li className="list-inline-item m-0"><a href="#" className="social-link"><i className="fa fa-instagram"></i></a></li>
-                              <li className="list-inline-item m-0"><a href="#" className="social-link"><i className="fa fa-linkedin"></i></a></li>
+                              <li className="list-inline-item m-0"><a href="#" className="social-link"><i className="fa fa-linkedin"></i></a></li> */}
                           </ul>
                       </div>
                   </div>
