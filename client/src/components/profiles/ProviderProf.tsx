@@ -1,6 +1,6 @@
-import React, { useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Form from 'react-bootstrap/Form'
+import Form from 'react-bootstrap/Form';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
@@ -23,87 +23,145 @@ const $ = require('jquery');
 
 export default function ProviderProf() {
 
-    const userInStore = useSelector((state: any) => state.user);
-    const dispatch = useDispatch();
+    const [test, setTest] = useState([]);
+
+    useEffect(() => {
+        axios.post(`http://localhost:8000/serviceprovider/servProv/`, { provider: "2" })
+
+            .then((result: any) => {
+                console.log("axios", result.data)
+                // dispatch(store(result.data))
+
+            })
+            .catch((err: any) => {
+                console.error("err===== =>", err);
+            })
+    }, [test])
+
+
+
     // const handleClick = (e: any) => {
-    //     e.preventDefault();
-    axios.get(`http://localhost:8000/serviceprovider/`)
-        .then((results: any) => {
-            console.log("axios", results);
-            // dispatch(store(results.data))
+    //     axios.post(`http://localhost:8000/serviceprovider/servProv/`,
+    //         {
+    //             provider: "2",
+    //         })
+    //         .then((results: any) => {
+    //             console.log("axios", results);
+    //         })
+    //         .catch((err: any) => {
+    //             console.error("err===== =>", err);
+    //         })
 
-        })
-        .catch((err: any) => {
-            console.error("err===== =>", err);
-        })
+    // }
 
+
+    // const userInStore = useSelector((state: any) => state.user);
+    // const dispatch = useDispatch();
+    // const handleClick = (e: any) => {
+    //     axios.post(`http://127.0.0.1:8000/serviceprovider/servProv/`,
+    //         {
+    //             provider: "2",
+    //         })
+    //         .then((results: any) => {
+    //             console.log("axios", results);
+    //         })
+    //         .catch((err: any) => {
+    //             console.error("err===== =>", err);
+    //         })
+
+    // }
 
     return (
         <div className="container emp-profile">
-            <form method="post">
+            <form >
                 <div className="row">
                     <div className="col-md-4">
                         <div className="profile-img">
-                            <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" className="avatar img-circle img-thumbnail" alt="avatar" />
+                            <br></br><img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" className="avatar img-circle img-thumbnail" alt="avatar" />
                             <div className="file btn btn-lg btn-primary">
                                 Change Photo
                                 <input type="file" name="file" />
                             </div>
+                            <h5>
+                                Service Provider Name
+                            </h5>
                         </div>
+
                     </div>
                     <div className="col-md-6">
                         <div className="profile-head">
-                            {/* <h5>
-                                Kshiti Ghelani
-                                    </h5> */}
-                            <h6>
-                                {/* {providers.} */}
-                                Service Provider Name
-                                    </h6>
+                            <div>
+                                <br></br>
+                                <ul className="nav nav-pills pull-right">
+                                    <li><a href="#"> <i className="fa fa-edit pull-right"></i> Edit profile</a></li><br /><br></br>
+                                    <li className="active "><a href="#"> <i className="fa fa-user"></i> Profile</a></li>
+                                </ul><br></br>
+                            </div><br></br>
 
-                            <ul className="nav nav-tabs" id="myTab" role="tablist">
-                                <li className="nav-item">
-                                    <a className="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Timeline</a>
-                                </li>
-                            </ul>
+                            <div>
+                                <br></br><div className="panel">
+                                    <form>
+                                        <br></br><textarea placeholder="Describe your services"
+                                            className="form-control input-lg p-text-area"></textarea>
+                                    </form>
+                                    <footer className="panel-footer">
+                                        <button className="button pull-right">Post</button>
+                                    </footer>
+                                </div>
+                                <div className="panel">
+                                    Helllllllllo
+                            </div><br></br>
+
+                                <div>
+                                    <ul className="nav nav-tabs" id="myTab" role="tablist">
+                                        <li className="nav-item">
+                                            <a className="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div className="col-md-2">
-                        <input type="submit" className="profile-edit-btn" name="btnAddMore" value="Edit Profile" />
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-md-4">
                         <div className="profile-work">
-                            <ul className="nav nav-pills">
-                                <li>
-                                    <a href="https://www.google.com/maps/search/?api=1">
-                                        <RoomIcon style={{ color: "blue", fontSize: "x-large" }} stroke={"blue"}
-                                            stroke-width={1} /></a>
-                                </li>
-                                <li>
-                                    <a href="https://www.facebook.com/">
-                                        <FacebookIcon style={{ color: "blue", fontSize: "x-large" }}
-                                            stroke={"blue"} stroke-width={1} /></a>
-                                </li>
-                                <li>
-                                    <a href="https://www.instagram.com/">
-                                        <InstagramIcon style={{ color: "blue", fontSize: "x-large" }}
-                                            stroke={"blue"} stroke-width={1} /></a>
-                                </li>
-                                <li>
-                                    <a href="https://www.twitter.com/">
-                                        <TwitterIcon style={{ color: "blue", fontSize: "x-large" }}
-                                            stroke={"blue"} stroke-width={1} /></a>
-                                </li>
-                            </ul>
-                            <br></br><p className="proile-rating"><StarRating /></p><br></br>
-                            <div><UploadImg /></div>
+                            <div>
+                                <ul className="nav nav-pills">
+                                    <li>
+                                        <a href="https://www.google.com/maps/search/?api=1">
+                                            <RoomIcon style={{ color: "blue", fontSize: "large" }} stroke={"blue"}
+                                                stroke-width={1} /></a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.facebook.com/">
+                                            <FacebookIcon style={{ color: "blue", fontSize: "large" }}
+                                                stroke={"blue"} stroke-width={1} /></a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.instagram.com/">
+                                            <InstagramIcon style={{ color: "blue", fontSize: "large" }}
+                                                stroke={"blue"} stroke-width={1} /></a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.twitter.com/">
+                                            <TwitterIcon style={{ color: "blue", fontSize: "large" }}
+                                                stroke={"blue"} stroke-width={1} /></a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <p className="proile-rating"><StarRating /></p><br></br>
+                            <div>
+                                <Form>
+                                    <Form.Group>
+                                        <div><UploadImg /></div>
+                                        <Form.File id="exampleFormControlFile1" label="Example file input" />
+                                    </Form.Group>
+                                </Form>
+                            </div>
                         </div>
                     </div>
+
                     <div className="col-md-8">
                         <div className="tab-content profile-tab" id="myTabContent">
                             <div className="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
@@ -148,22 +206,23 @@ export default function ProviderProf() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                <div className="row">
-                                    <Schedule />
-                                </div>
-                                <div className="row">
-                                    <div className="col-md-12">
-                                        <label>Your Bio</label><br />
-                                        <p>Your detail description</p>
-                                    </div>
+                            {/* <div className="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                            <div className="row">
+                                <Schedule />
+                            </div>
+                            <div className="row">
+                                <div className="col-md-12">
+                                    <label>Your Bio</label><br />
+                                    <p>Your detail description</p>
+
                                 </div>
                             </div>
+                        </div> */}
                         </div>
                     </div>
                 </div>
             </form>
-        </div>
+        </div >
     )
 }
 
