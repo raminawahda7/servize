@@ -2,7 +2,7 @@ from django.db import models
 from Location.models import City
 from Category.models import Category
 from accounts.models import UserAccount
-
+# from schedule.models import Schedule
 class ServiceProvider(models.Model):
     provider = models.OneToOneField(UserAccount,on_delete=models.CASCADE, related_name='Provider')
     phone =models.CharField(max_length=12,default='0000')
@@ -10,6 +10,7 @@ class ServiceProvider(models.Model):
     role = models.CharField(max_length=20,default='ServiceProvider')
     categoryId = models.ForeignKey(Category, on_delete=models.CASCADE,default=1,related_name='providers')
     picture = models.CharField(max_length=256)
+    # reservations = models.ManyToManyField(Schedule)
     def __str__(self):
         return self.provider.name
 

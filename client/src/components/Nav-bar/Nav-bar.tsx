@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { store, add } from '../../actions/Users/usersActions';
+// import { store, add } from '../../actions/Users/usersActions';
 import { connect } from 'react-redux'
 import { State } from '../../reducers/Users/usersReducer'
 import { useTranslation } from "react-i18next";
@@ -11,10 +11,11 @@ import Button from "@material-ui/core/Button";
 import Signup from '../Signup/Signup';
 import Login from '../Login/Login';
 import ProviderSignup from '../Provider-signup/Provider-signup'
+import Logout from '../Logout/Logout';
 import "./Nav-bar.css";
 const axios = require('axios');
 const $ = require('jquery');
-// import Logout from '../Logout/Logout';
+
 
 
 $(window).on("scroll", function () {
@@ -28,68 +29,101 @@ $(window).on("scroll", function () {
 const Navbar = () => {
     const { t, i18n } = useTranslation();
     const userInStore = useSelector((state: any) => state.user);
-    // const serializedState: any = localStorage.getItem("state");
-    // const userInStore = JSON.parse(serializedState) 
     const dispatch = useDispatch();
     // console.log("store ===> ", userInStore)
     // console.log("store ===> ", userInStore)
+    let token;
+    try {
+        const serializedState = localStorage.getItem("access_token");
+        console.log("token",serializedState);
+        if (serializedState === null) {
+            token = null;
+        }
+         token = JSON.parse(serializedState);
+    }
+    catch (e) {
+        console.log(e);
+    }
 
-    // const handleClick = () => {
-    //     $("#signup-form").show();
-    // }
+    const handleClick = () => {
+        $("#signup-form").show();
+    }
 
-    const categ = () => {
-        // axios.get(`http://localhost:8000/category/`)
+    const selectLang = () => {
 
-        //     .then((result: any) => {
-        //         console.log("axios", result.data)
-        //         // dispatch(store(result.data))
-        //         props.store(true)
+    }
 
-        //     })
-        //     .catch((err: any) => {
-        //         console.error("err===== =>", err);
-        //     })
-
-        // props.store(["test","123",542]);
-        dispatch(add("yasir", "yasir123@gmail.com"))
-        console.log("store ===> ", userInStore)
+    const openClick = () => {
+        document.getElementById("mySidenav").style.width = "250px"
+    }
+    const closeClick = () => {
+        document.getElementById("mySidenav").style.width = "0";
 
     }
 
     return (
         <header id="nav-bar">
             <nav>
-                <div className="menu-icon">
+                <span className="menu-icon" onClick={openClick}>
                     <i className="fa fa-bars fa-2x"></i>
+                </span>
+                <div id="mySidenav" className="sidenav">
+                    <a href="javascript:void(0)" className="closebtn" onClick={closeClick}>&times;</a>
+                    <a href="#">About</a>
+                    <a href="#">{t("how_it_works")}</a>
+                    <a href="#">Browse Jobs</a>
+                    <a href="#">Contact</a>
                 </div>
-                <div className="logo">
-                    <Link to="/">{t("app_name")}</Link>
-                </div>
-                <div className="menu">
+                
+                <a href="/" className="logo">
+                    {t("app_name")}
+                </a>
+                <span className="menu">
                     <ul>
-                        <li><a href="#">{t("how_it_works")}</a></li>
-                        <li onClick={categ}><a href="#">Browse Jobs</a></li>
-                        {/* <li><a href="#">Language</a></li> */}
-                        <li><Link to="/prov/signup">Become a Service Provider</Link></li>
-                        <li><Link to="/user/login">{t("log_in")}</Link></li>
-                        <li><Link to="/user/signup">{t("join")}</Link></li>
-                        {/* <li onClick={handleClick}> <a href="#">Join</a></li> */}
+                        <li className="pc-view"><a href="#">{t("how_it_works")}</a></li>
+                        <li className="pc-view"><a href="#">Browse Jobs</a></li>
+                        <li className="lang-dropdown">
+                            {/* <button onClick={selectLang} className="lang-dropbtn">Languages</button> */}
+                            < div id="lang-Dropdown pc-view" className="lang-dropdown-content"> 
+                                <a className="pc-view" onClick={() => i18n.changeLanguage("en")}> English</a>
+                                <a className="pc-view" onClick={() => i18n.changeLanguage("ar")}>عربي</a>
+                            </div>
+
+                        </li>
+                        {token === null ?
+                        <span>
+                            <li><Link to="/user/login">{t("log_in")}</Link></li>
+                            {/* <li><Link to="/user/signup">{t("join")}</Link></li> */}
+                            <li onClick={handleClick}> <a href="#">{t("join")}</a></li>
+                        </span>
+                        :
+                        <span>
+                            <li><a href="profiles/user">Profile</a></li>
+                            <li>
+                                <Button onClick={() => { localStorage.clear(); window.location.href = "/"; }} id="logout">
+                                    Logout
+                            </Button>
+                            </li>
+                        </span>}
+
+                        
                     </ul>
-                    <div className="select">
+
+                    {/* <div className="select">
                         <select
                             value={i18n.language}
-                            onChange={(e) =>
+                            onChange={(e) =>{
                                 i18n.changeLanguage(e.target.value)
-                            }
+                                console.log(e.target.value)
+                            }}
                         >
                             <option value="en">English</option>
                             <option value="ar">عربي</option>
                         </select>
-                    </div>
-                </div>
+                    </div> */}
+                </span>
             </nav>
-              
+
         </header>
 
     )
