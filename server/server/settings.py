@@ -36,6 +36,7 @@ ALLOWED_HOSTS = ["servize-web.herokuapp.com", "127.0.0.1","localhost"]
 # Application definition
 
 INSTALLED_APPS = [
+    'whitenoise.runserver_nostatic',
     'accounts',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -120,7 +121,7 @@ DATABASES = {
         'PORT': '5432',
     }
 }
-
+WHITENOISE_USE_FINDERS = True
 # import dj_database_url
 # db_from_env = dj_database_url.config(conn_max_age=600)
 # DATABASES['default'].update(db_from_env) 
@@ -211,7 +212,8 @@ DJOSER = {
 
 
 # STATIC_ROOT = Path(__file__, "staticfiles").resolve().parent.parent
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+# STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 STATIC_URL = '/static/'
 AUTH_USER_MODEL = 'accounts.UserAccount'
