@@ -18,6 +18,8 @@ server/env
 /server/ServiceProvider/migrations/
 /server/SubCategory/migrations/
 /server/User/migrations/
+server/schedule/migrations/
+
 # production
 /build
 
@@ -34,4 +36,4 @@ yarn-error.log*
 
 #django
 pyvenv.cfg
-server/__pycache__/
+

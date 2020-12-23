@@ -2,8 +2,8 @@ from rest_framework import serializers
 from ServiceProvider.models import ServiceProvider,Image
 from Category.models import Category
 from User.serialize import ProviderUserSerializer
-
-
+from schedule.models import Schedule
+# from schedule.serialize import ScheduleSerializer
 
 # class  CategoryProviderSerializer(serializers.ModelSerializer):
 #     providerName = serializers.CharField(source='serviceProviderId.provider.name', read_only=True)
@@ -22,14 +22,17 @@ from User.serialize import ProviderUserSerializer
 
 class  ServiceProviderSerializer(serializers.ModelSerializer):
     name = serializers.CharField(source='provider.name',read_only=True )
+    email = serializers.CharField(source='provider',read_only=True )
+    
     users= ProviderUserSerializer(many=True, read_only=True)
     catname= serializers.CharField(source='categoryId',read_only=True)
+    reservations=serializers.CharField(source='schedule',read_only=True)
 
-    # Categories=CategoryProviderSerializer(many=True, read_only=True)
-    catname = serializers.CharField(source='categoryId',read_only=True )
+    # events= serializers.CharField(source='events',read_only=True)
+
     class Meta:
         model=ServiceProvider
-        fields=('provider','name','phone','city','role','picture','users','catname','categoryId')
+        fields=('provider','name','email','phone','city','role','picture','users','catname','categoryId','reservations')
         # fields=('name','phone','city','picture','users','categoryId')
 
 
