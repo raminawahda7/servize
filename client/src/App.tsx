@@ -17,6 +17,7 @@ import ResetPassword from "./components/Reset-password/Reset-password";
 import ResetPasswordConfirm from "./components/Reset-password/Reset-password-confirm"
 import ProviderContainer from "./components/Provider-container/Provider-container";
 import ServiceProvider from "../src/components/ServiceProvider/ServiceProvider"
+import Booking from "./components/booking/Booking"
 import Activate from './components/Activate';
 // import Search from './components/search/Search';
 
@@ -39,8 +40,8 @@ function App() {
     <BrowserRouter>
       <div className="App">
         {/* < Map /> */}
-        <Navbar />
-        {/* <Test/> */}
+        {/* <Navbar /> */}
+        <Test/>
         {/* <Catagories /> */}
         {/* <ProviderProf /> */}
         {/* <ProviderView /> */}
@@ -53,11 +54,13 @@ function App() {
         {/* <Search /> */}
         {/* <Calendar /> */}
         {/* <Schedule /> */}
-        {/* <Header /> */}
+        {/* <Header />
+        <ServiceProvider/> */}
+        {/* <Booking/> */}
 
         <Switch>
 
-          <Route exact path="/" component={HomePage} />
+          {/* <Route exact path="/" component={HomePage} /> */}
           <Route exact path="/usertype" component={Usertype} />
           {/* <Route exact path="/" component={Main} /> */}
           <Route path="/prov/signup" component={ProviderSignup} />
@@ -70,7 +73,7 @@ function App() {
           <Route path="/reset/:token" component={ResetPassword} />
           <Route exact path='/password/reset/confirm/:uid/:token' component={ResetPasswordConfirm} />
           {/* <Route path="/activate/:uid/:token" component={Activate} /> */}
-          {/* <Route path="/profiles/provider" component={ProviderProf} /> */}
+          <Route path="/profiles/provider" component={ProviderProf} />
           {/* <Route path="/profiles/provider" component={Schedule} /> */}
           <Route path="/profiles/providerview" component={ProviderView} />
           <Route path="/profiles/user" component={UserProf} />

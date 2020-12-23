@@ -1,4 +1,4 @@
-import React, { useState, useEffect,useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Form from 'react-bootstrap/Form';
 import InstagramIcon from '@material-ui/icons/Instagram';
@@ -22,13 +22,13 @@ const axios = require('axios');
 const $ = require('jquery');
 
 export default function ProviderProf() {
-//for upload image 
+    //for upload image 
 
-// state = { selectedFile: null }
+    // state = { selectedFile: null }
 
-// fileChangedHandler = event => {
-//   this.setState({ selectedFile: event.target.files[0] })
-// }
+    // fileChangedHandler = event => {
+    //   this.setState({ selectedFile: event.target.files[0] })
+    // }
 
     const [test, setTest] = useState([]);
 
@@ -112,7 +112,7 @@ export default function ProviderProf() {
                                             className="form-control input-lg p-text-area"></textarea>
                                     </form>
                                     <footer className="panel-footer">
-                                        <button className="button pull-right">Post</button>
+                                        <button className="button pull-right" type="submit">Post</button>
                                     </footer>
                                 </div>
                                 <div className="panel">
