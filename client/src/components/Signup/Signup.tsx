@@ -86,7 +86,7 @@ const Signup = (props: any) => {
                     <div className="password error" ></div>
                 </div>
 
-                <button className="button" >Sign Up</button>
+                <button className="btn-signup" >Sign Up</button>
                 <button className="btn cancel" onClick={closeForm}>Close</button>
 
                 <div className="password-req" >8 characters or longer. Combine upper and lowercase letters and numbers</div><br />

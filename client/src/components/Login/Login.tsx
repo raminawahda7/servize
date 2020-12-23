@@ -85,7 +85,7 @@ export default function Login() {
 
                 {/* <button className="btn cancel" onClick={closeForm}>Close</button> */}
 
-                <button className="button" >Log In</button><br />
+                <button className="btn-login" >Log In</button><br />
                 <p >Don't have an account?  <Link to="/user/signup" style={{ textDecoration: "none" }}>Sign up</Link></p>
             </form>
         </div>

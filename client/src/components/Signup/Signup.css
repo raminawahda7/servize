@@ -42,7 +42,7 @@
   margin: 20px 0 10px;
 }
 
-#signup-form button {
+#signup-form .btn-signup {
   margin-top: 30px;
   border-radius: 36px;
   background: rgb(255, 56, 92);
