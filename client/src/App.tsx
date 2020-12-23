@@ -41,7 +41,7 @@ function App() {
         {/* < Map /> */}
         <Navbar />
         {/* <Test/> */}
-        {/* <Categories /> */}
+        <Catagories />
         {/* <ProviderProf /> */}
         {/* <ProviderView /> */}
         {/* <UserView /> */}
