@@ -12,6 +12,16 @@ import DateTimePicker from 'react-datetime-picker';
 // import 'react-datetimepicker-bootstrap';
 // import DatePicker from react-datepicker;
 
+const axios = require('axios');
+const $ = require('jquery');
+
+interface FormData {
+    username: string;
+    email: string;
+    phone: number;
+    password: string;
+}
+
 export default function Booking() {
 	const [startDate, setStartDate] = useState(new Date());
     return (

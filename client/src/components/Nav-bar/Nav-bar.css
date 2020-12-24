@@ -58,8 +58,10 @@
       margin: 10px 46px;
       color: rgb(0, 0, 0);
       font-weight: bold;
-      font-size: 20px;
+      font-size: 40px;
       letter-spacing: 2px;
+      
+      /* background-image: url('../../../public/serviz_owler_20190713_034914_original-removebg-preview.png'); */
 }
 
 nav {

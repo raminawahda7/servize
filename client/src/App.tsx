@@ -67,8 +67,11 @@ function App() {
           <Route path="/client/signup" component={UsersSignup} />
           <Route path="/user/signup" component={Signup} />
           <Route path="/user/login" component={Login} />
+          
           {/* <Route path="/providerProfile" exact component={() => < ProviderProf/>} /> */}
           <Route path="/provider" component={ProviderContainer} />
+          <Route path="/book" component={Booking} />
+
           <Route path="/auth/users/reset_password/" component={ForgotPassword} />
           <Route path="/reset/:token" component={ResetPassword} />
           <Route exact path='/password/reset/confirm/:uid/:token' component={ResetPasswordConfirm} />

@@ -16,7 +16,7 @@ import "./Nav-bar.css";
 const axios = require('axios');
 const $ = require('jquery');
 
-
+// import logo from '../../../public/serviz_owler_20190713_034914_original-removebg-preview.png'
 
 $(window).on("scroll", function () {
     if ($(window).scrollTop()) {
@@ -63,49 +63,32 @@ const Navbar = () => {
     const checkUser = async () => {
         await axios.post(`http://localhost:8000/user/specUser/`,
             {
-                pk :userInStore.user.id
+                pk: userInStore.user.id
             })
 
             .then(async (result: any) => {
-                console.log('user',result.data)
+                console.log('user', result.data)
                 console.log("post", result.data[0].role)
-                if(result.data[0].role==='user'){
+                if (result.data[0].role === 'user') {
                     window.location.href = "/profiles/user"
                 }
-                // let res = await axios({
-                //     url: 'http://localhost:8000/auth/users/me/',
-                //     method: 'get',
-                //     // timeout: 8000,
-                //     headers: {
-                //         'Authorization': 'JWT ' + access,
-                //         'Content-Type': 'application/json',
-                //     }
-                // })
-                // if (res.status == 200) {
-                //     // test for status you want, etc
-                //     console.log("get", res)
-                //     localStorage.setItem("access_token", access);
-                //     localStorage.setItem("refresh_token", refresh);
-                //     dispatch(logIn(res.data.name, res.data.email, res.data.id))
-                //     window.location.href = "/"
-                // }
 
             })
-            .catch(async(result: any)  => {
-                
+            .catch(async (result: any) => {
+
                 console.log("nononot")
                 await axios.post(`http://localhost:8000/serviceprovider/servProv/`,
-                {
-                    provider :userInStore.user.id
-                })
-                .then(async (result: any) => {
-                    console.log('provider',result.data)
-                    console.log("post", result.data[0].role)
-                    if(result.data[0].role==='ServiceProvider'){
-                        window.location.href = "/profiles/provider"
-                    }
-                })
-               
+                    {
+                        provider: userInStore.user.id
+                    })
+                    .then(async (result: any) => {
+                        console.log('provider', result.data)
+                        console.log("post", result.data[0].role)
+                        if (result.data[0].role === 'ServiceProvider') {
+                            window.location.href = "/profiles/provider"
+                        }
+                    })
+
             })
 
     }
@@ -115,7 +98,6 @@ const Navbar = () => {
         //     <nav>
         <nav className="navbar navbar-expand-lg navbar-light fixed-top navbar-collapse collapse w-100 order-3 dual-collapse2">
             <div className="container">
-                <a className="navbar-brand" href="#">Creativo</a> <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" className="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button"><span className="navbar-toggler-icon"></span></button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <span className="menu-icon" onClick={openClick}>
                         <i className="fa fa-bars fa-2x"></i>
@@ -154,7 +136,7 @@ const Navbar = () => {
                                     </span>
                                     :
                                     <span>
-                                        <li><a  onClick={checkUser}>Profile</a></li>
+                                        <li><a onClick={checkUser}>Profile</a></li>
                                         <li>
                                             <Button onClick={() => { localStorage.clear(); window.location.href = "/"; }} id="logout">
                                                 Logout
