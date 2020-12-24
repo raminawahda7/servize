@@ -58,10 +58,10 @@ export default function UserProf() {
                                         <div className="m-b-25">
                                             <div className="profile-img">
                                                 <br></br><img src={userData.image} className="img-radius" alt="User-Profile-Image" />
-                                                {/* <div className="file btn btn-primary">
+                                                <div className="file btn btn-primary">
                                                     Change Photo
                                                  <input type="file" name="file" />
-                                                </div>  */}
+                                                </div> 
                                             </div>
                                         </div>
                                         <h6 className="f-w-600">{userData.name}</h6><br></br>
