@@ -43,10 +43,10 @@ export default function UserProf() {
                                         <div className="m-b-25">
                                             <div className="profile-img">
                                                 <br></br><img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" className="img-radius" alt="User-Profile-Image" />
-                                                <div className="file btn btn-primary">
+                                                {/* <div className="file btn btn-primary">
                                                     Change Photo
                                                  <input type="file" name="file" />
-                                                </div>
+                                                </div> */}
                                             </div>
                                         </div>
                                         <h6 className="f-w-600">Name</h6><br></br>
